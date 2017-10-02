@@ -1,10 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CalibrateToPlayerHeight : MonoBehaviour
 {
-    private Vector3 m_originalLocalScale;
+    [SerializeField]
+    private float m_averageHeightMeters = 2f;
+
+    [SerializeField] private float m_scaleMod = 1f;
+
+    [SerializeField] private Vector3 m_originalLocalScale = Vector3.one;
 
 	void Start ()
     {
@@ -16,6 +19,6 @@ public class CalibrateToPlayerHeight : MonoBehaviour
     public void Calibrate()
     {
         transform.localScale = m_originalLocalScale *
-            Vector3.Distance(Valve.VR.InteractionSystem.Player.instance.transform.position, Camera.main.transform.position) / 2f;
+           ( Vector3.Distance(Valve.VR.InteractionSystem.Player.instance.transform.position, Camera.main.transform.position) / m_averageHeightMeters ) * m_scaleMod;
     }
 }
