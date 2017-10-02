@@ -6,7 +6,8 @@ public class CutModel : MonoBehaviour
 {
 	void Start ()
     {
-        Vector3[] verts = GetComponent<MeshFilter>().mesh.vertices;
+        MeshFilter mf = GetComponent<MeshFilter>();
+        Vector3[] verts = mf.mesh.vertices;
         Color[] colors = new Color[verts.Length];
 
         int h, l;
@@ -14,6 +15,8 @@ public class CutModel : MonoBehaviour
 
         for (int i = 0; i < verts.Length; i++)
         {
+            
+
             int floor = Mathf.FloorToInt(verts[i].y);
             floor += floor % 10;
             verts[i].y = floor;
@@ -27,8 +30,8 @@ public class CutModel : MonoBehaviour
             colors[i].a = 1f;
         }
 
-        GetComponent<MeshFilter>().mesh.vertices = verts;
-        GetComponent<MeshFilter>().mesh.colors = colors;
+        mf.mesh.vertices = verts;
+        mf.mesh.colors = colors;
 
     }
 }
