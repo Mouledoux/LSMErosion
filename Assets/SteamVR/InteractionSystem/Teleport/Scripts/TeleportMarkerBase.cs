@@ -13,6 +13,7 @@ namespace Valve.VR.InteractionSystem
 	{
 		public bool locked = false;
 		public bool markerActive = true;
+        public bool teleprtThrough = false;
 
 		//-------------------------------------------------
 		public virtual bool showReticle

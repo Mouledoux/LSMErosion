@@ -24,14 +24,7 @@ namespace Valve.VR.InteractionSystem
 
 		//-------------------------------------------------
 		void Update()
-		{
-            GameObject go = gameObject;
-            while(go != Player.instance.gameObject)
-            {
-                if (go.transform.parent != null) go = go.transform.parent.gameObject;
-                else return;
-            }
-            
+		{            
 			for ( int i = 0; i < Player.instance.handCount; i++ )
 			{
 				Hand hand = Player.instance.GetHand( i );

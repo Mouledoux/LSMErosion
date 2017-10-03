@@ -29,6 +29,7 @@ namespace Valve.VR.InteractionSystem
 		public Color pointerValidColor;
 		public Color pointerInvalidColor;
 		public Color pointerLockedColor;
+        public Color pointerTeleportThroughColor;
 		public bool showPlayAreaMarker = true;
 
 		public float teleportFadeTime = 0.1f;
@@ -356,6 +357,22 @@ namespace Valve.VR.InteractionSystem
 #endif
 					destinationReticleTransform.gameObject.SetActive( false );
 				}
+
+                /* Teleporting through a predefined area, to a nother valid are under it if aplicable
+                 *///
+                else if (hitTeleportMarker.teleprtThrough)
+                {
+                    teleportArc.SetColor(pointerTeleportThroughColor);
+#if (UNITY_5_4)
+					pointerLineRenderer.SetColors( pointerTeleportThroughColor, pointerTeleportThroughColor );
+#else
+                    pointerLineRenderer.startColor = pointerTeleportThroughColor;
+                    pointerLineRenderer.endColor = pointerTeleportThroughColor;
+#endif
+                    destinationReticleTransform.gameObject.GetComponent<Renderer>().material.SetColor("_TintColor", pointerTeleportThroughColor);
+                    destinationReticleTransform.gameObject.SetActive(true);
+                }
+
 				else
 				{
 					teleportArc.SetColor( pointerValidColor );
@@ -365,7 +382,8 @@ namespace Valve.VR.InteractionSystem
 					pointerLineRenderer.startColor = pointerValidColor;
 					pointerLineRenderer.endColor = pointerValidColor;
 #endif
-					destinationReticleTransform.gameObject.SetActive( hitTeleportMarker.showReticle );
+                    destinationReticleTransform.gameObject.GetComponent<Renderer>().material.SetColor("_TintColor", pointerValidColor);
+                    destinationReticleTransform.gameObject.SetActive( hitTeleportMarker.showReticle );
 				}
 
 				offsetReticleTransform.gameObject.SetActive( true );
