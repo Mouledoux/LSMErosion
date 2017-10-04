@@ -52,6 +52,9 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         
         Vector3[] v = { m_hand.transform.position, endPoint };
         m_lineRenderer.SetPositions(v);
+
+        if (m_hand.AttachedObjects.Count > 0)
+            m_hand.AttachedObjects[0].attachedObject.transform.position = endPoint;
     }
 
 
