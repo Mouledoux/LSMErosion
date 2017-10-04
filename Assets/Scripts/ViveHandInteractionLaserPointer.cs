@@ -33,6 +33,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
     public bool CheckObjectHit()
     {
+        return (Physics.Raycast(m_hand.transform.position, m_hand.transform.forward, out m_raycast));
+
         if (!Physics.Raycast(m_hand.transform.position, m_hand.transform.forward, out m_raycast)) return false;
         else if (!m_raycast.transform.gameObject.GetComponent<Valve.VR.InteractionSystem.Interactable>()) return false;
         else if (!m_raycast.transform.gameObject.CompareTag(m_hitTag)) return false;
