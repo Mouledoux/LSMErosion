@@ -807,7 +807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_averageHeightMeters: 2
-  m_scaleMod: 1.1
+  m_scaleMod: 1
   m_originalLocalScale: {x: 1, y: 1, z: 1}
 --- !u!4 &507514163
 Transform:

@@ -31,10 +31,10 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         {
             if (CheckObject())
             {
-                //if (CheckInput())
-                //{
-                //    PickUpObject();
-                //}
+                if (CheckInput())
+                {
+                    PickUpObject();
+                }
             }
         }
 
@@ -47,10 +47,13 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         if (Physics.Raycast(m_hand.transform.position, m_hand.transform.forward, out m_raycast))
         {
-            if (m_targetObject != null && m_targetObject != m_raycast.transform.gameObject && !m_isHoldingSomething)
+            if (m_targetObject != m_raycast.transform.gameObject && !m_isHoldingSomething)
             {
-                Mouledoux.Components.Mediator.instance.NotifySubscribers
-                    (m_targetObject.GetInstanceID().ToString() + "->offhighlight", new Mouledoux.Callback.Packet());
+                if (m_targetObject != null)
+                {
+                    Mouledoux.Components.Mediator.instance.NotifySubscribers
+                        (m_targetObject.GetInstanceID().ToString() + "->offhighlight", new Mouledoux.Callback.Packet());
+                }
 
                 m_targetObject = m_raycast.transform.gameObject;
 
@@ -99,15 +102,12 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     public System.Collections.IEnumerator HoldObject()
     {
         Vector3 lastPos = Vector3.zero;
+
         Transform t = m_raycast.transform;
         Collider c = m_raycast.collider;
+
         c.enabled = false;
         m_isHoldingSomething = true;
-
-        Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (m_targetObject.GetInstanceID().ToString() + "->offhighlight", new Mouledoux.Callback.Packet());
-        Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (m_targetObject.GetInstanceID().ToString() + "->oninteract", new Mouledoux.Callback.Packet());
 
         while (m_hand.controller.GetHairTrigger())
         {
@@ -126,8 +126,5 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
         c.enabled = true;
         m_isHoldingSomething = false;
-
-        Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (m_targetObject.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
     }
 }
