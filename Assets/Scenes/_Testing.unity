@@ -117,6 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 36823039}
   - component: {fileID: 36823041}
+  - component: {fileID: 36823040}
   m_Layer: 0
   m_Name: cube (3)
   m_TagString: Pickup
@@ -138,6 +139,18 @@ Transform:
   m_Father: {fileID: 507514163}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &36823040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 36823038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a3eb1c7b6c354495a51f6e91b6ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_highlightMaterial: {fileID: 2100000, guid: 7b939e5e799d98a469f594828ebab52e, type: 2}
 --- !u!65 &36823041
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -328,7 +341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &191507941
 Transform:
   m_ObjectHideFlags: 0
@@ -398,6 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 245403732}
   - component: {fileID: 245403734}
+  - component: {fileID: 245403733}
   m_Layer: 0
   m_Name: cube (4)
   m_TagString: Pickup
@@ -419,6 +433,18 @@ Transform:
   m_Father: {fileID: 507514163}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &245403733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 245403731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a3eb1c7b6c354495a51f6e91b6ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_highlightMaterial: {fileID: 2100000, guid: 7b939e5e799d98a469f594828ebab52e, type: 2}
 --- !u!65 &245403734
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -705,6 +731,7 @@ GameObject:
   m_Component:
   - component: {fileID: 353509133}
   - component: {fileID: 353509135}
+  - component: {fileID: 353509134}
   m_Layer: 0
   m_Name: cube (2)
   m_TagString: Pickup
@@ -726,6 +753,18 @@ Transform:
   m_Father: {fileID: 507514163}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &353509134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353509132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a3eb1c7b6c354495a51f6e91b6ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_highlightMaterial: {fileID: 2100000, guid: 7b939e5e799d98a469f594828ebab52e, type: 2}
 --- !u!65 &353509135
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1269,6 +1308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 708734429}
   - component: {fileID: 708734431}
+  - component: {fileID: 708734430}
   m_Layer: 0
   m_Name: cube (6)
   m_TagString: Pickup
@@ -1290,6 +1330,18 @@ Transform:
   m_Father: {fileID: 507514163}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &708734430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 708734428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a3eb1c7b6c354495a51f6e91b6ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_highlightMaterial: {fileID: 2100000, guid: 7b939e5e799d98a469f594828ebab52e, type: 2}
 --- !u!65 &708734431
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2095,6 +2147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1094325869}
   - component: {fileID: 1094325871}
+  - component: {fileID: 1094325870}
   m_Layer: 0
   m_Name: cube (5)
   m_TagString: Pickup
@@ -2116,6 +2169,18 @@ Transform:
   m_Father: {fileID: 507514163}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1094325870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1094325868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a3eb1c7b6c354495a51f6e91b6ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_highlightMaterial: {fileID: 2100000, guid: 7b939e5e799d98a469f594828ebab52e, type: 2}
 --- !u!65 &1094325871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2137,6 +2202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1127703211}
   - component: {fileID: 1127703213}
+  - component: {fileID: 1127703212}
   m_Layer: 0
   m_Name: cube (1)
   m_TagString: Pickup
@@ -2158,6 +2224,18 @@ Transform:
   m_Father: {fileID: 507514163}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1127703212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1127703210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a3eb1c7b6c354495a51f6e91b6ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_highlightMaterial: {fileID: 2100000, guid: 7b939e5e799d98a469f594828ebab52e, type: 2}
 --- !u!65 &1127703213
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2488,6 +2566,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 406981998f1234442a4f2eb50cfe07e1, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3784,7 +3863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &2064867718
 MeshCollider:
   m_ObjectHideFlags: 0
