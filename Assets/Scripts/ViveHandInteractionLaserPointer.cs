@@ -29,13 +29,13 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         if (CheckObjectHit())
         {
-            if (CheckObject())
-            {
-                if (CheckInput())
-                {
-                    PickUpObject();
-                }
-            }
+            //if (CheckObject())
+            //{
+            //    if (CheckInput())
+            //    {
+            //        PickUpObject();
+            //    }
+            //}
         }
 
         UpdateLaser();

@@ -12,7 +12,6 @@ public class _PLACEHOLDER_TOWER : InteractableObject
 	new void Start ()
     {
 		m_renderer = GetComponentInChildren<Renderer>();
-        onHighlight += onHighlight;
 
         base.Start();
 	}

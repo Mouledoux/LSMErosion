@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
-    protected Mouledoux.Components.Mediator.Subscriptions m_subscriptions;
+    protected Mouledoux.Components.Mediator.Subscriptions m_subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
     protected Mouledoux.Callback.Callback onHighlight;
     protected Mouledoux.Callback.Callback offHighlight;
     protected Mouledoux.Callback.Callback onInteract;
