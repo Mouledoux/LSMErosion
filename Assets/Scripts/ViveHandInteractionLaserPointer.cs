@@ -24,8 +24,9 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 	void Update ()
     {
         if (CheckObjectHit())
-            if(CheckInput())
-                PickUpObject();
+            if(CheckObject())
+                if(CheckInput())
+                    PickUpObject();
 
         UpdateLaser();
     }
@@ -47,6 +48,10 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         }
     }
 
+    public bool CheckObject()
+    {
+        return m_raycast.transform.gameObject.CompareTag(m_hitTag);
+    }
 
     public void UpdateLaser()
     {
@@ -69,6 +74,18 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     public int PickUpObject()
     {
         //m_hand.AttachObject(m_raycast.transform.gameObject);
+        StartCoroutine(HoldObject(m_raycast.transform.gameObject));
         return 0;
+    }
+
+    public System.Collections.IEnumerator HoldObject(GameObject target)
+    {
+        target.GetComponent<Collider>().enabled = false;
+        while(m_hand.controller.GetHairTrigger())
+        {
+            target.transform.position = m_raycast.point;
+            yield return null;
+        }
+        target.GetComponent<Collider>().enabled = true;
     }
 }
