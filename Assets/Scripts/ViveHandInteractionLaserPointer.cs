@@ -24,14 +24,14 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         if (CheckObjectHit())
         {
             Mouledoux.Components.Mediator.instance.NotifySubscribers
-                (m_raycast.transform.gameObject.GetInstanceID().ToString() + "->highlight", new Mouledoux.Callback.Packet());
+                (m_raycast.transform.gameObject.GetInstanceID().ToString() + "->onhighlight", new Mouledoux.Callback.Packet());
 
             if (CheckObject())
             {
                 if (CheckInput())
                 {
                     Mouledoux.Components.Mediator.instance.NotifySubscribers
-                        (m_raycast.transform.gameObject.GetInstanceID().ToString() + "->interact", new Mouledoux.Callback.Packet());
+                        (m_raycast.transform.gameObject.GetInstanceID().ToString() + "->oninteract", new Mouledoux.Callback.Packet());
 
                     PickUpObject();
                 }
@@ -77,6 +77,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
         while(m_hand.controller.GetHairTrigger())
         {
+            t.position = m_raycast.point + (transform.up * 0.01f);
             yield return null;
         }
 
