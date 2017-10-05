@@ -29,13 +29,13 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         if (CheckObjectHit())
         {
-            //if (CheckObject())
-            //{
-            //    if (CheckInput())
-            //    {
-            //        PickUpObject();
-            //    }
-            //}
+            if (CheckObject())
+            {
+                //if (CheckInput())
+                //{
+                //    PickUpObject();
+                //}
+            }
         }
 
         UpdateLaser();
@@ -47,7 +47,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         if (Physics.Raycast(m_hand.transform.position, m_hand.transform.forward, out m_raycast))
         {
-            if (m_targetObject != m_raycast.transform.gameObject && !m_isHoldingSomething)
+            if (m_targetObject != null && m_targetObject != m_raycast.transform.gameObject && !m_isHoldingSomething)
             {
                 Mouledoux.Components.Mediator.instance.NotifySubscribers
                     (m_targetObject.GetInstanceID().ToString() + "->offhighlight", new Mouledoux.Callback.Packet());
@@ -60,6 +60,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
             return true;
         }
+
+        m_raycast.point = m_hand.transform.position + m_hand.transform.forward;
         return false;
     }
 
