@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
-    private Mouledoux.Components.Mediator.Subscriptions m_subscriptions;
-    private Mouledoux.Callback.Callback onHighlight;
-    private Mouledoux.Callback.Callback offHighlight;
-    private Mouledoux.Callback.Callback onInteract;
-    private Mouledoux.Callback.Callback offInteract;
+    protected Mouledoux.Components.Mediator.Subscriptions m_subscriptions;
+    protected Mouledoux.Callback.Callback onHighlight;
+    protected Mouledoux.Callback.Callback offHighlight;
+    protected Mouledoux.Callback.Callback onInteract;
+    protected Mouledoux.Callback.Callback offInteract;
 
 
     // Use this for initialization
-    void Start ()
+    protected void Start ()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        m_subscriptions.Subscribe(GetInstanceID().ToString() + "->onhighlight", onHighlight);
+        m_subscriptions.Subscribe(GetInstanceID().ToString() + "->offhighlight", offHighlight);
+        m_subscriptions.Subscribe(GetInstanceID().ToString() + "->oninteract", onInteract);
+        m_subscriptions.Subscribe(GetInstanceID().ToString() + "->offinteract", offInteract);
+    }
 }
