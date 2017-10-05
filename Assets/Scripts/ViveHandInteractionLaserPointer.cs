@@ -73,11 +73,22 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         Transform t = m_raycast.transform;
         Collider c = m_raycast.collider;
 
+        Vector3 lastPos = Vector3.zero;
+
         c.enabled = false;
 
         while(m_hand.controller.GetHairTrigger())
         {
-            t.position = m_raycast.point + (transform.up * 0.01f);
+            if (m_raycast.transform.gameObject.CompareTag("PlacementArea"))
+            {
+                lastPos = t.position = m_raycast.point;
+            }
+
+            else
+            {
+                t.position = lastPos;
+            }
+
             yield return null;
         }
 
