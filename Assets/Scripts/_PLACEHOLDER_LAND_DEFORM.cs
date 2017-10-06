@@ -15,36 +15,31 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
 
     }
 
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-
-    }
-
-    private void OnTriggerEnter(Collider collision)
-    {
-        Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+        Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
         if (rb == null) return;
 
         Vector3[] vertices = m_mesh.vertices;
         
         float dist = 0f;
-
-        Vector3 POC = collision.ClosestPoint(transform.position);
+        
+        Vector3 POC = other.ClosestPoint(transform.position);
 
         for (int i = 0; i < vertices.Length; i++)
         {
-            dist = Vector3.Distance(transform.position + vertices[i], POC);
+            dist = Vector3.Distance(transform.TransformPoint(vertices[i]), POC);
 
-            if (dist <= 0.5f)
+            if (dist <= 1)
             {
-                vertices[i] /= rb.velocity.magnitude * 2;
+                vertices[i] += transform.InverseTransformDirection(rb.velocity.normalized * rb.mass) * Mathf.Abs(dist - 1);
             }
         }
-
+        
         m_mesh.vertices = vertices;
         m_collider.sharedMesh = m_mesh;
 
-        Destroy(collision.gameObject);
+        Destroy(other.gameObject);
     }
 }
 
