@@ -3359,8 +3359,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 587654708}
-  m_LocalRotation: {x: -0.37728047, y: 0.026349796, z: 0.010737092, w: 0.92566186}
-  m_LocalPosition: {x: 14.845991, y: -10.677536, z: -12.627857}
+  m_LocalRotation: {x: 0.45067132, y: 0.2642886, z: 0.14165872, w: -0.8408209}
+  m_LocalPosition: {x: 21.245033, y: -1.4454656, z: -1.944286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8147,7 +8147,7 @@ GameObject:
   - component: {fileID: 1389730649}
   - component: {fileID: 1389730648}
   - component: {fileID: 1389730647}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11598,7 +11598,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 1c85e85eabbc1164e89c80121d8f1114, type: 2}
     - target: {fileID: 100000, guid: 633aba7763524e74d8aed8ad42e74506, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 633aba7763524e74d8aed8ad42e74506, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 633aba7763524e74d8aed8ad42e74506, type: 3}
