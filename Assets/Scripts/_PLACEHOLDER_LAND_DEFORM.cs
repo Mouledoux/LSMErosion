@@ -12,7 +12,6 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
     {
         m_mesh = GetComponent<MeshFilter>().mesh;
         m_collider = GetComponent<MeshCollider>();
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,7 +20,7 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         if (rb == null) return;
 
         Vector3[] vertices = m_mesh.vertices;
-        
+
         float dist = 0f;
         
         Vector3 POC = other.ClosestPoint(transform.position);
@@ -33,6 +32,7 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
             if (dist <= 1)
             {
                 vertices[i] += transform.InverseTransformDirection(rb.velocity.normalized * rb.mass) * Mathf.Abs(dist - 1);
+                vertices[i] = vertices[i].magnitude < m_mesh.vertices[i].magnitude ? vertices[i] : m_mesh.vertices[i];
             }
         }
         
