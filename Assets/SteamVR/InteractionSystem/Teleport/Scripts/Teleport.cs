@@ -891,7 +891,7 @@ namespace Valve.VR.InteractionSystem
 
 			// Find the actual floor position below the navigation mesh
 			TeleportArea teleportArea = teleportingToMarker as TeleportArea;
-			if ( teleportArea != null )
+			if ( teleportArea != null || teleportArea.teleprtThrough)           /// Where we actually teleport through specific area to the ones under it
 			{
 				if ( floorFixupMaximumTraceDistance > 0.0f )
 				{
