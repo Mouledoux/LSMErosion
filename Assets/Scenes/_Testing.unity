@@ -3119,8 +3119,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 587654708}
-  m_LocalRotation: {x: 0.38789198, y: 0.27270198, z: 0.1213037, w: -0.87204295}
-  m_LocalPosition: {x: 20.147133, y: -0.011808872, z: -0.6131669}
+  m_LocalRotation: {x: -0.000286042, y: 0.9754518, z: 0.22020935, w: 0.0012520833}
+  m_LocalPosition: {x: 20.07468, y: 0.5743749, z: 0.9183376}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4429,6 +4429,10 @@ Prefab:
     - target: {fileID: 400006, guid: b544816461f324e56a39767fdeb5b114, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: b544816461f324e56a39767fdeb5b114, type: 2}
+      propertyPath: m_Name
+      value: table.top.enviroment.water
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b544816461f324e56a39767fdeb5b114, type: 2}
@@ -8131,7 +8135,6 @@ Transform:
   - {fileID: 932177977}
   - {fileID: 981611533}
   - {fileID: 841208966}
-  - {fileID: 1680177636}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8713,7 +8716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1680177636}
   m_Layer: 0
-  m_Name: enviroment
+  m_Name: table.top.enviroment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8726,12 +8729,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1680177635}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.33333334, y: 10, z: 0.5}
   m_Children:
   - {fileID: 844374235}
-  m_Father: {fileID: 1552597013}
-  m_RootOrder: 5
+  m_Father: {fileID: 1996101128}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1683840934
 GameObject:
@@ -10135,6 +10138,7 @@ Transform:
   m_Children:
   - {fileID: 1839971539}
   - {fileID: 1248610203}
+  - {fileID: 1680177636}
   m_Father: {fileID: 841208966}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
