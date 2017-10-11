@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Settings>
   <settings>
-    <frontFacing>true</frontFacing>
+    <frontFacing>false</frontFacing>
     <renderWireframe>false</renderWireframe>
     <quickHighlights>false</quickHighlights>
     <coincidentVertices>true</coincidentVertices>
@@ -17,7 +17,7 @@
     <snapRotationXToggle>true</snapRotationXToggle>
     <snapRotationYToggle>true</snapRotationYToggle>
     <snapRotationZToggle>true</snapRotationZToggle>
-    <worldOrientation>3</worldOrientation>
+    <worldOrientation>2</worldOrientation>
     <editMode>0</editMode>
     <transformMode>0</transformMode>
     <keycodeSelectionIndex>119</keycodeSelectionIndex>
