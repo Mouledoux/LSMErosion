@@ -12,6 +12,7 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
     {
         m_mesh = GetComponent<MeshFilter>().mesh;
         m_collider = GetComponent<MeshCollider>();
+        m_collider.sharedMesh = m_mesh;
     }
 
     private void OnTriggerEnter(Collider other)
