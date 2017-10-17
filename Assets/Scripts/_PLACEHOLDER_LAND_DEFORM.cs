@@ -33,7 +33,7 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         {
             dist = Vector3.Distance(transform.TransformPoint(vertices[i]), POC);
 
-            if (dist <= 0.01)
+            if (dist <= 0.1)
             {
                 vertices[i] += transform.InverseTransformDirection(rb.velocity.normalized * rb.mass) * Mathf.Abs(dist - 1);
                 vertices[i] = vertices[i].magnitude < m_mesh.vertices[i].magnitude ? vertices[i] : m_mesh.vertices[i];
