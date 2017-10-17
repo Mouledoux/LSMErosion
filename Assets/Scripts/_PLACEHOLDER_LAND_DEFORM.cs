@@ -43,7 +43,19 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         m_mesh.vertices = vertices;
         m_collider.sharedMesh = m_mesh;
 
-        Destroy(other.gameObject);
+        //other.enabled = false;
+        //Destroy(other.gameObject);
+
+        StartCoroutine(FadeOut(other.gameObject));
+    }
+
+    IEnumerator FadeOut(GameObject go)
+    {
+        while(go.transform.localScale.magnitude > 0)
+        {
+            go.transform.localScale = Vector3.Lerp(go.transform.localScale, Vector3.zero, Time.deltaTime * 4);
+            yield return null;
+        }
     }
 }
 
