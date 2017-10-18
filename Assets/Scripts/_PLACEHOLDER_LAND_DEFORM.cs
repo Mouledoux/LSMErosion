@@ -7,12 +7,43 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
 {
     private Mesh m_mesh;
     private MeshCollider m_collider;
-    
-	void Start ()
+
+    private Vector3[] m_newVertPos;
+    private Vector3[] m_vertBuffer;
+
+    private List<int> m_affectedVerts = new List<int>();
+
+    private int m_bufferIndex;
+
+	void Awake ()
     {
         m_mesh = GetComponent<MeshFilter>().mesh;
         m_collider = GetComponent<MeshCollider>();
+
+        m_collider.sharedMesh = m_mesh;
+        m_newVertPos = m_mesh.vertices;
+        m_vertBuffer = m_mesh.vertices;
+
+        m_bufferIndex = 0;
     }
+
+
+    private void Update()
+    {
+        for (int i = m_affectedVerts[0]; i < m_affectedVerts.Count; i++)
+        {
+            m_vertBuffer[m_affectedVerts[i]] = Vector3.Lerp(m_vertBuffer[m_affectedVerts[i]], m_newVertPos[m_affectedVerts[i]], Time.deltaTime);
+
+            if(Vector3.Distance(m_vertBuffer[m_affectedVerts[i]], m_newVertPos[m_affectedVerts[i]]) < 0.01f)
+            {
+                m_affectedVerts.Remove(m_affectedVerts[i]);
+            }
+        }
+
+        m_mesh.vertices = m_vertBuffer;
+        m_collider.sharedMesh = m_mesh;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,24 +53,41 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         Vector3[] vertices = m_mesh.vertices;
 
         float dist = 0f;
-        
-        Vector3 POC = other.ClosestPoint(transform.position);
+
+        Vector3 POC = other.transform.position; //ClosestPoint(transform.position);
 
         for (int i = 0; i < vertices.Length; i++)
         {
             dist = Vector3.Distance(transform.TransformPoint(vertices[i]), POC);
 
-            if (dist <= 1)
+            if (dist <= 0.25)
             {
                 vertices[i] += transform.InverseTransformDirection(rb.velocity.normalized * rb.mass) * Mathf.Abs(dist - 1);
                 vertices[i] = vertices[i].magnitude < m_mesh.vertices[i].magnitude ? vertices[i] : m_mesh.vertices[i];
+
+                if (!m_affectedVerts.Contains(i)) m_affectedVerts.Add(i);
             }
         }
-        
-        m_mesh.vertices = vertices;
-        m_collider.sharedMesh = m_mesh;
 
-        Destroy(other.gameObject);
+        m_newVertPos = vertices;
+
+        //m_mesh.vertices = vertices;
+        //m_collider.sharedMesh = m_mesh;
+
+        other.enabled = false;
+
+        StartCoroutine(FadeOut(other.gameObject));
+    }
+
+    IEnumerator FadeOut(GameObject go)
+    {
+        while(go.transform.localScale.magnitude > 0)
+        {
+            go.transform.localScale = Vector3.Lerp(go.transform.localScale, Vector3.zero, Time.deltaTime * 4);
+            yield return null;
+        }
+
+        Destroy(go);
     }
 }
 

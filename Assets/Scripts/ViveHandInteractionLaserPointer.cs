@@ -72,7 +72,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     public bool CheckObject()
     {
-        return m_raycast.transform.gameObject.CompareTag(m_hitTag);
+        return m_raycast.transform.gameObject.GetComponent<_PLACEHOLDER_TOWER>() != null;
     }
 
 
@@ -102,11 +102,12 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     public System.Collections.IEnumerator HoldObject()
     {
         Vector3 lastPos = Vector3.zero;
-
+        
         Transform t = m_raycast.transform;
         Collider c = m_raycast.collider;
 
         c.enabled = false;
+
         m_isHoldingSomething = true;
 
         while (m_hand.controller.GetHairTrigger())
