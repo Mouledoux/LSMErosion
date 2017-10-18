@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4f2dc53175b90064ca08cd97e47ea47a
-timeCreated: 1508271715
+guid: 705eff381f01c7841975467ad1f49e7a
+timeCreated: 1508365651
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: mesh_house_02
+    4300000: mesh_office_8_story
   materials:
     importMaterials: 1
     materialName: 0
