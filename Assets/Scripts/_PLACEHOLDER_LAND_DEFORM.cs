@@ -7,14 +7,34 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
 {
     private Mesh m_mesh;
     private MeshCollider m_collider;
-    
+
+    private Vector3[] m_newVertPos;
+    private Vector3[] m_vertBuffer;
+
+    private int m_bufferIndex = 0;
+
 	void Start ()
     {
         m_mesh = GetComponent<MeshFilter>().mesh;
         m_collider = GetComponent<MeshCollider>();
 
         m_collider.sharedMesh = m_mesh;
+        m_newVertPos = m_mesh.vertices;
+        m_vertBuffer = m_mesh.vertices;
     }
+
+
+    private void Update()
+    {
+        m_vertBuffer[m_bufferIndex] = Vector3.Lerp(m_vertBuffer[m_bufferIndex], m_newVertPos[m_bufferIndex], Time.deltaTime);
+
+        m_mesh.vertices = m_vertBuffer;
+        m_collider.sharedMesh = m_mesh;
+
+        m_bufferIndex += 1;
+        m_bufferIndex %= m_mesh.vertices.Length;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,8 +47,6 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         
         Vector3 POC = other.ClosestPoint(transform.position);
 
-        float max = float.MaxValue;
-
         for (int i = 0; i < vertices.Length; i++)
         {
             dist = Vector3.Distance(transform.TransformPoint(vertices[i]), POC);
@@ -40,11 +58,12 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
             }
         }
 
-        m_mesh.vertices = vertices;
-        m_collider.sharedMesh = m_mesh;
+        m_newVertPos = vertices;
 
-        //other.enabled = false;
-        //Destroy(other.gameObject);
+        //m_mesh.vertices = vertices;
+        //m_collider.sharedMesh = m_mesh;
+
+        other.enabled = false;
 
         StartCoroutine(FadeOut(other.gameObject));
     }
