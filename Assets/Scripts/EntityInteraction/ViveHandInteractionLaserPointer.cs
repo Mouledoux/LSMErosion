@@ -69,7 +69,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     public bool CheckObject()
     {
-        return m_targetObject.GetComponent<InteractableObject>() != null;
+        return m_targetObject.GetComponent<InteractableObject>();
     }
 
 
@@ -91,6 +91,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
             StartCoroutine(HoldObject());
         }
 
+
         return 0;
     }
 
@@ -106,13 +107,11 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     public System.Collections.IEnumerator HoldObject()
     {
         Vector3 lastPos = Vector3.zero;
-        Transform lastParent = null;
 
         Transform t = m_raycast.transform;
         Collider c = m_raycast.collider;
 
         c.enabled = false;
-
         m_isHoldingSomething = true;
 
         while (m_hand.controller.GetHairTrigger())
@@ -120,15 +119,12 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
             if (m_raycast.transform.gameObject.tag == t.gameObject.tag)
             {
                 lastPos = t.position = m_raycast.point;
-                lastParent = m_raycast.transform;
             }
 
-            else
-            {
-                t.position = lastPos;
-            }
-
-            t.parent = lastParent;
+            //else
+            //{
+            //    t.position = lastPos;
+            //}
 
             yield return null;
         }

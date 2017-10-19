@@ -11,7 +11,7 @@ public class RigidbodyPush : MonoBehaviour
 	void Start ()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
-        rb.AddForce(transform.InverseTransformDirection(direction) * force);
+        rb.velocity = transform.TransformDirection(direction.normalized) * force;
 	}
 
     public void Push()
