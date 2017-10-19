@@ -86,7 +86,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         Mouledoux.Components.Mediator.instance.NotifySubscribers
             (m_targetObject.GetInstanceID().ToString() + "->oninteract", new Mouledoux.Callback.Packet());
 
-        if (m_targetObject.GetComponent<InteractableObject>().m_pickup != true)
+        if (m_targetObject.GetComponent<InteractableObject>().m_pickup)
         {
             StartCoroutine(HoldObject());
         }
