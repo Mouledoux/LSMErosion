@@ -12,8 +12,7 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
     private Vector3[] m_vertBuffer;
 
     private List<int> m_affectedVerts = new List<int>();
-
-    private int m_bufferIndex;
+    
 
 	void Awake ()
     {
@@ -23,8 +22,7 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         m_collider.sharedMesh = m_mesh;
         m_newVertPos = m_mesh.vertices;
         m_vertBuffer = m_mesh.vertices;
-
-        m_bufferIndex = 0;
+        
     }
 
 
