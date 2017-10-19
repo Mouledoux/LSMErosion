@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: d2fdf1162f45e954a9b5f5ac66f979c8
-timeCreated: 1508261007
-licenseType: Pro
+guid: b14468c61162b4d4289d325d025e0a43
+timeCreated: 1508374357
+licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: mesh_house_01
+    4300000: mesh_office_10_story
   materials:
     importMaterials: 1
     materialName: 0
@@ -41,11 +41,11 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
