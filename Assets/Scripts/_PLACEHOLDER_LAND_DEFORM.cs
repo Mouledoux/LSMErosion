@@ -30,6 +30,8 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
 
     private void Update()
     {
+        if (m_affectedVerts.Count < 1) return;
+
         for (int i = m_affectedVerts[0]; i < m_affectedVerts.Count; i++)
         {
             m_vertBuffer[m_affectedVerts[i]] = Vector3.Lerp(m_vertBuffer[m_affectedVerts[i]], m_newVertPos[m_affectedVerts[i]], 0.1f);
