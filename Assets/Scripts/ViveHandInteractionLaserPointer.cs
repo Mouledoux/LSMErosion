@@ -72,7 +72,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     public bool CheckObject()
     {
-        return m_raycast.transform.gameObject.GetComponent<_PLACEHOLDER_TOWER>() != null;
+        return m_raycast.transform.gameObject.GetComponent<InteractableObject>() != null;
     }
 
 
