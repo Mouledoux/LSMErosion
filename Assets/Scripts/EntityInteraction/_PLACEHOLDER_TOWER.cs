@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class _PLACEHOLDER_TOWER : InteractableObject
 {
-	new private void Start ()
+	private void Start ()
     {
-        base.Start();
+        //base.Start();
     }
 
     new protected void OnHighlight(Mouledoux.Callback.Packet packet)

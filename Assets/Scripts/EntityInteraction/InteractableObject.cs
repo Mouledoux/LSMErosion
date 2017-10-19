@@ -26,7 +26,7 @@ public class InteractableObject : MonoBehaviour
 
     private Renderer m_renderer;
 
-    protected void Start()
+    protected void Initialize(GameObject self)
     {
         m_renderer = GetComponentInChildren<Renderer>();
 
@@ -36,23 +36,23 @@ public class InteractableObject : MonoBehaviour
         onInteract = OnInteract;
         offInteract = OffInteract;
 
-        m_subscriptions.Subscribe(gameObject.GetInstanceID().ToString() + "->onhighlight", onHighlight);
-        m_subscriptions.Subscribe(gameObject.GetInstanceID().ToString() + "->offhighlight", offHighlight);
+        m_subscriptions.Subscribe(self.GetInstanceID().ToString() + "->onhighlight", onHighlight);
+        m_subscriptions.Subscribe(self.GetInstanceID().ToString() + "->offhighlight", offHighlight);
 
-        m_subscriptions.Subscribe(gameObject.GetInstanceID().ToString() + "->oninteract", onInteract);
-        m_subscriptions.Subscribe(gameObject.GetInstanceID().ToString() + "->offinteract", offInteract);
+        m_subscriptions.Subscribe(self.GetInstanceID().ToString() + "->oninteract", onInteract);
+        m_subscriptions.Subscribe(self.GetInstanceID().ToString() + "->offinteract", offInteract);
     }
 
 
 
-    protected void OnHighlight(Mouledoux.Callback.Packet packet)
+    protected virtual void OnHighlight(Mouledoux.Callback.Packet packet)
     {
         m_onHighnight.Invoke();
 
         m_renderer.materials = new Material[] { m_renderer.materials[0], m_highlightMaterial };
     }
 
-    protected void OffHighlight(Mouledoux.Callback.Packet packet)
+    protected virtual void OffHighlight(Mouledoux.Callback.Packet packet)
     {
         m_offHighnight.Invoke();
 
@@ -60,12 +60,12 @@ public class InteractableObject : MonoBehaviour
     }
 
 
-    protected void OnInteract(Mouledoux.Callback.Packet packet)
+    protected virtual void OnInteract(Mouledoux.Callback.Packet packet)
     {
         m_onInteract.Invoke();
     }
 
-    protected void OffInteract(Mouledoux.Callback.Packet packet)
+    protected virtual void OffInteract(Mouledoux.Callback.Packet packet)
     {
         m_offInteract.Invoke();
     }

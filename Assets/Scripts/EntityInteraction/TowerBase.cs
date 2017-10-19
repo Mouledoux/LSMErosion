@@ -20,27 +20,27 @@ public class TowerBase : InteractableObject
 
 
     // ---------- ---------- ---------- ---------- ----------
-    new private void Start()
+    private void Start()
     {
-        base.Start();
+        Initialize(gameObject);
     }
 
-    new protected void OnHighlight(Mouledoux.Callback.Packet packet)
+    override protected void OnHighlight(Mouledoux.Callback.Packet packet)
     {
         base.OnHighlight(packet);
     }
 
-    new protected void OffHighlight(Mouledoux.Callback.Packet packet)
+    override protected void OffHighlight(Mouledoux.Callback.Packet packet)
     {
         base.OffHighlight(packet);
     }
 
-    new protected void OnInteract(Mouledoux.Callback.Packet packet)
+    override protected void OnInteract(Mouledoux.Callback.Packet packet)
     {
         base.OnInteract(packet);
     }
 
-    new protected void OffInteract(Mouledoux.Callback.Packet packet)
+    override protected void OffInteract(Mouledoux.Callback.Packet packet)
     {
         m_pickup = m_repickup;
         base.OffInteract(packet);

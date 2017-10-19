@@ -3,9 +3,6 @@
 [RequireComponent(typeof(Valve.VR.InteractionSystem.Hand), typeof(LineRenderer))]
 public class ViveHandInteractionLaserPointer : MonoBehaviour
 {
-    [SerializeField]
-    private string m_hitTag;
-
     private GameObject m_targetObject;
     private bool m_isHoldingSomething = false;
 
