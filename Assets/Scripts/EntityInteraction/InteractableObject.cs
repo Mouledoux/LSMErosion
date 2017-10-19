@@ -13,16 +13,16 @@ public class InteractableObject : MonoBehaviour
 
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
 
-    private Mouledoux.Callback.Callback onHighlight;
-    private Mouledoux.Callback.Callback offHighlight;
-    private Mouledoux.Callback.Callback onInteract;
-    private Mouledoux.Callback.Callback offInteract;
+    protected Mouledoux.Callback.Callback onHighlight;
+    protected Mouledoux.Callback.Callback offHighlight;
+    protected Mouledoux.Callback.Callback onInteract;
+    protected Mouledoux.Callback.Callback offInteract;
 
     private Renderer m_renderer;
 
 
 
-    void Start()
+    void Awake()
     {
         m_renderer = GetComponentInChildren<Renderer>();
 
@@ -54,6 +54,7 @@ public class InteractableObject : MonoBehaviour
 
         m_renderer.materials = new Material[] { m_renderer.materials[0] };
     }
+
 
     public void OnInteract(Mouledoux.Callback.Packet packet)
     {
