@@ -116,8 +116,6 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
         while (m_hand.controller.GetHairTrigger())
         {
-            if (m_raycast.transform.gameObject.CompareTag(t.gameObject.tag)) print("Hello");
-
             t.position = m_raycast.point;
             yield return null;
         }
