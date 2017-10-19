@@ -12,13 +12,12 @@ public class CalibrateToPlayerHeight : MonoBehaviour
 	void Start ()
     {
         m_originalLocalScale = transform.localScale;
-        //Calibrate();
+        Calibrate();
 	}
 
-    
+    [ContextMenu("Calibrate")]
     public void Calibrate()
     {
-        transform.localScale = m_originalLocalScale *
-           ( Vector3.Distance(Valve.VR.InteractionSystem.Player.instance.transform.position, Camera.main.transform.position) / m_averageHeightMeters ) * m_scaleMod;
+        transform.localScale = m_originalLocalScale * ((Valve.VR.InteractionSystem.Player.instance.eyeHeight / m_averageHeightMeters) * m_scaleMod);
     }
 }
