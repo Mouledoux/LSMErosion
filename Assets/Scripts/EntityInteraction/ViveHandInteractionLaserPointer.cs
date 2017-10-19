@@ -90,7 +90,9 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
             (m_targetObject.GetInstanceID().ToString() + "->oninteract", new Mouledoux.Callback.Packet());
 
         if (m_targetObject.GetComponent<InteractableObject>().m_pickup != true)
+        {
             StartCoroutine(HoldObject());
+        }
 
         return 0;
     }
@@ -107,7 +109,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     public System.Collections.IEnumerator HoldObject()
     {
         Vector3 lastPos = Vector3.zero;
-        
+        Transform lastParent = null;
+
         Transform t = m_raycast.transform;
         Collider c = m_raycast.collider;
 
@@ -120,6 +123,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
             if (m_raycast.transform.gameObject.tag == t.gameObject.tag)
             {
                 lastPos = t.position = m_raycast.point;
+                lastParent = m_raycast.transform;
             }
 
             else
@@ -127,9 +131,11 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
                 t.position = lastPos;
             }
 
+            t.parent = lastParent;
+
             yield return null;
         }
-
+        
         Mouledoux.Components.Mediator.instance.NotifySubscribers
             (t.gameObject.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
 

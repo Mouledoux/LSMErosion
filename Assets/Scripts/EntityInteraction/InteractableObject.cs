@@ -7,6 +7,10 @@ public class InteractableObject : MonoBehaviour
     public Material m_highlightMaterial;
 
     public bool m_pickup;
+    [SerializeField]
+    private bool repickup;
+    [HideInInspector]
+    public bool m_repickup { get { return repickup; } }
 
     public UnityEngine.Events.UnityEvent m_onHighnight;
     public UnityEngine.Events.UnityEvent m_offHighnight;
