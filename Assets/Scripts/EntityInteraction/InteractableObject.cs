@@ -6,6 +6,8 @@ public class InteractableObject : MonoBehaviour
 {
     public Material m_highlightMaterial;
 
+    public bool m_pickup;
+
     public UnityEngine.Events.UnityEvent m_onHighnight;
     public UnityEngine.Events.UnityEvent m_offHighnight;
     public UnityEngine.Events.UnityEvent m_onInteract;
@@ -20,9 +22,7 @@ public class InteractableObject : MonoBehaviour
 
     private Renderer m_renderer;
 
-
-
-    void Awake()
+    protected void Start()
     {
         m_renderer = GetComponentInChildren<Renderer>();
 
@@ -41,14 +41,14 @@ public class InteractableObject : MonoBehaviour
 
 
 
-    public void OnHighlight(Mouledoux.Callback.Packet packet)
+    protected void OnHighlight(Mouledoux.Callback.Packet packet)
     {
         m_onHighnight.Invoke();
 
         m_renderer.materials = new Material[] { m_renderer.materials[0], m_highlightMaterial };
     }
 
-    public void OffHighlight(Mouledoux.Callback.Packet packet)
+    protected void OffHighlight(Mouledoux.Callback.Packet packet)
     {
         m_offHighnight.Invoke();
 
@@ -56,12 +56,12 @@ public class InteractableObject : MonoBehaviour
     }
 
 
-    public void OnInteract(Mouledoux.Callback.Packet packet)
+    protected void OnInteract(Mouledoux.Callback.Packet packet)
     {
         m_onInteract.Invoke();
     }
 
-    public void OffInteract(Mouledoux.Callback.Packet packet)
+    protected void OffInteract(Mouledoux.Callback.Packet packet)
     {
         m_offInteract.Invoke();
     }

@@ -33,7 +33,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
             {
                 if (CheckInput())
                 {
-                    PickUpObject();
+                    ObjectInteract();
                 }
             }
         }
@@ -72,7 +72,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     public bool CheckObject()
     {
-        return m_raycast.transform.gameObject.GetComponent<InteractableObject>() != null;
+        return m_targetObject.GetComponent<InteractableObject>() != null;
     }
 
 
@@ -84,9 +84,14 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
 
     // ---------- ---------- ---------- ---------- ----------
-    public int PickUpObject()
+    public int ObjectInteract()
     {
-        StartCoroutine(HoldObject());
+        Mouledoux.Components.Mediator.instance.NotifySubscribers
+            (m_targetObject.GetInstanceID().ToString() + "->oninteract", new Mouledoux.Callback.Packet());
+
+        if (m_targetObject.GetComponent<InteractableObject>().m_pickup != true)
+            StartCoroutine(HoldObject());
+
         return 0;
     }
 
@@ -124,6 +129,9 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
             yield return null;
         }
+
+        Mouledoux.Components.Mediator.instance.NotifySubscribers
+            (t.gameObject.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
 
         c.enabled = true;
         m_isHoldingSomething = false;

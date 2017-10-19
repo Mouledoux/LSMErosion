@@ -2,66 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _PLACEHOLDER_TOWER : MonoBehaviour
+public class _PLACEHOLDER_TOWER : InteractableObject
 {
-    public Material m_highlightMaterial;
-
-    public UnityEngine.Events.UnityEvent m_onHighnight;
-    public UnityEngine.Events.UnityEvent m_offHighnight;
-    public UnityEngine.Events.UnityEvent m_onInteract;
-    public UnityEngine.Events.UnityEvent m_offInteract;
-
-    private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
-
-    private Mouledoux.Callback.Callback onHighlight;
-    private Mouledoux.Callback.Callback offHighlight;
-    private Mouledoux.Callback.Callback onInteract;
-    private Mouledoux.Callback.Callback offInteract;
-
-    private Renderer m_renderer;
-    
-
-
-	void Start ()
+	new private void Start ()
     {
-		m_renderer = GetComponentInChildren<Renderer>();
-
-        onHighlight = OnHighlight;
-        offHighlight = OffHighlight;
-
-        onInteract = OnInteract;
-        offInteract = OffInteract;
-
-        m_subscriptions.Subscribe(gameObject.GetInstanceID().ToString() + "->onhighlight", onHighlight);
-        m_subscriptions.Subscribe(gameObject.GetInstanceID().ToString() + "->offhighlight", offHighlight);
-
-        m_subscriptions.Subscribe(gameObject.GetInstanceID().ToString() + "->oninteract", onInteract);
-        m_subscriptions.Subscribe(gameObject.GetInstanceID().ToString() + "->offinteract", offInteract);
+        base.Start();
     }
 
-
-
-    public void OnHighlight(Mouledoux.Callback.Packet packet)
+    new protected void OnHighlight(Mouledoux.Callback.Packet packet)
     {
-        m_onHighnight.Invoke();
-
-        m_renderer.materials = new Material[] { m_renderer.materials[0], m_highlightMaterial };
+        base.OnHighlight(packet);
     }
 
-    public void OffHighlight(Mouledoux.Callback.Packet packet)
+    new protected void OffHighlight(Mouledoux.Callback.Packet packet)
     {
-        m_offHighnight.Invoke();
-
-        m_renderer.materials = new Material[] { m_renderer.materials[0] };
+        base.OffHighlight(packet);
     }
 
-    public void OnInteract(Mouledoux.Callback.Packet packet)
+    new protected void OnInteract(Mouledoux.Callback.Packet packet)
     {
-        m_onInteract.Invoke();
+        base.OnInteract(packet);
     }
 
-    public void OffInteract(Mouledoux.Callback.Packet packet)
+    new protected void OffInteract(Mouledoux.Callback.Packet packet)
     {
-        m_offInteract.Invoke();
+        base.OffInteract(packet);
     }
 }
