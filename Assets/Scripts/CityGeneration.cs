@@ -40,11 +40,11 @@ public class CityGeneration : MonoBehaviour
             return;
         }
 
-        m_chargeingTime += Time.deltaTime + Random.value * Time.deltaTime;
+        m_chargeingTime += Time.deltaTime;
 
         if(m_chargeingTime >= m_generationObjectPrefabs[m_generationIndex].GetComponent<TowerBase>().m_cost)
         {
-            m_chargeingTime = 0;
+            m_chargeingTime = Random.value * m_chargeingTime / 2f;
 
             GameObject g = Instantiate(m_generationObjectPrefabs[m_generationIndex], transform.position + (transform.up * 0.1f), Quaternion.identity);
             g.transform.parent = freeSpot;
@@ -57,12 +57,14 @@ public class CityGeneration : MonoBehaviour
     {
         float dist = float.MaxValue;
         Vector3 oPos = tower.transform.localPosition;
+        float timer = 0;
+
 
         while (dist > 0.01f)
         {
-            tower.transform.localPosition = Vector3.Lerp(tower.transform.localPosition, Vector3.zero, Time.deltaTime);
+            tower.transform.localPosition = Vector3.Lerp(oPos, Vector3.zero, timer);
             dist = tower.transform.localPosition.magnitude;
-
+            timer += Time.deltaTime;
             yield return null;
         }
 

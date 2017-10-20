@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 65061915398145878}
   - component: {fileID: 114327321050048094}
   m_Layer: 0
-  m_Name: Wave
+  m_Name: WaveDummy.root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,5 +220,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cab5b599c94b5047bd4fc74da3fecd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 0.05
+  force: 0.1
   direction: {x: 0, y: 0, z: 1}

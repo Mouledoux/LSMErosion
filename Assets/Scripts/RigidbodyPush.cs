@@ -29,10 +29,16 @@ public class RigidbodyPush : MonoBehaviour
             transform.localScale = Vector3.Lerp(transform.localScale, nScale, Time.deltaTime * 10);
             yield return null;
         }
+
+        if (nScale == Vector3.zero)
+            Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        StopAllCoroutines();
+        StartCoroutine(GrowShrink(transform.localScale, Vector3.zero));
+
+        print(other.bounds.size);
     }
 }

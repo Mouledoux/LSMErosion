@@ -74,9 +74,9 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         m_mesh.vertices = vertices;
         m_collider.sharedMesh = m_mesh;
 
-        other.enabled = false;
+        //other.enabled = false;
 
-        StartCoroutine(FadeOut(other.gameObject));
+        //StartCoroutine(FadeOut(other.gameObject));
     }
 
     IEnumerator FadeOut(GameObject go)
