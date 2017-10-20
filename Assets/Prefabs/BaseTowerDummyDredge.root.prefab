@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114611966708706592}
   m_Layer: 0
   m_Name: BaseTowerDummyDredge.root
-  m_TagString: Land
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
