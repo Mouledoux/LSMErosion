@@ -12,7 +12,7 @@ public class RigidbodyPush : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.velocity = transform.TransformDirection(direction.normalized) * force;
-        StartCoroutine(GrowIn());
+        StartCoroutine(GrowShrink(Vector3.zero, transform.localScale));
 	}
 
     public void Push()
@@ -20,15 +20,19 @@ public class RigidbodyPush : MonoBehaviour
         Start();
     }
 
-    public IEnumerator GrowIn()
+    public IEnumerator GrowShrink(Vector3 oScale, Vector3 nScale)
     {
-        Vector3 oScale = transform.localScale;
-        transform.localScale = Vector3.zero;
+        transform.localScale = oScale;
 
-        while(Vector3.Distance(transform.localScale, oScale) > 0.01f)
+        while(Vector3.Distance(transform.localScale, nScale) > 0.01f)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, oScale, Time.deltaTime * 10);
+            transform.localScale = Vector3.Lerp(transform.localScale, nScale, Time.deltaTime * 10);
             yield return null;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
     }
 }
