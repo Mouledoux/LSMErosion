@@ -36,6 +36,8 @@ public class RigidbodyPush : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.GetComponent<Valve.VR.InteractionSystem.TeleportArea>()) return;
+
         StopAllCoroutines();
         StartCoroutine(GrowShrink(transform.localScale, Vector3.zero));
 

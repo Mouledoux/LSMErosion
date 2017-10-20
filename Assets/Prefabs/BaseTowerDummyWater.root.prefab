@@ -39,8 +39,8 @@ GameObject:
   - component: {fileID: 65512908594429602}
   - component: {fileID: 114420450580570310}
   m_Layer: 0
-  m_Name: BaseTowerDummy.root
-  m_TagString: Land
+  m_Name: BaseTowerDummyWater.root
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +85,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e61313bd14f1e224794d43e92a612f2b, type: 2}
+  - {fileID: 2100000, guid: 667ad7388fab0d74cbd49398c4ce8635, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
