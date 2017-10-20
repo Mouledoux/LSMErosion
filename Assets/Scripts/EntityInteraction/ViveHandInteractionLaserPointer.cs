@@ -114,7 +114,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         c.enabled = false;
         m_isHoldingSomething = true;
 
-        while (m_hand.GetStandardInteractionButton()) ;//controller.GetHairTrigger())
+        while (m_hand.GetStandardInteractionButton())//controller.GetHairTrigger())
         {
             t.position = m_raycast.point;
             yield return null;

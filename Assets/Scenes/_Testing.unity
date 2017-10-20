@@ -1339,8 +1339,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 166395316}
-  m_LocalRotation: {x: 0.32966483, y: 0.030476836, z: 0.010652612, w: -0.9435459}
-  m_LocalPosition: {x: -0.18923867, y: -12.410655, z: -16.27726}
+  m_LocalRotation: {x: 0.3495628, y: 0.012832707, z: 0.0047927564, w: -0.9368128}
+  m_LocalPosition: {x: -0.6979035, y: 0.4038329, z: -1.4461544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1187699427}
@@ -7391,7 +7391,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e382bf183181552448121e169dc28dbc, type: 2}
+  - {fileID: 2100000, guid: 482e63caff94a824aa1759a2f2ffe7b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10041,7 +10041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781d63aec8b3ab84ca33fe9dae447e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spawnDelay: 3
+  m_spawnDelay: 1
   m_enemy: {fileID: 1938139530534630, guid: 75028d0707be038499caa64d9187bf0e, type: 2}
 --- !u!1 &1059287900
 GameObject:
@@ -10212,7 +10212,7 @@ RectTransform:
   m_Children:
   - {fileID: 1387719456}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13631,7 +13631,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e382bf183181552448121e169dc28dbc, type: 2}
+  - {fileID: 2100000, guid: 482e63caff94a824aa1759a2f2ffe7b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18798,7 +18798,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 475244, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
       propertyPath: pointerTeleportThroughColor.a
