@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TowerBase : InteractableObject
 {
+    public string m_towerType;
+    public float m_cost;
+
     // ---------- ---------- ---------- ---------- ----------
     private void Start()
     {
