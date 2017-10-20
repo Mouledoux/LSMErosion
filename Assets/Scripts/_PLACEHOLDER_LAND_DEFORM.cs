@@ -28,20 +28,20 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
 
     private void Update()
     {
-        if (m_affectedVerts.Count < 1) return;
+        //if (m_affectedVerts.Count < 1) return;
 
-        for (int i = m_affectedVerts[0]; i < m_affectedVerts.Count; i++)
-        {
-            m_vertBuffer[m_affectedVerts[i]] = Vector3.Lerp(m_vertBuffer[m_affectedVerts[i]], m_newVertPos[m_affectedVerts[i]], 0.1f);
+        //for (int i = m_affectedVerts[0]; i < m_affectedVerts.Count; i++)
+        //{
+        //    m_vertBuffer[m_affectedVerts[i]] = Vector3.Lerp(m_vertBuffer[m_affectedVerts[i]], m_newVertPos[m_affectedVerts[i]], 0.1f);
 
-            if(Vector3.Distance(m_vertBuffer[m_affectedVerts[i]], m_newVertPos[m_affectedVerts[i]]) < 0.01f)
-            {
-                m_vertBuffer[m_affectedVerts[i]] = m_newVertPos[m_affectedVerts[i]];
-                m_affectedVerts.Remove(m_affectedVerts[i]);
-            }
-            m_mesh.vertices = m_vertBuffer;
-            m_collider.sharedMesh = m_mesh;
-        }
+        //    if(Vector3.Distance(m_vertBuffer[m_affectedVerts[i]], m_newVertPos[m_affectedVerts[i]]) < 0.01f)
+        //    {
+        //        m_vertBuffer[m_affectedVerts[i]] = m_newVertPos[m_affectedVerts[i]];
+        //        m_affectedVerts.Remove(m_affectedVerts[i]);
+        //    }
+        //    m_mesh.vertices = m_vertBuffer;
+        //    m_collider.sharedMesh = m_mesh;
+        //}
     }
 
 
@@ -69,10 +69,10 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
             }
         }
 
-        m_newVertPos = vertices;
+        //m_newVertPos = vertices;
 
-        //m_mesh.vertices = vertices;
-        //m_collider.sharedMesh = m_mesh;
+        m_mesh.vertices = vertices;
+        m_collider.sharedMesh = m_mesh;
 
         other.enabled = false;
 
