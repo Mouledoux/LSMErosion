@@ -3304,8 +3304,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 682223442}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.01808336, y: -1.0538692, z: 1.8095639}
+  m_LocalRotation: {x: -0.049557474, y: 0.943108, z: 0.2849295, w: 0.16403198}
+  m_LocalPosition: {x: -0.4402237, y: -0.6335583, z: 5.111062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8857,7 +8857,7 @@ GameObject:
   - component: {fileID: 1812496902}
   m_Layer: 2
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
