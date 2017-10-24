@@ -91,6 +91,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         if (io.m_interactionType == InteractableObject.InteractionType.PICKUP && !io.m_lockedInPlace)
         {
             if (m_isHoldingSomething) return -1;
+            io.m_lockedInPlace = true;
 
             StartCoroutine(HoldObject(m_raycast.transform.gameObject));
         }
@@ -128,7 +129,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         }
 
         go.transform.parent = m_raycast.transform;
-        
+
+
         Mouledoux.Components.Mediator.instance.NotifySubscribers
             (go.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
 
