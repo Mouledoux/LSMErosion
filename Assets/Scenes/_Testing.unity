@@ -252,36 +252,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 3642862}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &9548836
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1815686925854906, guid: 3be1306b584189a4cb03781500861c31,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 9548837}
-  m_Layer: 0
-  m_Name: Specular
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9548837
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4426130886032414, guid: 3be1306b584189a4cb03781500861c31,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 9548836}
-  m_LocalRotation: {x: -0.0015695563, y: 0.99474496, z: -0.10120303, w: -0.015427485}
-  m_LocalPosition: {x: 0, y: 10, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 554558658}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &19661969
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,7 +902,6 @@ Transform:
   m_Children:
   - {fileID: 1043639925}
   - {fileID: 1761031393}
-  - {fileID: 1008433501}
   - {fileID: 756743554}
   m_Father: {fileID: 1795410108}
   m_RootOrder: 0
@@ -1071,7 +1040,7 @@ GameObject:
   m_Component:
   - component: {fileID: 166395318}
   - component: {fileID: 166395317}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: table.top.enviroment.waterReflectionVRCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1935,7 +1904,7 @@ Transform:
   - {fileID: 148434475}
   - {fileID: 1831393602}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &367909931
 GameObject:
@@ -2861,8 +2830,8 @@ GameObject:
   - component: {fileID: 554558662}
   - component: {fileID: 554558660}
   - component: {fileID: 554558661}
-  m_Layer: 0
-  m_Name: table.top.enviroment.water
+  m_Layer: 4
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2883,10 +2852,9 @@ Transform:
   - {fileID: 1651844363}
   - {fileID: 1855873711}
   - {fileID: 2042034100}
-  - {fileID: 9548837}
   - {fileID: 1191804379}
   m_Father: {fileID: 1008433501}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &554558659
 MonoBehaviour:
@@ -2946,7 +2914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de2ab2b9ac93bb544b9552e49030371b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specularLight: {fileID: 9548837}
+  specularLight: {fileID: 0}
 --- !u!1 &555074771
 GameObject:
   m_ObjectHideFlags: 0
@@ -3202,7 +3170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 587654710}
   - component: {fileID: 587654709}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water4AdvancedReflectionSceneCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3268,7 +3236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 697812255}
   - component: {fileID: 697812256}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: table.top.enviroment.waterReflectionSceneCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3282,12 +3250,12 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 697812254}
-  m_LocalRotation: {x: -0.35241565, y: 0.003917957, z: 0.001469305, w: 0.9358342}
-  m_LocalPosition: {x: 0.32566488, y: -0.53331923, z: -0.82955366}
+  m_LocalRotation: {x: 0.116969936, y: 0.74082035, z: 0.13378116, w: -0.6477699}
+  m_LocalPosition: {x: 2.197922, y: -0.76840806, z: 0.19207627}
   m_LocalScale: {x: 1.0106957, y: 5.2643137, z: 5.26754}
   m_Children: []
   m_Father: {fileID: 1008433501}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &697812256
 Camera:
@@ -3326,6 +3294,71 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!1 &707338341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 707338343}
+  - component: {fileID: 707338342}
+  m_Layer: 0
+  m_Name: WaterReflectionSceneCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!20 &707338342
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707338341}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967279
+  m_RenderingPath: 1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
+--- !u!4 &707338343
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707338341}
+  m_LocalRotation: {x: 0.21793884, y: 0.6981363, z: 0.23808664, w: -0.6390799}
+  m_LocalPosition: {x: 0.45048523, y: 0.9932995, z: 0.12726592}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &710895989
 GameObject:
   m_ObjectHideFlags: 0
@@ -3613,7 +3646,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 1, z: 0.01}
   m_Children: []
   m_Father: {fileID: 144120482}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &756743555
 MonoBehaviour:
@@ -3959,7 +3992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &889757608
 Transform:
   m_ObjectHideFlags: 0
@@ -3967,13 +4000,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 889757607}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.075, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1712911057}
   m_Father: {fileID: 1831393602}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &892125498
 GameObject:
@@ -4269,7 +4302,7 @@ Transform:
   - {fileID: 342631936}
   - {fileID: 2057167329}
   m_Father: {fileID: 1831393602}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &978097332
 ParticleSystem:
@@ -7849,9 +7882,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1008433501}
-  m_Layer: 0
-  m_Name: table.top.enviroment
-  m_TagString: Untagged
+  - component: {fileID: 1008433502}
+  m_Layer: 4
+  m_Name: Water
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7864,14 +7898,28 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1008433500}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.33333334, y: 10, z: 0.5}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1096149709}
   - {fileID: 554558658}
+  - {fileID: 1187699427}
   - {fileID: 697812255}
-  m_Father: {fileID: 144120482}
+  m_Father: {fileID: 1831393602}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1008433502
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1008433500}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9, y: 0.01, z: 1.9}
+  m_Center: {x: 0, y: 0.08, z: 0}
 --- !u!1 &1010335162
 GameObject:
   m_ObjectHideFlags: 0
@@ -8759,7 +8807,7 @@ RectTransform:
   m_Children:
   - {fileID: 1387719456}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8829,8 +8877,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &1096149709 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4851542823817078, guid: 60be607a6e531f84fbb396195ccc0147,
+    type: 2}
+  m_PrefabInternal: {fileID: 1714829140}
 --- !u!1 &1187699426
 GameObject:
   m_ObjectHideFlags: 0
@@ -8839,7 +8892,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1187699427}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: WaterFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8852,15 +8905,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1187699426}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 587654710}
   - {fileID: 2134266415}
   - {fileID: 166395318}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 1008433501}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1191804378
 GameObject:
@@ -8876,7 +8929,7 @@ GameObject:
   - component: {fileID: 1191804380}
   m_Layer: 4
   m_Name: Plane
-  m_TagString: Water
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8893,7 +8946,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 554558658}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1191804380
 MeshRenderer:
@@ -8909,7 +8962,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c55afdc4a8a3b4890b07cc7d176510bb, type: 2}
+  - {fileID: 2100000, guid: 52b7d70b1de7c4ce09662b77c14d9fda, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10289,7 +10342,7 @@ Transform:
   - {fileID: 477822330}
   - {fileID: 1824027300}
   m_Father: {fileID: 1831393602}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &1510322863
 ParticleSystem:
@@ -14997,6 +15050,53 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1713641188}
   m_Mesh: {fileID: 4300000, guid: 564fe6d37d018614f8ef606e2941c884, type: 3}
+--- !u!1001 &1714829140
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1008433501}
+    m_Modifications:
+    - target: {fileID: 4851542823817078, guid: 60be607a6e531f84fbb396195ccc0147, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851542823817078, guid: 60be607a6e531f84fbb396195ccc0147, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851542823817078, guid: 60be607a6e531f84fbb396195ccc0147, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851542823817078, guid: 60be607a6e531f84fbb396195ccc0147, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851542823817078, guid: 60be607a6e531f84fbb396195ccc0147, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851542823817078, guid: 60be607a6e531f84fbb396195ccc0147, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851542823817078, guid: 60be607a6e531f84fbb396195ccc0147, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851542823817078, guid: 60be607a6e531f84fbb396195ccc0147, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114271864318069132, guid: 60be607a6e531f84fbb396195ccc0147,
+        type: 2}
+      propertyPath: m_offset
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 60be607a6e531f84fbb396195ccc0147, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1747745548
 GameObject:
   m_ObjectHideFlags: 0
@@ -15112,7 +15212,7 @@ Transform:
   - {fileID: 1607622509}
   - {fileID: 451858210}
   m_Father: {fileID: 1831393602}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &1771594842
 ParticleSystem:
@@ -19072,6 +19172,7 @@ Transform:
   m_Children:
   - {fileID: 1795410108}
   - {fileID: 2128726294}
+  - {fileID: 1008433501}
   - {fileID: 2026253676}
   - {fileID: 889757608}
   - {fileID: 1510322862}
@@ -19296,7 +19397,7 @@ Transform:
   - {fileID: 73731617}
   - {fileID: 1713641189}
   m_Father: {fileID: 1831393602}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &1864807318
 ParticleSystem:
@@ -22993,7 +23094,7 @@ Transform:
   - {fileID: 1593666397}
   - {fileID: 1691583533}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1908324491
 GameObject:
@@ -23248,7 +23349,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 475244, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
       propertyPath: pointerTeleportThroughColor.a
@@ -23637,7 +23738,7 @@ Transform:
   - {fileID: 481734384}
   - {fileID: 301641329}
   m_Father: {fileID: 1831393602}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2041078359
 GameObject:
@@ -24868,7 +24969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2134266415}
   - component: {fileID: 2134266414}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water4SimpleReflectionSceneCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

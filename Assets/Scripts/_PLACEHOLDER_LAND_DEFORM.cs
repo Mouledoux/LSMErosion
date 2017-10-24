@@ -12,7 +12,9 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
     private Vector3[] m_vertBuffer;
 
     private List<int> m_affectedVerts = new List<int>();
-    
+
+    private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
+    private Mouledoux.Callback.Callback deform;
 
 	void Awake ()
     {
@@ -22,26 +24,10 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         m_collider.sharedMesh = m_mesh;
         m_newVertPos = m_mesh.vertices;
         m_vertBuffer = m_mesh.vertices;
-        
-    }
 
+        deform = DeformMesh;
 
-    private void Update()
-    {
-        //if (m_affectedVerts.Count < 1) return;
-
-        //for (int i = m_affectedVerts[0]; i < m_affectedVerts.Count; i++)
-        //{
-        //    m_vertBuffer[m_affectedVerts[i]] = Vector3.Lerp(m_vertBuffer[m_affectedVerts[i]], m_newVertPos[m_affectedVerts[i]], 0.1f);
-
-        //    if(Vector3.Distance(m_vertBuffer[m_affectedVerts[i]], m_newVertPos[m_affectedVerts[i]]) < 0.01f)
-        //    {
-        //        m_vertBuffer[m_affectedVerts[i]] = m_newVertPos[m_affectedVerts[i]];
-        //        m_affectedVerts.Remove(m_affectedVerts[i]);
-        //    }
-        //    m_mesh.vertices = m_vertBuffer;
-        //    m_collider.sharedMesh = m_mesh;
-        //}
+        m_subscriptions.Subscribe(gameObject.GetInstanceID().ToString() + "->deform", deform);
     }
 
 
@@ -50,11 +36,20 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
         if (rb == null) return;
 
-        Vector3[] vertices = m_mesh.vertices;
+        DeformMesh(other.transform.position, rb.velocity, 0.01f);
+    }
 
+    public void DeformMesh(Vector3 pos, Vector3 dir, float force)
+    {
+        dir = dir.normalized;
+        dir *= force;
+
+        Vector3[] vertices = m_mesh.vertices;
         float dist = 0f;
 
-        Vector3 POC = other.ClosestPoint(transform.position);
+        RaycastHit rh;
+        Physics.Raycast(pos, dir, out rh);
+        Vector3 POC = (rh.point);
 
         for (int i = 0; i < vertices.Length; i++)
         {
@@ -62,17 +57,23 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
 
             if (dist <= 0.1f)
             {
-                vertices[i] += transform.InverseTransformDirection(rb.velocity.normalized * rb.mass) * Mathf.Abs(dist - 1);
+                vertices[i] += transform.InverseTransformDirection(dir) * Mathf.Abs(dist - 1);
                 vertices[i] = vertices[i].magnitude < m_mesh.vertices[i].magnitude ? vertices[i] : m_mesh.vertices[i];
 
                 if (!m_affectedVerts.Contains(i)) m_affectedVerts.Add(i);
             }
         }
 
-        //m_newVertPos = vertices;
-
         m_mesh.vertices = vertices;
         m_collider.sharedMesh = m_mesh;
     }
-}
 
+    public void DeformMesh(Mouledoux.Callback.Packet packet)
+    {
+        Vector3 pos = new Vector3(packet.floats[0], packet.floats[1], packet.floats[2]);
+        Vector3 dir = new Vector3(packet.floats[3], packet.floats[4], packet.floats[5]);
+        float str = packet.floats[0];
+
+        DeformMesh(pos, dir, str);
+    }
+}
