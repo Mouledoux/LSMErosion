@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
-    public Material m_highlightMaterial;
+    public enum InteractionType
+    {
+        DEFAULT,
+        PICKUP,
+        LONGINTERACT,
+    }
 
-    public bool m_pickup;
-    [SerializeField]
-    private bool repickup;
-    [HideInInspector]
-    public bool m_repickup { get { return repickup; } }
+    public InteractionType m_interactionType;
+    public bool m_lockedInPlace = false;
+
+    //public bool m_pickup;
+    //[SerializeField]
+    //private bool repickup;
+    //[HideInInspector]
+    //public bool m_repickup { get { return repickup; } }
 
     public UnityEngine.Events.UnityEvent m_onHighnight;
     public UnityEngine.Events.UnityEvent m_offHighnight;
@@ -25,6 +33,11 @@ public class InteractableObject : MonoBehaviour
     protected Mouledoux.Callback.Callback offInteract;
 
     private Renderer m_renderer;
+
+    private void Start()
+    {
+        Initialize(gameObject);
+    }
 
     protected void Initialize(GameObject self)
     {
@@ -48,15 +61,11 @@ public class InteractableObject : MonoBehaviour
     protected virtual void OnHighlight(Mouledoux.Callback.Packet packet)
     {
         m_onHighnight.Invoke();
-
-        m_renderer.materials = new Material[] { m_renderer.materials[0], m_highlightMaterial };
     }
 
     protected virtual void OffHighlight(Mouledoux.Callback.Packet packet)
     {
         m_offHighnight.Invoke();
-
-        m_renderer.materials = new Material[] { m_renderer.materials[0] };
     }
 
 
@@ -68,5 +77,10 @@ public class InteractableObject : MonoBehaviour
     protected virtual void OffInteract(Mouledoux.Callback.Packet packet)
     {
         m_offInteract.Invoke();
+    }
+
+    public void ToggleGameObject(GameObject go)
+    {
+        go.SetActive(!go.activeSelf);
     }
 }
