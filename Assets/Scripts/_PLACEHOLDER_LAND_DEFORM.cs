@@ -35,7 +35,6 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
     public void DeformMesh(Vector3 pos, Vector3 dir, float force)
     {
         dir = dir.normalized;
-        dir *= force;
 
         Vector3[] vertices = m_mesh.vertices;
         float dist = 0f;
@@ -50,10 +49,8 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
 
             if (dist <= 0.1f)
             {
-                vertices[i] += transform.InverseTransformDirection(dir) * Mathf.Abs(dist - 1);
+                vertices[i] += transform.InverseTransformDirection(dir) * force * Mathf.Abs(dist - 1);
 
-                //vertices[i].x = vertices[i].x < 0 ? 0 : vertices[i].x;
-                //vertices[i].y = vertices[i].y < 0 ? 0 : vertices[i].y;
                 vertices[i].z = vertices[i].z < 0 ? 0 : vertices[i].z;
             }
         }
@@ -66,7 +63,7 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
     {
         Vector3 pos = new Vector3(packet.floats[0], packet.floats[1], packet.floats[2]);
         Vector3 dir = new Vector3(packet.floats[3], packet.floats[4], packet.floats[5]);
-        float str = packet.floats[0];
+        float str = packet.floats[6];
 
         DeformMesh(pos, dir, str);
     }
