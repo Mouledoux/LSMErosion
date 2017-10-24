@@ -121,7 +121,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         c.enabled = false;
         m_isHoldingSomething = true;
 
-        while (m_hand.GetStandardInteractionButton() || !go.CompareTag(m_raycast.transform.tag))
+        while (m_hand.GetStandardInteractionButton() || !go.CompareTag(m_raycast.transform.tag) || m_raycast.transform.GetComponent<InteractableObject>())
         {
             go.transform.position = m_raycast.point;
             yield return null;

@@ -7,7 +7,7 @@ public class CityGeneration : MonoBehaviour
     public GameObject[] m_generationObjectPrefabs;
     public TowerStorage m_towerStorage;
 
-    public int m_generationIndex = 0;
+    public int m_generationIndex = -1;
 
     public float m_chargeingTime;
 
@@ -23,6 +23,8 @@ public class CityGeneration : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        if (m_generationIndex < 0) return;
+
         Transform freeSpot = null;
         foreach (Transform t in m_towerStorage.m_towerStorageSpots)
         {
@@ -69,6 +71,11 @@ public class CityGeneration : MonoBehaviour
         }
 
         tower.transform.localPosition = Vector3.zero;
+    }
+
+    public void SetGenIndex(int i)
+    {
+        m_generationIndex = i;
     }
 
 }

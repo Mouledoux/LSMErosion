@@ -10,7 +10,7 @@ public class TowerDredgeIsland : MonoBehaviour
     private void Start()
     {
         m_maxScale = transform.localScale;
-        transform.localScale = Vector3.zero;
+        transform.localScale = m_maxScale * 0.01f;
     }
 
     private void Update()
