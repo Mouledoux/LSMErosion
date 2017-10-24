@@ -7,15 +7,18 @@ public class TowerDredgeIsland : MonoBehaviour
     private Vector3 m_targetScale;
     private Vector3 m_maxScale;
 
+    [SerializeField]
+    private GameObject m_island;
+
     private void Start()
     {
-        m_maxScale = transform.localScale;
-        transform.localScale = m_maxScale * 0.01f;
+        m_maxScale = m_island.transform.localScale;
+        m_island.transform.localScale = m_maxScale * 0.01f;
     }
 
     private void Update()
     {
-        transform.localScale = Vector3.Lerp(transform.localScale, m_targetScale, Time.deltaTime);
+        m_island.transform.localScale = Vector3.Lerp(m_island.transform.localScale, m_targetScale, Time.deltaTime);
         m_targetScale += m_targetScale.magnitude >= m_maxScale.magnitude ? Vector3.zero : (m_maxScale * Time.deltaTime) / 10;
     }
 
