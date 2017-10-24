@@ -76,21 +76,29 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     public bool CheckInput()
     {
-        return (m_hand.GetStandardInteractionButtonDown());//controller.GetHairTriggerDown());
+        return (m_hand.GetStandardInteractionButtonDown());
     }
 
 
     // ---------- ---------- ---------- ---------- ----------
     public int ObjectInteract()
     {
+        InteractableObject io = m_targetObject.GetComponent<InteractableObject>();
+
         Mouledoux.Components.Mediator.instance.NotifySubscribers
             (m_targetObject.GetInstanceID().ToString() + "->oninteract", new Mouledoux.Callback.Packet());
 
-        if (m_targetObject.GetComponent<InteractableObject>().m_pickup)
+        if (io.m_interactionType == InteractableObject.InteractionType.PICKUP && !io.m_lockedInPlace)
         {
-            StartCoroutine(HoldObject());
-        }
+            if (m_isHoldingSomething) return -1;
 
+            StartCoroutine(HoldObject(m_raycast.transform.gameObject));
+        }
+        
+        else if (io.m_interactionType == InteractableObject.InteractionType.LONGINTERACT)
+        {
+            StartCoroutine(LongInteract(m_raycast.transform.gameObject));
+        }
 
         return 0;
     }
@@ -104,28 +112,39 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
 
     // ---------- ---------- ---------- ---------- ----------
-    public System.Collections.IEnumerator HoldObject()
+    public System.Collections.IEnumerator HoldObject(GameObject go)
     {
         Vector3 lastPos = Vector3.zero;
 
-        Transform t = m_raycast.transform;
         Collider c = m_raycast.collider;
 
         c.enabled = false;
         m_isHoldingSomething = true;
 
-        while (m_hand.GetStandardInteractionButton() || !t.CompareTag(m_raycast.transform.tag))//controller.GetHairTrigger())
+        while (m_hand.GetStandardInteractionButton() || !go.CompareTag(m_raycast.transform.tag))
         {
-            t.position = m_raycast.point;
+            go.transform.position = m_raycast.point;
             yield return null;
         }
 
-        t.parent = m_raycast.transform;
+        go.transform.parent = m_raycast.transform;
         
         Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (t.gameObject.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
+            (go.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
 
         c.enabled = true;
         m_isHoldingSomething = false;
+    }
+
+
+    public System.Collections.IEnumerator LongInteract(GameObject go)
+    {
+        yield return new WaitWhile(() => (m_hand.GetStandardInteractionButton()));
+;
+        Mouledoux.Components.Mediator.instance.NotifySubscribers
+            (go.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
+
+        Mouledoux.Components.Mediator.instance.NotifySubscribers
+            (m_raycast.transform.gameObject.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
     }
 }

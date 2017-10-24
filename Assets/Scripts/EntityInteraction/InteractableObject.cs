@@ -6,11 +6,21 @@ public class InteractableObject : MonoBehaviour
 {
     public Material m_highlightMaterial;
 
-    public bool m_pickup;
-    [SerializeField]
-    private bool repickup;
-    [HideInInspector]
-    public bool m_repickup { get { return repickup; } }
+    public enum InteractionType
+    {
+        DEFAULT,
+        PICKUP,
+        LONGINTERACT,
+    }
+
+    public InteractionType m_interactionType;
+    public bool m_lockedInPlace = false;
+
+    //public bool m_pickup;
+    //[SerializeField]
+    //private bool repickup;
+    //[HideInInspector]
+    //public bool m_repickup { get { return repickup; } }
 
     public UnityEngine.Events.UnityEvent m_onHighnight;
     public UnityEngine.Events.UnityEvent m_offHighnight;
@@ -25,6 +35,11 @@ public class InteractableObject : MonoBehaviour
     protected Mouledoux.Callback.Callback offInteract;
 
     private Renderer m_renderer;
+
+    private void Start()
+    {
+        Initialize(gameObject);
+    }
 
     protected void Initialize(GameObject self)
     {
@@ -68,5 +83,10 @@ public class InteractableObject : MonoBehaviour
     protected virtual void OffInteract(Mouledoux.Callback.Packet packet)
     {
         m_offInteract.Invoke();
+    }
+
+    public void ToggleGameObject(GameObject go)
+    {
+        go.SetActive(!go.activeSelf);
     }
 }

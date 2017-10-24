@@ -30,7 +30,6 @@ public class TowerBase : InteractableObject
 
     override protected void OffInteract(Mouledoux.Callback.Packet packet)
     {
-        m_pickup = m_repickup;
         base.OffInteract(packet);
     }
 }

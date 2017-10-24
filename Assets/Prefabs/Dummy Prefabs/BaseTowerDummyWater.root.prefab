@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_highlightMaterial: {fileID: 2100000, guid: 7b939e5e799d98a469f594828ebab52e, type: 2}
-  m_pickup: 1
-  repickup: 0
+  m_interactionType: 1
+  m_lockedInPlace: 0
   m_onHighnight:
     m_PersistentCalls:
       m_Calls: []
