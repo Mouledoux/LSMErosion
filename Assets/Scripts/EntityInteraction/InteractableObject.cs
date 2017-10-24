@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
-    public Material m_highlightMaterial;
-
     public enum InteractionType
     {
         DEFAULT,
@@ -63,15 +61,11 @@ public class InteractableObject : MonoBehaviour
     protected virtual void OnHighlight(Mouledoux.Callback.Packet packet)
     {
         m_onHighnight.Invoke();
-
-        m_renderer.materials = new Material[] { m_renderer.materials[0], m_highlightMaterial };
     }
 
     protected virtual void OffHighlight(Mouledoux.Callback.Packet packet)
     {
         m_offHighnight.Invoke();
-
-        m_renderer.materials = new Material[] { m_renderer.materials[0] };
     }
 
 
