@@ -40,7 +40,5 @@ public class RigidbodyPush : MonoBehaviour
 
         StopAllCoroutines();
         StartCoroutine(GrowShrink(transform.localScale, Vector3.zero));
-
-        print(other.bounds.size);
     }
 }

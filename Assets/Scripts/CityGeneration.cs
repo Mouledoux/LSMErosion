@@ -11,7 +11,6 @@ public class CityGeneration : MonoBehaviour
 
     public float m_chargeingTime;
 
-
 	// Use this for initialization
 	void Start ()
     {
@@ -62,7 +61,8 @@ public class CityGeneration : MonoBehaviour
 
         while (dist > 0.01f)
         {
-            tower.transform.localPosition = Vector3.Lerp(oPos, Vector3.zero, timer);
+            Vector3 newPos = Vector3.Lerp(oPos, Vector3.zero, timer);
+            tower.transform.localPosition = newPos;
             dist = tower.transform.localPosition.magnitude;
             timer += Time.deltaTime;
             yield return null;
