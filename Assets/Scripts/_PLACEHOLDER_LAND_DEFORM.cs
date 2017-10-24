@@ -8,11 +8,6 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
     private Mesh m_mesh;
     private MeshCollider m_collider;
 
-    private Vector3[] m_newVertPos;
-    private Vector3[] m_vertBuffer;
-
-    private List<int> m_affectedVerts = new List<int>();
-
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
     private Mouledoux.Callback.Callback deform;
 
@@ -22,8 +17,6 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         m_collider = GetComponent<MeshCollider>();
 
         m_collider.sharedMesh = m_mesh;
-        m_newVertPos = m_mesh.vertices;
-        m_vertBuffer = m_mesh.vertices;
 
         deform = DeformMesh;
 
@@ -59,11 +52,9 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
             {
                 vertices[i] += transform.InverseTransformDirection(dir) * Mathf.Abs(dist - 1);
 
-                vertices[i].x = vertices[i].x < 0 ? 0 : vertices[i].x;
-                vertices[i].y = vertices[i].y < 0 ? 0 : vertices[i].y;
+                //vertices[i].x = vertices[i].x < 0 ? 0 : vertices[i].x;
+                //vertices[i].y = vertices[i].y < 0 ? 0 : vertices[i].y;
                 vertices[i].z = vertices[i].z < 0 ? 0 : vertices[i].z;
-
-                if (!m_affectedVerts.Contains(i)) m_affectedVerts.Add(i);
             }
         }
 

@@ -36,7 +36,7 @@ public class TowerJettie : MonoBehaviour
             Physics.Raycast(rayPos, -transform.forward, out m_raycast);
             Vector3 rayDir = m_raycast.point - rayPos;
 
-            packet.floats = new float[] { rayPos.x, rayPos.y, rayPos.z, rayDir.x, rayDir.y, rayDir.z, 0.01f };
+            packet.floats = new float[] { rayPos.x, rayPos.y, rayPos.z, rayDir.x, rayDir.y, rayDir.z, -0.01f };
             Mouledoux.Components.Mediator.instance.NotifySubscribers(m_raycast.transform.gameObject.GetInstanceID().ToString() + "->deform", packet);
 
             yield return new WaitForSeconds(1 - m_growthRate);
