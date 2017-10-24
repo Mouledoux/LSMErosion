@@ -58,7 +58,10 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
             if (dist <= 0.1f)
             {
                 vertices[i] += transform.InverseTransformDirection(dir) * Mathf.Abs(dist - 1);
-                vertices[i] = vertices[i].magnitude < m_mesh.vertices[i].magnitude ? vertices[i] : m_mesh.vertices[i];
+
+                vertices[i].x = vertices[i].x < 0 ? 0 : vertices[i].x;
+                vertices[i].y = vertices[i].y < 0 ? 0 : vertices[i].y;
+                vertices[i].z = vertices[i].z < 0 ? 0 : vertices[i].z;
 
                 if (!m_affectedVerts.Contains(i)) m_affectedVerts.Add(i);
             }
