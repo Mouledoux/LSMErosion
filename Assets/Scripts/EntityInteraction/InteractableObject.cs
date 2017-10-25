@@ -32,8 +32,6 @@ public class InteractableObject : MonoBehaviour
     protected Mouledoux.Callback.Callback onInteract;
     protected Mouledoux.Callback.Callback offInteract;
 
-    private Renderer m_renderer;
-
     private void Start()
     {
         Initialize(gameObject);
@@ -41,8 +39,6 @@ public class InteractableObject : MonoBehaviour
 
     protected void Initialize(GameObject self)
     {
-        m_renderer = GetComponentInChildren<Renderer>();
-
         onHighlight = OnHighlight;
         offHighlight = OffHighlight;
 
