@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CityGeneration : MonoBehaviour
 {
+    public GameObject m_currentTowerPreview;
     public GameObject[] m_generationObjectPrefabs;
     public TowerStorage m_towerStorage;
 
@@ -47,7 +48,7 @@ public class CityGeneration : MonoBehaviour
         {
             m_chargeingTime = Random.value * m_chargeingTime / 2f;
 
-            GameObject g = Instantiate(m_generationObjectPrefabs[m_generationIndex], transform.position + (transform.up * 0.1f), Quaternion.identity);
+            GameObject g = Instantiate(m_generationObjectPrefabs[m_generationIndex], m_currentTowerPreview.transform.position, Quaternion.identity);
             g.transform.parent = freeSpot;
 
             StartCoroutine(TowerToStand(g));
@@ -57,7 +58,7 @@ public class CityGeneration : MonoBehaviour
     public IEnumerator TowerToStand(GameObject tower)
     {
         float dist = float.MaxValue;
-        Vector3 oPos = tower.transform.localPosition;
+        Vector3 oPos = m_currentTowerPreview.transform.position;// tower.transform.localPosition;
         float timer = 0;
 
 
@@ -76,6 +77,20 @@ public class CityGeneration : MonoBehaviour
     public void SetGenIndex(int i)
     {
         m_generationIndex = i;
+
+        m_currentTowerPreview.GetComponent<MeshFilter>().mesh = m_generationObjectPrefabs[m_generationIndex].GetComponent<MeshFilter>().mesh;
+        m_currentTowerPreview.GetComponent<MeshRenderer>().materials = m_generationObjectPrefabs[m_generationIndex].GetComponent<MeshRenderer>().materials;
     }
 
+    public void FillPreviewTower()
+    {
+        Material[] mats = m_currentTowerPreview.GetComponent<MeshRenderer>().materials;
+
+        for (int i = 0; i < mats.Length; ++i)
+        {
+            Color t = mats[i].color;
+            t.a = m_chargeingTime / m_generationObjectPrefabs[m_generationIndex].GetComponent<TowerBase>().m_cost;
+            mats[i].color = t;
+        }
+    }
 }
