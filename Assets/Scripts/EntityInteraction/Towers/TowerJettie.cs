@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TowerJettie : MonoBehaviour
 {
+    public int m_health;
     public float m_growthDelay;
 
     [SerializeField]
@@ -14,8 +15,19 @@ public class TowerJettie : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(GrowLand());
-        //StartCoroutine(SnapToLand());
+        SnapToLand();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Rigidbody rb = other.GetComponent<Rigidbody>();
+
+        if (rb == null) return;
+
+        other.enabled = false;
+        m_health--;
+
+        if (m_health <= 0) StartCoroutine(iDestroy());
     }
 
     public IEnumerator iSnapToLand()
@@ -36,6 +48,8 @@ public class TowerJettie : MonoBehaviour
         }
 
         transform.position = m_raycast.point + forwardOffset;
+
+        StartCoroutine(iGrowLand());
     }
 
     [ContextMenu("Snap")]
@@ -44,7 +58,7 @@ public class TowerJettie : MonoBehaviour
         StartCoroutine(iSnapToLand());
     }
 
-    public IEnumerator GrowLand()
+    public IEnumerator iGrowLand()
     {
         Mouledoux.Callback.Packet packet = new Mouledoux.Callback.Packet();
         while (enabled)
@@ -59,5 +73,23 @@ public class TowerJettie : MonoBehaviour
 
             yield return new WaitForSeconds(m_growthDelay);
         }
+    }
+
+    public IEnumerator iDestroy()
+    {
+        Vector3 nPos = transform.localPosition;
+        nPos.y *= -1;
+
+        float timer = 1;
+
+        while (timer > 0)
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, nPos, Time.deltaTime);
+            timer -= Time.deltaTime;
+
+            yield return null;
+        }
+
+        Destroy(gameObject);
     }
 }
