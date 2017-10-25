@@ -26,6 +26,24 @@ public class TowerDredgeIsland : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         m_targetScale *= 0.9f;
-       if (m_targetScale.magnitude < m_maxScale.magnitude * 0.05f) Destroy(gameObject);
+        if (m_targetScale.magnitude < m_maxScale.magnitude * 0.05f) StartCoroutine(iDestroy());
+    }
+
+    public IEnumerator iDestroy()
+    {
+        Vector3 nPos = transform.localPosition;
+        nPos.y *= -1;
+
+        float timer = 1;
+
+        while (timer > 0)
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, nPos, Time.deltaTime);
+            timer -= Time.deltaTime;
+
+            yield return null;
+        }
+
+        Destroy(gameObject);
     }
 }
