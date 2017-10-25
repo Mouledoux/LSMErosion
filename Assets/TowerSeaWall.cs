@@ -6,7 +6,7 @@ public class TowerSeaWall : MonoBehaviour
 {
     private void Start()
     {
-        StartCoroutine(iSnapToLand());
+        StartCoroutine(iSnapToShore());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,7 +35,7 @@ public class TowerSeaWall : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public IEnumerator iSnapToLand()
+    public IEnumerator iSnapToShore()
     {
         Vector3 rayPos = transform.position;
         rayPos.y *= 1.01f;
@@ -57,5 +57,7 @@ public class TowerSeaWall : MonoBehaviour
 
             yield return null;
         }
+
+        tag = "Untagged";
     }
 }

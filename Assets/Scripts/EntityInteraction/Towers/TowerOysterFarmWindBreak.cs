@@ -35,4 +35,33 @@ public class TowerOysterFarmWindBreak : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    public void SnapToShore()
+    {
+        StartCoroutine(iSnapToShore());
+    }
+
+    public IEnumerator iSnapToShore()
+    {
+        Vector3 rayPos = transform.position;
+        rayPos.y *= 1.01f;
+
+        RaycastHit raycast;
+        Vector3 shoreLine = transform.position + (transform.forward * 0.01f);
+        Physics.Raycast(rayPos, (shoreLine - rayPos).normalized, out raycast);
+
+
+        Debug.DrawLine(rayPos, raycast.point, Color.red, 10f);
+
+        while (raycast.transform.CompareTag(tag))
+        {
+            transform.position = raycast.point;
+            rayPos = transform.position;
+            rayPos.y *= 1.01f;
+            shoreLine = transform.position + (transform.forward * 0.01f);
+            Physics.Raycast(rayPos, (shoreLine - rayPos).normalized, out raycast);
+
+            yield return null;
+        }
+    }
 }
