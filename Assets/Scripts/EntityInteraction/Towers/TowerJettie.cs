@@ -16,8 +16,6 @@ public class TowerJettie : MonoBehaviour
     private void Start()
     {
         SnapToLand();
-        StartCoroutine(iGrowLand());
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,6 +48,8 @@ public class TowerJettie : MonoBehaviour
         }
 
         transform.position = m_raycast.point + forwardOffset;
+
+        StartCoroutine(iGrowLand());
     }
 
     [ContextMenu("Snap")]

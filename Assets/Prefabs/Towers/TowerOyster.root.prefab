@@ -122,7 +122,6 @@ MeshRenderer:
   - {fileID: 2100000, guid: 71fc6227b5cbeaf4c8db63e9a884137f, type: 2}
   - {fileID: 2100000, guid: 147e5cada0b08ed4cbf7e5aaeefc1eca, type: 2}
   - {fileID: 2100000, guid: 2927b027f31cee44598064042a16aed7, type: 2}
-  - {fileID: 2100000, guid: 2927b027f31cee44598064042a16aed7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -272,4 +271,4 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_towerType: 
-  m_cost: 15
+  m_cost: 10

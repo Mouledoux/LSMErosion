@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CityGeneration : MonoBehaviour
 {
-    public GameObject m_currentTowerPreview;
     public GameObject[] m_generationObjectPrefabs;
     public TowerStorage m_towerStorage;
 
@@ -20,7 +19,7 @@ public class CityGeneration : MonoBehaviour
             if (go.GetComponent<TowerBase>() == null) Destroy(gameObject);
         }
 
-        SetGenIndex(0);
+        //SetGenIndex(0);
 	}
 	
 	// Update is called once per frame
@@ -50,7 +49,7 @@ public class CityGeneration : MonoBehaviour
         {
             m_chargeingTime = Random.value * m_chargeingTime / 2f;
 
-            GameObject g = Instantiate(m_generationObjectPrefabs[m_generationIndex], m_currentTowerPreview.transform.position, Quaternion.identity);
+            GameObject g = Instantiate(m_generationObjectPrefabs[m_generationIndex], transform.position, Quaternion.identity);
             g.transform.parent = freeSpot;
 
             StartCoroutine(TowerToStand(g));

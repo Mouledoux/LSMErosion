@@ -265,7 +265,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_towerType: 
-  m_cost: 15
+  m_cost: 20
 --- !u!114 &114618774616105060
 MonoBehaviour:
   m_ObjectHideFlags: 1
