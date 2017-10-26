@@ -7470,7 +7470,7 @@ GameObject:
   - component: {fileID: 1010335166}
   - component: {fileID: 1010335165}
   - component: {fileID: 1010335164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mississippi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9395,7 +9395,7 @@ GameObject:
   - component: {fileID: 1460262097}
   - component: {fileID: 1460262096}
   - component: {fileID: 1460262095}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Texas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

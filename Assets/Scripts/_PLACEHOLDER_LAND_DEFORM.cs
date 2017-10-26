@@ -32,6 +32,8 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         if (rb == null) return;
 
         DeformMesh(other.transform.position, rb.velocity, 0.01f);
+
+        print(CalculateLandRemaining());
     }
 
     private void OnDestroy()
