@@ -25,7 +25,6 @@ public class ScoreManager : MonoBehaviour
         foreach(_PLACEHOLDER_LAND_DEFORM p in FindObjectsOfType<_PLACEHOLDER_LAND_DEFORM>())
         {
             landScore += p.CalculateLandRemaining();
-            print(landScore);
         }
 
         landScore /= FindObjectsOfType<_PLACEHOLDER_LAND_DEFORM>().Length;
