@@ -1,17 +1,24 @@
 fileFormatVersion: 2
-guid: 74077d494c55f42438c62c3afb360389
-timeCreated: 1509043058
-licenseType: Pro
+guid: 1e164aff81dc2ea4db4f66bc15fb4627
+timeCreated: 1509057981
+licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: mesh_map_B1
+    100004: mesh_mapframe_B1
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Plane.003
+    400002: mesh_map_B1
+    400004: mesh_mapframe_B1
+    2300000: mesh_map_B1
+    2300002: mesh_mapframe_B1
+    3300000: mesh_map_B1
+    3300002: mesh_mapframe_B1
+    4300000: mesh_map_B1
+    4300002: mesh_mapframe_B1
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -42,10 +49,10 @@ ModelImporter:
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
