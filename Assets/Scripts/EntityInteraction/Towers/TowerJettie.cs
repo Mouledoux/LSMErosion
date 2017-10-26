@@ -23,8 +23,7 @@ public class TowerJettie : MonoBehaviour
         Rigidbody rb = other.GetComponent<Rigidbody>();
 
         if (rb == null) return;
-
-        other.enabled = false;
+        
         m_health--;
 
         if (m_health <= 0) StartCoroutine(iDestroy());
