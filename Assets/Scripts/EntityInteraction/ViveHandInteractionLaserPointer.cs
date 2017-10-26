@@ -129,7 +129,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         }
 
         go.transform.parent = m_raycast.transform;
-
+        go.transform.position = m_raycast.point;
 
         Mouledoux.Components.Mediator.instance.NotifySubscribers
             (go.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());

@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: FlowBall  - Magma
   m_Shader: {fileID: 4800000, guid: 8793935a89241024a8b9616db346a230, type: 3}
-  m_ShaderKeywords: _OCCLUSION_FROM_ALBEDO_ALPHA _PARALLAXMAP _WETNESS_RIPPLES
+  m_ShaderKeywords: _OCCLUSION_FROM_ALBEDO_ALPHA _WETNESS_RIPPLES
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -60,7 +60,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 3, y: 3}
         m_Offset: {x: 0, y: 0}
     - _HeightMap:
         m_Texture: {fileID: 2800000, guid: 5028ffd00e255244c9dd3d639a0c53b5, type: 3}
@@ -72,7 +72,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 529b325371db87749b48a7ab218fb638, type: 3}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 3, y: 3}
         m_Offset: {x: 0, y: 0}
     - _MainTex2:
         m_Texture: {fileID: 0}
@@ -172,7 +172,7 @@ Material:
     - _BendNormalsFreq: 22.9
     - _BendNormalsStrength: 0.02
     - _BendNormals_Used: 0
-    - _BumpScale: 0.4
+    - _BumpScale: 0
     - _BumpScale2: 1
     - _CurvatureCustomU: 4
     - _CurvatureCustomV: 4
@@ -255,7 +255,7 @@ Material:
     - _PanEmissionMask: 1
     - _PanUSpeed: 0
     - _PanVSpeed: 0.2
-    - _Parallax: 0.09
+    - _Parallax: 0
     - _Parallax2: 0.04
     - _Parallax_Type: 0
     - _Phong: 0
@@ -359,7 +359,7 @@ Material:
     - _WetnessEmissiveness: 14
     - _WetnessEmissivenessWrap: 1
     - _WetnessFlowGlobalTime: 0
-    - _WetnessLevel: 0
+    - _WetnessLevel: 0.5
     - _WetnessLevelFromGlobal: 0
     - _WetnessMergeWithSnowPerMaterial: 0
     - _WetnessNormMIP: 5.6
@@ -421,7 +421,7 @@ Material:
     - _DetailSpecGloss: {r: 0.110308774, g: 0.110308774, b: 0.110308774, a: 1}
     - _DiffuseScatteringColor: {r: 0, g: 0.03676468, b: 0.021552876, a: 0}
     - _DiffuseScatteringColor2: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 0.004, g: 0.004, b: 0.004, a: 0}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
     - _GlitterColor: {r: 0.33090094, g: 0.33090094, b: 0.33090094, a: 0.023529412}
     - _GlitterColor2: {r: 0, g: 0, b: 0, a: 0}
