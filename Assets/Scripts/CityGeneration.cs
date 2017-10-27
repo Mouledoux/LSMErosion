@@ -60,8 +60,6 @@ public class CityGeneration : MonoBehaviour
             GameObject g = Instantiate(m_generationObjectPrefabs[m_generationIndex], m_towerStoragePos.position, Quaternion.identity);
             g.transform.parent = m_towerStoragePos;
             m_towerStoragePos = null;
-
-            //StartCoroutine(TowerToStand(g));
         }
 	}
 
@@ -105,5 +103,10 @@ public class CityGeneration : MonoBehaviour
     {
         Destroy(m_towerPreview);
         m_towerPreview = Instantiate(preview, m_towerStoragePos);
+    }
+
+    public void HighlightTowerPreview()
+    {
+
     }
 }
