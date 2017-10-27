@@ -6,10 +6,13 @@ public class CityGeneration : MonoBehaviour
 {
     public GameObject[] m_generationObjectPrefabs;
     public TowerStorage m_towerStorage;
+    public GameObject m_towerPreview;
+    public Material m_previreMaterial;
 
-    public int m_generationIndex = -1;
+    private float m_chargeingTime;
+    private int m_generationIndex = -1;
 
-    public float m_chargeingTime;
+    private Transform m_towerStoragePos;
 
 	// Use this for initialization
 	void Start ()
@@ -18,8 +21,6 @@ public class CityGeneration : MonoBehaviour
         {
             if (go.GetComponent<TowerBase>() == null) Destroy(gameObject);
         }
-
-        //SetGenIndex(0);
 	}
 	
 	// Update is called once per frame
@@ -27,21 +28,28 @@ public class CityGeneration : MonoBehaviour
     {
         if (m_generationIndex < 0) return;
 
-        Transform freeSpot = null;
         foreach (Transform t in m_towerStorage.m_towerStorageSpots)
         {
+            if (m_towerStoragePos != null) break;
+
             if (t.childCount == 0)
             {
-                freeSpot = t;
+                m_towerStoragePos = t;
+                m_towerPreview.SetActive(true);
+                m_towerPreview.transform.parent = m_towerStoragePos;
+                m_towerPreview.transform.localPosition = Vector3.zero;
                 break;
             }
         }
 
-        if (!freeSpot)
+
+        if (!m_towerStoragePos)
         {
             m_chargeingTime = 0;
+            m_towerPreview.SetActive(false);
             return;
         }
+
 
         m_chargeingTime += Time.deltaTime;
 
@@ -49,10 +57,11 @@ public class CityGeneration : MonoBehaviour
         {
             m_chargeingTime = Random.value * m_chargeingTime / 2f;
 
-            GameObject g = Instantiate(m_generationObjectPrefabs[m_generationIndex], transform.position, Quaternion.identity);
-            g.transform.parent = freeSpot;
+            GameObject g = Instantiate(m_generationObjectPrefabs[m_generationIndex], m_towerStoragePos.position, Quaternion.identity);
+            g.transform.parent = m_towerStoragePos;
+            m_towerStoragePos = null;
 
-            StartCoroutine(TowerToStand(g));
+            //StartCoroutine(TowerToStand(g));
         }
 	}
 
@@ -75,8 +84,26 @@ public class CityGeneration : MonoBehaviour
         tower.transform.localPosition = Vector3.zero;
     }
 
+    [ContextMenu("SetIndex")]
+    void ABC()
+    {
+        ++m_generationIndex;
+        SetGenIndex(m_generationIndex);
+    }
+    
+
     public void SetGenIndex(int i)
     {
+        i = i >= m_generationObjectPrefabs.Length? 0 : i;
+
         m_generationIndex = i;
+        SetPreview(m_generationObjectPrefabs[i].GetComponent<TowerBase>().m_preview);
+    }
+
+
+    public void SetPreview(GameObject preview)
+    {
+        Destroy(m_towerPreview);
+        m_towerPreview = Instantiate(preview, m_towerStoragePos);
     }
 }

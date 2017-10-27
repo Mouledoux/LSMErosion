@@ -4,16 +4,6 @@ public class ScoreManager : MonoBehaviour
 {
     public string m_fileName;
 
-    private void Awake()
-    {
-
-    }
-
-    void Update ()
-    {
-
-	}
-
     private void AppendToScoreFile()
     {
         string filePath = Application.dataPath + "/" + m_fileName;
@@ -27,8 +17,9 @@ public class ScoreManager : MonoBehaviour
         {
             testAnswers += s + ", ";
         }
-        
-        foreach(_PLACEHOLDER_LAND_DEFORM p in FindObjectsOfType<_PLACEHOLDER_LAND_DEFORM>())
+        testAnswers += FindObjectOfType<TestManager>().GetScore() + ", ";
+
+        foreach (_PLACEHOLDER_LAND_DEFORM p in FindObjectsOfType<_PLACEHOLDER_LAND_DEFORM>())
         {
             landScore += p.CalculateLandRemaining();
         }

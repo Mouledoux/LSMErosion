@@ -7,6 +7,8 @@ public class TowerBase : InteractableObject
     public string m_towerType;
     public float m_cost;
 
+    public GameObject m_preview;
+
     // ---------- ---------- ---------- ---------- ----------
     private void Start()
     {

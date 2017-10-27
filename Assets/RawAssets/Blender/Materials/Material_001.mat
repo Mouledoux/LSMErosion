@@ -8,13 +8,12 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Material_001
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHABLEND_ON _WETNESS_NONE
+  m_ShaderKeywords: _WETNESS_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -161,7 +160,7 @@ Material:
     - _DistStepsShadows: 64
     - _DropletsAnimSpeed: 10
     - _DropletsTiling: 1
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EmissionPulsateSpeed: 0
     - _FlowCycleScale: 2
     - _Frost: 0
@@ -185,7 +184,7 @@ Material:
     - _Metallic: 0
     - _Metallic2: 1
     - _MinPulseBrightness: 0
-    - _Mode: 2
+    - _Mode: 0
     - _OcclusionStrength: 1
     - _OcclusionStrength2: 0
     - _Occlusion_from_albedo_alpha: 1
@@ -249,7 +248,7 @@ Material:
     - _Softness: 2
     - _SoftnessFade: 0.4
     - _SpecularHighlights: 1
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _Tan2ObjCustomU: 1
     - _Tan2ObjCustomV: 1
     - _Tan2ObjMultU: 1
@@ -291,7 +290,7 @@ Material:
     - _WetnessShown: 1
     - _WetnessUVMult: 1
     - _WireThickness: 100
-    - _ZWrite: 0
+    - _ZWrite: 1
     - maxDist: 10
     - minDist: 1
     m_Colors:

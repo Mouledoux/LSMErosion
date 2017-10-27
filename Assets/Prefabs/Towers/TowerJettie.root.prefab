@@ -250,7 +250,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -262,7 +262,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -274,7 +274,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &114271864318069132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -357,3 +357,4 @@ MonoBehaviour:
       PublicKeyToken=null
   m_towerType: 
   m_cost: 25
+  m_preview: {fileID: 1752664867374956, guid: a49c261d78707d3448257a318fb5ea45, type: 2}
