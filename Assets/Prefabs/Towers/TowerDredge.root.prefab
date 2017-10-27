@@ -1152,7 +1152,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_towerType: 
-  m_cost: 45
+  m_cost: 30
   m_preview: {fileID: 1834653807621056, guid: 62a87cf1fed34144b916052dbcc38540, type: 2}
 --- !u!114 &114611966708706592
 MonoBehaviour:
