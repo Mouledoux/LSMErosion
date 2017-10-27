@@ -5,7 +5,8 @@ using UnityEngine;
 public class TowerOysterFarmWindBreak : MonoBehaviour
 {
     public int m_health;
-    
+    public AudioSource m_damageSound;
+
     private void OnTriggerEnter(Collider other)
     {
         Rigidbody rb = other.GetComponent<Rigidbody>();
@@ -24,9 +25,8 @@ public class TowerOysterFarmWindBreak : MonoBehaviour
 
         float timer = 1;
 
-        AudioSource audio = GetComponent<AudioSource>();
-        audio.loop = false;
-        audio.Play();
+        m_damageSound.loop = false;
+        m_damageSound.Play();
 
         while (timer > 0)
         {
@@ -36,7 +36,7 @@ public class TowerOysterFarmWindBreak : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitWhile(() => GetComponent<AudioSource>().isPlaying);
+        yield return new WaitWhile(() => m_damageSound.isPlaying);
 
         Destroy(gameObject);
     }
