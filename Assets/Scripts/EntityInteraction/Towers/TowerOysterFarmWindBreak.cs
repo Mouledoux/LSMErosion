@@ -24,13 +24,19 @@ public class TowerOysterFarmWindBreak : MonoBehaviour
 
         float timer = 1;
 
-        while(timer > 0)
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.loop = false;
+        audio.Play();
+
+        while (timer > 0)
         {
             transform.localPosition = Vector3.Lerp(transform.localPosition, nPos, Time.deltaTime);
             timer -= Time.deltaTime;
 
             yield return null;
         }
+
+        yield return new WaitWhile(() => GetComponent<AudioSource>().isPlaying);
 
         Destroy(gameObject);
     }
