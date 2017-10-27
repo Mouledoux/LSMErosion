@@ -9,6 +9,8 @@ public class TowerOysterFarmWindBreak : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        print("hit");
+
         Rigidbody rb = other.GetComponent<Rigidbody>();
 
         if (rb == null || !other.CompareTag(tag)) return;

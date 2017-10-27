@@ -14,6 +14,8 @@ public class CityGeneration : MonoBehaviour
 
     private Transform m_towerStoragePos;
 
+    public AudioSource m_ready;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -60,8 +62,7 @@ public class CityGeneration : MonoBehaviour
             GameObject g = Instantiate(m_generationObjectPrefabs[m_generationIndex], m_towerStoragePos.position, Quaternion.identity);
             g.transform.parent = m_towerStoragePos;
             m_towerStoragePos = null;
-
-            //StartCoroutine(TowerToStand(g));
+            m_ready.Play();
         }
 	}
 

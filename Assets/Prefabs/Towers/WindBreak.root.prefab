@@ -285,8 +285,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.05, z: 0.01}
-  m_Center: {x: 0, y: 0.025, z: 0}
+  m_Size: {x: 0.05, y: 0.05, z: 0.02}
+  m_Center: {x: 0, y: 0.025, z: 0.007}
 --- !u!82 &82198458418924904
 AudioSource:
   m_ObjectHideFlags: 1
@@ -525,7 +525,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_towerType: 
-  m_cost: 20
+  m_cost: 15
   m_preview: {fileID: 1506486706772776, guid: 89f2cb5e5a64c764596648cc62c6eac2, type: 2}
 --- !u!114 &114618774616105060
 MonoBehaviour:
