@@ -97,13 +97,13 @@ public class CityGeneration : MonoBehaviour
         i = i >= m_generationObjectPrefabs.Length? 0 : i;
 
         m_generationIndex = i;
-        SetPreview(m_generationObjectPrefabs[i]);
+        SetPreview(m_generationObjectPrefabs[i].GetComponent<TowerBase>().m_preview);
     }
 
 
     public void SetPreview(GameObject preview)
     {
         Destroy(m_towerPreview);
-        m_towerPreview = Instantiate(preview);
+        m_towerPreview = Instantiate(preview, m_towerStoragePos);
     }
 }

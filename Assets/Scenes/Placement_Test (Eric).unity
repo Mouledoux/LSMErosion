@@ -15066,29 +15066,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114052973924653364, guid: 1490a37d38f190846b8455bc7673659c,
-        type: 2}
-      propertyPath: m_target
-      value: 
-      objectReference: {fileID: 812393816}
     - target: {fileID: 114704511632135710, guid: 1490a37d38f190846b8455bc7673659c,
         type: 2}
       propertyPath: m_towerStorage
       value: 
       objectReference: {fileID: 355520064}
-    - target: {fileID: 4378972700451816, guid: 1490a37d38f190846b8455bc7673659c, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.0000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378972700451816, guid: 1490a37d38f190846b8455bc7673659c, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.0000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 198279272214289876, guid: 1490a37d38f190846b8455bc7673659c,
+    - target: {fileID: 114052973924653364, guid: 1490a37d38f190846b8455bc7673659c,
         type: 2}
-      propertyPath: randomSeed
-      value: 661571723
-      objectReference: {fileID: 0}
+      propertyPath: m_target
+      value: 
+      objectReference: {fileID: 812393816}
     - target: {fileID: 1691363697532980, guid: 1490a37d38f190846b8455bc7673659c, type: 2}
       propertyPath: m_Name
       value: CityGenerator (1)

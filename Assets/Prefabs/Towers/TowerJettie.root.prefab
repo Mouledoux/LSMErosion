@@ -357,3 +357,4 @@ MonoBehaviour:
       PublicKeyToken=null
   m_towerType: 
   m_cost: 25
+  m_preview: {fileID: 1752664867374956, guid: a49c261d78707d3448257a318fb5ea45, type: 2}

@@ -526,6 +526,7 @@ MonoBehaviour:
       PublicKeyToken=null
   m_towerType: 
   m_cost: 20
+  m_preview: {fileID: 1506486706772776, guid: 89f2cb5e5a64c764596648cc62c6eac2, type: 2}
 --- !u!114 &114618774616105060
 MonoBehaviour:
   m_ObjectHideFlags: 1
