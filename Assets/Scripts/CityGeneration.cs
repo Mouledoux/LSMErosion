@@ -30,14 +30,14 @@ public class CityGeneration : MonoBehaviour
 
         foreach (Transform t in m_towerStorage.m_towerStorageSpots)
         {
-            if (t == m_towerStoragePos) break;
+            if (m_towerStoragePos != null) break;
 
-            else if (t.childCount == 0)
+            if (t.childCount == 0)
             {
                 m_towerStoragePos = t;
                 m_towerPreview.SetActive(true);
                 m_towerPreview.transform.parent = m_towerStoragePos;
-                m_towerPreview.transform.position = Vector3.zero;
+                m_towerPreview.transform.localPosition = Vector3.zero;
                 break;
             }
         }
@@ -57,10 +57,11 @@ public class CityGeneration : MonoBehaviour
         {
             m_chargeingTime = Random.value * m_chargeingTime / 2f;
 
-            GameObject g = Instantiate(m_generationObjectPrefabs[m_generationIndex], transform.position, Quaternion.identity);
+            GameObject g = Instantiate(m_generationObjectPrefabs[m_generationIndex], m_towerStoragePos.position, Quaternion.identity);
             g.transform.parent = m_towerStoragePos;
+            m_towerStoragePos = null;
 
-            StartCoroutine(TowerToStand(g));
+            //StartCoroutine(TowerToStand(g));
         }
 	}
 
@@ -86,26 +87,23 @@ public class CityGeneration : MonoBehaviour
     [ContextMenu("SetIndex")]
     void ABC()
     {
-        SetGenIndex(m_generationIndex++);
+        ++m_generationIndex;
+        SetGenIndex(m_generationIndex);
     }
     
 
     public void SetGenIndex(int i)
     {
-        i = m_generationObjectPrefabs.Length % i;
+        i = i >= m_generationObjectPrefabs.Length? 0 : i;
 
         m_generationIndex = i;
-        SetPreview(m_generationObjectPrefabs[i].GetComponentInChildren<MeshFilter>(), m_generationObjectPrefabs[i].GetComponentInChildren<MeshRenderer>(), m_previreMaterial);
+        SetPreview(m_generationObjectPrefabs[i]);
     }
 
 
-    public void SetPreview(MeshFilter mesh, MeshRenderer renderer, Material mat)
+    public void SetPreview(GameObject preview)
     {
-        m_towerPreview.GetComponent<MeshFilter>().sharedMesh = mesh.sharedMesh;
-
-        for (int i = 0; i < m_towerPreview.GetComponent<MeshRenderer>().materials.Length; ++i)
-        {
-            m_towerPreview.GetComponent<MeshRenderer>().materials[i] = mat;
-        }
+        Destroy(m_towerPreview);
+        m_towerPreview = Instantiate(preview);
     }
 }
