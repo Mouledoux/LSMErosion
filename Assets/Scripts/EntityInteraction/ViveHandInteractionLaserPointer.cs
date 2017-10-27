@@ -30,7 +30,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
             {
                 if (CheckInput())
                 {
-                    ObjectInteract();
+                    OnObjectInteract();
                 }
             }
         }
@@ -81,7 +81,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
 
     // ---------- ---------- ---------- ---------- ----------
-    public int ObjectInteract()
+    public int OnObjectInteract()
     {
         InteractableObject io = m_targetObject.GetComponent<InteractableObject>();
 
@@ -99,6 +99,11 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         else if (io.m_interactionType == InteractableObject.InteractionType.LONGINTERACT)
         {
             StartCoroutine(LongInteract(m_raycast.transform.gameObject));
+        }
+
+        else
+        {
+            StartCoroutine(OffInteract(m_raycast.transform.gameObject));
         }
 
         return 0;
@@ -122,9 +127,13 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         c.enabled = false;
         m_isHoldingSomething = true;
 
-        while (m_hand.GetStandardInteractionButton() || !go.CompareTag(m_raycast.transform.tag) || m_raycast.transform.GetComponent<InteractableObject>() || !CheckObjectHit())
+        bool canDrop = false;
+        while (m_hand.GetStandardInteractionButton() || canDrop ==  false)
         {
-            go.transform.position = m_raycast.point;
+            go.transform.position = m_lineRenderer.GetPosition(m_lineRenderer.positionCount - 1);
+
+            canDrop = CheckObjectHit() && go.CompareTag(m_raycast.transform.tag) && !m_raycast.transform.GetComponent<InteractableObject>();
+
             yield return null;
         }
 
@@ -142,11 +151,20 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     public System.Collections.IEnumerator LongInteract(GameObject go)
     {
         yield return new WaitWhile(() => (m_hand.GetStandardInteractionButton()));
-;
+
         Mouledoux.Components.Mediator.instance.NotifySubscribers
             (go.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
 
         Mouledoux.Components.Mediator.instance.NotifySubscribers
             (m_raycast.transform.gameObject.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
+    }
+
+
+    public System.Collections.IEnumerator OffInteract(GameObject go)
+    {
+        yield return new WaitWhile(() => (m_hand.GetStandardInteractionButton()));
+
+        Mouledoux.Components.Mediator.instance.NotifySubscribers
+            (go.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
     }
 }
