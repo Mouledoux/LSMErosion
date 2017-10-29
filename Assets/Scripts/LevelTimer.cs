@@ -23,7 +23,10 @@ public class LevelTimer : MonoBehaviour
     {
         m_timer += Time.deltaTime;
 
-        m_countDownClock.text = (m_time - m_timer).ToString("0");
+        float reaminingTime = (m_time - m_timer);
+        int min = (int)(reaminingTime / 60f);
+        int sec = (int)(reaminingTime % 60f);
+        m_countDownClock.text = min.ToString("00") + ":" + sec.ToString("00");
 
         if (m_timer >= m_time)
         {
