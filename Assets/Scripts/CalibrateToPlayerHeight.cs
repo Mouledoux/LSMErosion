@@ -11,7 +11,7 @@ public class CalibrateToPlayerHeight : MonoBehaviour
 
 	void Start ()
     {
-        StartCoroutine(CalibrateHintCoroutine());
+        Invoke("ShowHint", 1.0f);
         //m_originalLocalScale = transform.localScale;
         //Calibrate();
 	}
@@ -22,8 +22,15 @@ public class CalibrateToPlayerHeight : MonoBehaviour
         transform.localScale = m_originalLocalScale * ((Valve.VR.InteractionSystem.Player.instance.eyeHeight / m_averageHeightMeters) * m_scaleMod);
     }
 
+    public void ShowHint()
+    {
+        StartCoroutine(CalibrateHintCoroutine());
+    }
+
     public System.Collections.IEnumerator CalibrateHintCoroutine()
     {
+        print("Hello");
+
         float prevBreakTime = Time.time;
         float prevHapticPulseTime = Time.time;
 
