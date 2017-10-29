@@ -58,7 +58,7 @@ public class CityGeneration : MonoBehaviour
 
         if(m_chargeingTime >= m_generationObjectPrefabs[m_generationIndex].GetComponent<TowerBase>().m_cost)
         {
-            m_chargeingTime = Random.value * m_chargeingTime / 2f;
+            m_chargeingTime = Random.value;
 
             GameObject g = Instantiate(m_generationObjectPrefabs[m_generationIndex], m_towerStoragePos.position, Quaternion.identity);
             g.transform.parent = m_towerStoragePos;

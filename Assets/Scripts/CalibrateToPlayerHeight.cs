@@ -27,6 +27,10 @@ public class CalibrateToPlayerHeight : MonoBehaviour
         float prevBreakTime = Time.time;
         float prevHapticPulseTime = Time.time;
 
+        yield return new WaitUntil(() => Valve.VR.InteractionSystem.Player.instance.handCount > 0);
+
+        print(Valve.VR.InteractionSystem.Player.instance.handCount);
+
         while (true)
         {
             bool pulsed = false;
