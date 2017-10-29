@@ -9,6 +9,7 @@ public class CityGeneration : MonoBehaviour
     public GameObject m_towerPreview;
     public Material m_previreMaterial;
 
+    [SerializeField]
     private float m_chargeingTime;
     private int m_generationIndex = -1;
 
