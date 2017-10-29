@@ -29,8 +29,6 @@ public class CalibrateToPlayerHeight : MonoBehaviour
 
     public System.Collections.IEnumerator CalibrateHintCoroutine()
     {
-        print("Hello");
-
         float prevBreakTime = Time.time;
         float prevHapticPulseTime = Time.time;
 
