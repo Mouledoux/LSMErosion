@@ -49,7 +49,7 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         RaycastHit rh;
         Physics.Raycast(pos, dir, out rh);
         Vector3 POC = (rh.point);
-
+        
         for (int i = 0; i < vertices.Length; i++)
         {
             dist = Vector3.Distance(transform.TransformPoint(vertices[i]), POC);
@@ -57,7 +57,6 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
             if (dist <= 0.1f)
             {
                 vertices[i] += transform.InverseTransformDirection(dir) * force * Mathf.Abs(dist - 1);
-
                 vertices[i].z = vertices[i].z < 0 ? 0 : vertices[i].z;
             }
         }
