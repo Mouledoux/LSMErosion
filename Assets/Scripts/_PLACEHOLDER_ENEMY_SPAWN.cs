@@ -19,7 +19,7 @@ public class _PLACEHOLDER_ENEMY_SPAWN : MonoBehaviour
             Instantiate(m_enemy, transform.position, transform.rotation, transform.parent);
             m_timer = Random.value;
 
-            if(m_timer < 0.1) Instantiate(m_speciamEnemy, transform.position, transform.rotation, transform.parent);
+            if(m_timer < 0.025) Instantiate(m_speciamEnemy, transform.position, transform.rotation, transform.parent);
         }
 	}
 }
