@@ -2850,6 +2850,16 @@ Prefab:
       propertyPath: m_onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224265624576196112, guid: 933de9b6f74735448bae22b43975359e,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 224265624576196112, guid: 933de9b6f74735448bae22b43975359e,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -140
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 933de9b6f74735448bae22b43975359e, type: 2}
   m_IsPrefabParent: 0
@@ -6516,6 +6526,22 @@ Prefab:
     - {fileID: 114939822679001950, guid: 625edaf40e1a4c6448c5821f8367bda7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 625edaf40e1a4c6448c5821f8367bda7, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &558250252 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1556787489638318, guid: 625edaf40e1a4c6448c5821f8367bda7,
+    type: 2}
+  m_PrefabInternal: {fileID: 558250251}
+--- !u!114 &558250253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 558250252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86f8b4880575ec47b842a23ff55c7f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &559272631
 GameObject:
   m_ObjectHideFlags: 0
@@ -17303,7 +17329,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1839933052}
         m_MethodName: PrintScoreToText

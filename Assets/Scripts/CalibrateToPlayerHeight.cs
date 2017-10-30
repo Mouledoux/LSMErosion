@@ -4,14 +4,12 @@ public class CalibrateToPlayerHeight : MonoBehaviour
 {
     [SerializeField]
     private float m_averageHeightMeters = 2f;
-
     [SerializeField] private float m_scaleMod = 1f;
-
     [SerializeField] private Vector3 m_originalLocalScale = Vector3.one;
 
 	void Start ()
     {
-        Invoke("ShowHint", 1.0f);
+        ShowHint();
         //m_originalLocalScale = transform.localScale;
         //Calibrate();
 	}
@@ -24,11 +22,44 @@ public class CalibrateToPlayerHeight : MonoBehaviour
 
     public void ShowHint()
     {
-        StartCoroutine(CalibrateHintCoroutine());
+        foreach (Valve.VR.InteractionSystem.Hand hand in Valve.VR.InteractionSystem.Player.instance.hands)
+        {
+            Valve.VR.InteractionSystem.ControllerButtonHints.ShowTextHint(hand, Valve.VR.EVRButtonId.k_EButton_Grip, "Adjust Height");
+        }
+        //StartCoroutine(CalibrateHintCoroutine());
+    }
+
+    public void HideHint()
+    {
+        foreach (Valve.VR.InteractionSystem.Hand hand in Valve.VR.InteractionSystem.Player.instance.hands)
+        {
+            Valve.VR.InteractionSystem.ControllerButtonHints.HideTextHint(hand, Valve.VR.EVRButtonId.k_EButton_Grip);
+        }
     }
 
     public System.Collections.IEnumerator CalibrateHintCoroutine()
     {
+        //yield return new WaitUntil(() => Valve.VR.InteractionSystem.Player.instance.hands.Length > 0);
+
+        //Valve.VR.InteractionSystem.Hand hand0, hand1;
+        //hand0 = Valve.VR.InteractionSystem.Player.instance.hands[0];
+        //hand1 = Valve.VR.InteractionSystem.Player.instance.hands[1];
+
+        foreach(Valve.VR.InteractionSystem.Hand hand in Valve.VR.InteractionSystem.Player.instance.hands)
+        {
+            Valve.VR.InteractionSystem.ControllerButtonHints.ShowTextHint(hand, Valve.VR.EVRButtonId.k_EButton_Grip, "Adjust Height");
+        }
+
+        yield return null;
+        //Valve.VR.InteractionSystem.ControllerButtonHints.ShowTextHint(hand0, Valve.VR.EVRButtonId.k_EButton_Grip, "Adjust Height");
+        //Valve.VR.InteractionSystem.ControllerButtonHints.ShowTextHint(hand1, Valve.VR.EVRButtonId.k_EButton_Grip, "Adjust Height");
+
+        //yield return new WaitUntil(() => (hand0.controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_Grip) || hand1.controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_Grip)));
+
+        //Valve.VR.InteractionSystem.ControllerButtonHints.HideTextHint(hand0, Valve.VR.EVRButtonId.k_EButton_Grip);
+        //Valve.VR.InteractionSystem.ControllerButtonHints.HideTextHint(hand1, Valve.VR.EVRButtonId.k_EButton_Grip);
+
+        /*
         float prevBreakTime = Time.time;
         float prevHapticPulseTime = Time.time;
 
@@ -78,5 +109,6 @@ public class CalibrateToPlayerHeight : MonoBehaviour
             }
             yield return null;
         }
+        */
     }
 }
