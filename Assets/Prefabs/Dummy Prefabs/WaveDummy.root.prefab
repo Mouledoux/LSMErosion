@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4319224602201514}
   - component: {fileID: 33245599902114178}
   - component: {fileID: 23400363854037470}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: mesh_wave_foam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4931508081629384}
   - component: {fileID: 33746781426626966}
   - component: {fileID: 23414443419940234}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: mesh_wave_water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 65061915398145878}
   - component: {fileID: 114327321050048094}
   - component: {fileID: 82971687456795784}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WaveDummy.root
   m_TagString: Water
   m_Icon: {fileID: 0}

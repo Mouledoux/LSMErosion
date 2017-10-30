@@ -507,7 +507,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1691363697532980}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.787, y: 1.085, z: -0.42050028}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4242863167928280}
@@ -763,7 +763,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6d01c5d29b38501479f104dc0f43f0ba, type: 2}
+  - {fileID: 2100000, guid: f51b1420a8d64874e971ff5deba7df06, type: 2}
   - {fileID: 2100000, guid: 5c6cb1680b14dc5448f8939f903707b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1028,7 +1028,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6d01c5d29b38501479f104dc0f43f0ba, type: 2}
+  - {fileID: 2100000, guid: f51b1420a8d64874e971ff5deba7df06, type: 2}
   - {fileID: 2100000, guid: 5d6f5820eab1f6f4a983614d12dc58aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1061,7 +1061,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6d01c5d29b38501479f104dc0f43f0ba, type: 2}
+  - {fileID: 2100000, guid: f51b1420a8d64874e971ff5deba7df06, type: 2}
   - {fileID: 2100000, guid: a9cd5c47f7b4bcf458872130242047ec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1158,7 +1158,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6d01c5d29b38501479f104dc0f43f0ba, type: 2}
+  - {fileID: 2100000, guid: f51b1420a8d64874e971ff5deba7df06, type: 2}
   - {fileID: 2100000, guid: d8b98c7c46d6ee749a10f929a37d2b34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1396,7 +1396,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6d01c5d29b38501479f104dc0f43f0ba, type: 2}
+  - {fileID: 2100000, guid: f51b1420a8d64874e971ff5deba7df06, type: 2}
   - {fileID: 2100000, guid: efebbae0544851f428acbe8d30a0ec39, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -2616,7 +2616,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 410104710
+  randomSeed: 895419588
   InitialModule:
     serializedVersion: 3
     enabled: 1
