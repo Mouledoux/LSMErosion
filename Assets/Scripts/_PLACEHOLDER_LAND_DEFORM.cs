@@ -52,9 +52,9 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         
         for (int i = 0; i < vertices.Length; i++)
         {
-            dist = Vector3.Distance(transform.TransformPoint(vertices[i]), POC);
+            dist = Vector3.Distance((vertices[i]), transform.InverseTransformPoint(POC));
 
-            if (dist <= 0.025f)
+            if (dist <= 0.05f)
             {
                 vertices[i] += transform.InverseTransformDirection(dir) * force * Mathf.Abs(dist - 1);
                 vertices[i].z = vertices[i].z < 0 ? 0 : vertices[i].z;

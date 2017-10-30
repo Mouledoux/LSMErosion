@@ -14906,7 +14906,7 @@ Prefab:
     - target: {fileID: 23156131910712538, guid: 28172d15e1e34434aa52340d45dc42c4,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28172d15e1e34434aa52340d45dc42c4, type: 2}
@@ -18444,7 +18444,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 3b06d7129d1f77b43a34ceb16ce94fec, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3b06d7129d1f77b43a34ceb16ce94fec, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -27540,8 +27540,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2099537533}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-  m_LocalPosition: {x: 0, y: 2.2900002, z: 2}
+  m_LocalRotation: {x: 0.27629805, y: 0.39039126, z: 0.124075994, w: -0.86940163}
+  m_LocalPosition: {x: 1.3740988, y: 0.1262517, z: -0.8244018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

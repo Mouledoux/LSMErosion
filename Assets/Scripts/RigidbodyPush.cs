@@ -6,19 +6,22 @@ public class RigidbodyPush : MonoBehaviour
 {
     public float force = 0.0f;
     public Vector3 direction;
+    public float m_growthTime;
+    public bool m_pushOnAwake;
+    Rigidbody rb;
 
-    
 
-	void Start ()
+    void Start ()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.velocity = transform.TransformDirection(direction.normalized) * force;
+        rb = GetComponent<Rigidbody>();
         StartCoroutine(GrowShrink(Vector3.zero, transform.localScale));
+
+        if (m_pushOnAwake) Push();
 	}
 
     public void Push()
     {
-        Start();
+        rb.velocity = transform.TransformDirection(direction.normalized) * force;
     }
 
     public IEnumerator GrowShrink(Vector3 oScale, Vector3 nScale)
@@ -27,7 +30,7 @@ public class RigidbodyPush : MonoBehaviour
 
         while(Vector3.Distance(transform.localScale, nScale) > 0.01f)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, nScale, Time.deltaTime * 10);
+            transform.localScale = Vector3.Lerp(transform.localScale, nScale, Time.deltaTime * (1f / m_growthTime));
             yield return null;
         }
 
@@ -45,6 +48,7 @@ public class RigidbodyPush : MonoBehaviour
     {
         if (other.GetComponent<Valve.VR.InteractionSystem.TeleportArea>() ||
             other.gameObject.layer == LayerMask.NameToLayer("Water") ||
+            other.GetComponent<Rigidbody>() != null ||
             (!other.CompareTag(tag) && other.gameObject.layer != LayerMask.NameToLayer("Land"))) return;
 
         AudioSource audio = GetComponent<AudioSource>();

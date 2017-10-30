@@ -499,9 +499,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 918ee1b51fd32d748a66d520586569ba, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -539,7 +539,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -663,6 +663,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 0.075
   direction: {x: 0, y: 0, z: 1}
+  m_growthTime: 0.1
+  m_pushOnAwake: 1
 --- !u!137 &137043411980087170
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
