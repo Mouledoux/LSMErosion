@@ -14,6 +14,11 @@ public class CalibrateToPlayerHeight : MonoBehaviour
         //Calibrate();
 	}
 
+    private void OnEnable()
+    {
+        ShowHint();
+    }
+
     [ContextMenu("Calibrate")]
     public void Calibrate()
     {
@@ -22,22 +27,15 @@ public class CalibrateToPlayerHeight : MonoBehaviour
 
     public void ShowHint()
     {
-        Valve.VR.InteractionSystem.ControllerButtonHints.ShowTextHint(Valve.VR.InteractionSystem.Player.instance.rightHand, Valve.VR.EVRButtonId.k_EButton_Grip, "Adjust Height");
-        Valve.VR.InteractionSystem.ControllerButtonHints.ShowTextHint(Valve.VR.InteractionSystem.Player.instance.leftHand, Valve.VR.EVRButtonId.k_EButton_Grip, "Adjust Height");
-        //foreach (Valve.VR.InteractionSystem.Hand hand in Valve.VR.InteractionSystem.Player.instance.hands)
-        //{
-        //    Valve.VR.InteractionSystem.ControllerButtonHints.ShowTextHint(hand, Valve.VR.EVRButtonId.k_EButton_Grip, "Adjust Height");
-        //    print(hand.transform.position);
-        //}
+        Valve.VR.InteractionSystem.ControllerButtonHints.ShowTextHint(Valve.VR.InteractionSystem.Player.instance.rightHand, Valve.VR.EVRButtonId.k_EButton_Grip, "Squeeze Me");
+        Valve.VR.InteractionSystem.ControllerButtonHints.ShowTextHint(Valve.VR.InteractionSystem.Player.instance.leftHand, Valve.VR.EVRButtonId.k_EButton_Grip, "Squeeze Me");
     }
 
-    //public void HideHint()
-    //{
-    //    foreach (Valve.VR.InteractionSystem.Hand hand in Valve.VR.InteractionSystem.Player.instance.hands)
-    //    {
-    //        Valve.VR.InteractionSystem.ControllerButtonHints.HideTextHint(hand, Valve.VR.EVRButtonId.k_EButton_Grip);
-    //    }
-    //}
+    public void HideHint()
+    {
+        Valve.VR.InteractionSystem.ControllerButtonHints.HideTextHint(Valve.VR.InteractionSystem.Player.instance.rightHand, Valve.VR.EVRButtonId.k_EButton_Grip);
+        Valve.VR.InteractionSystem.ControllerButtonHints.HideTextHint(Valve.VR.InteractionSystem.Player.instance.leftHand, Valve.VR.EVRButtonId.k_EButton_Grip);
+    }
 
 
 
