@@ -6,8 +6,11 @@ public class CityGeneration : MonoBehaviour
 {
     public GameObject[] m_generationObjectPrefabs;
     public TowerStorage m_towerStorage;
-    public GameObject m_towerPreview;
+    public GameObject m_towerPreviewCity;
+    public GameObject m_towerPreviewBase;
     public Material m_previreMaterial;
+    public Transform m_progressBar;
+
 
     [SerializeField]
     private float m_chargeingTime;
@@ -38,10 +41,9 @@ public class CityGeneration : MonoBehaviour
             if (t.childCount == 0)
             {
                 m_towerStoragePos = t;
-                m_towerPreview.SetActive(true);
-                m_towerPreview.transform.parent = m_towerStoragePos;
-                m_towerPreview.transform.localPosition = Vector3.zero;
-                break;
+                m_towerPreviewBase.SetActive(true);
+                m_towerPreviewBase.transform.parent = m_towerStoragePos;
+                m_towerPreviewBase.transform.localPosition = Vector3.zero;
             }
         }
 
@@ -49,14 +51,15 @@ public class CityGeneration : MonoBehaviour
         if (!m_towerStoragePos)
         {
             m_chargeingTime = 0;
-            m_towerPreview.SetActive(false);
+            m_towerPreviewBase.SetActive(false);
             return;
         }
 
 
         m_chargeingTime += Time.deltaTime;
+        m_progressBar.localScale = new Vector3(m_chargeingTime / m_generationObjectPrefabs[m_generationIndex].GetComponent<TowerBase>().m_cost, 1, 1);
 
-        if(m_chargeingTime >= m_generationObjectPrefabs[m_generationIndex].GetComponent<TowerBase>().m_cost)
+        if (m_chargeingTime >= m_generationObjectPrefabs[m_generationIndex].GetComponent<TowerBase>().m_cost)
         {
             m_chargeingTime = Random.value;
 
@@ -85,13 +88,6 @@ public class CityGeneration : MonoBehaviour
 
         tower.transform.localPosition = Vector3.zero;
     }
-
-    [ContextMenu("SetIndex")]
-    void ABC()
-    {
-        ++m_generationIndex;
-        SetGenIndex(m_generationIndex);
-    }
     
 
     public void SetGenIndex(int i)
@@ -105,7 +101,11 @@ public class CityGeneration : MonoBehaviour
 
     public void SetPreview(GameObject preview)
     {
-        Destroy(m_towerPreview);
-        m_towerPreview = Instantiate(preview, m_towerStoragePos);
+        Destroy(m_towerPreviewBase);
+        Destroy(m_towerPreviewCity);
+        m_towerPreviewBase = Instantiate(preview, m_towerStoragePos);
+        m_towerPreviewCity = Instantiate(preview, transform);
+        m_towerPreviewCity.transform.localPosition = new Vector3(0, 0, 0.125f);
+        m_towerPreviewCity.transform.Rotate(90, 0, 0);
     }
 }
