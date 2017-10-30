@@ -46,17 +46,27 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         {
             if (m_targetObject != m_raycast.transform.gameObject && !m_isHoldingSomething)
             {
-                Mouledoux.Components.Mediator.instance.NotifySubscribers
-                    (m_targetObject.GetInstanceID().ToString() + "->offhighlight", new Mouledoux.Callback.Packet());
+                if (m_targetObject != null)
+                {
+                    Mouledoux.Components.Mediator.instance.NotifySubscribers
+                        (m_targetObject.GetInstanceID().ToString() + "->offhighlight", new Mouledoux.Callback.Packet());
+                }
                 
-
                 m_targetObject = m_raycast.transform.gameObject;
 
                 Mouledoux.Components.Mediator.instance.NotifySubscribers
                     (m_targetObject.GetInstanceID().ToString() + "->onhighlight", new Mouledoux.Callback.Packet());
             }
-
+            
             return true;
+        }
+
+        else if (m_targetObject != null)
+        {
+            Mouledoux.Components.Mediator.instance.NotifySubscribers
+                (m_targetObject.GetInstanceID().ToString() + "->offhighlight", new Mouledoux.Callback.Packet());
+
+            m_targetObject = null;
         }
 
         m_raycast.point = m_hand.transform.position + m_hand.transform.forward;

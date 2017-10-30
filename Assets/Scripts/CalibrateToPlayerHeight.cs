@@ -25,8 +25,8 @@ public class CalibrateToPlayerHeight : MonoBehaviour
         foreach (Valve.VR.InteractionSystem.Hand hand in Valve.VR.InteractionSystem.Player.instance.hands)
         {
             Valve.VR.InteractionSystem.ControllerButtonHints.ShowTextHint(hand, Valve.VR.EVRButtonId.k_EButton_Grip, "Adjust Height");
+            print(hand.transform.position);
         }
-        //StartCoroutine(CalibrateHintCoroutine());
     }
 
     public void HideHint()
@@ -36,6 +36,9 @@ public class CalibrateToPlayerHeight : MonoBehaviour
             Valve.VR.InteractionSystem.ControllerButtonHints.HideTextHint(hand, Valve.VR.EVRButtonId.k_EButton_Grip);
         }
     }
+
+
+
 
     public System.Collections.IEnumerator CalibrateHintCoroutine()
     {
