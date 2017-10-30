@@ -19,6 +19,6 @@ public class UIUtils : MonoBehaviour
 
     public void GoToScene(int index)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(index);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(index);
     }
 }
