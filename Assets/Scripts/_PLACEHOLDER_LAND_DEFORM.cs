@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter), typeof(MeshCollider))]
 public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
 {
+    [Range(0.01f, 1.00f)]
+    public float m_maxLoss;
+
     private Mesh m_mesh;
     private MeshCollider m_collider;
 
@@ -37,6 +40,7 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
     private void OnDestroy()
     {
         m_subscriptions.UnsubscribeAll();
+        print(CalculateLandRemaining());
     }
 
     public void DeformMesh(Vector3 pos, Vector3 dir, float force)
@@ -57,7 +61,12 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
             if (dist <= 0.05f)
             {
                 vertices[i] += transform.InverseTransformDirection(dir) * force * Mathf.Abs(dist - 1);
-                vertices[i].z = vertices[i].z < 0 ? 0 : vertices[i].z;
+
+                if (Vector3.Distance(vertices[i], m_originalVerts[i] * m_maxLoss) < 0.05f)
+                {
+                    vertices[i] -= transform.InverseTransformDirection(dir) * force * Mathf.Abs(dist - 1);
+                    print("max");
+                }
             }
         }
 
@@ -90,6 +99,6 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
             nMag += v.magnitude;
         }
 
-        return nMag / oMag;
+        return ((nMag / oMag) * 2f) - 1f;
     }
 }
