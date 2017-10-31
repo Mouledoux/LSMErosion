@@ -9,9 +9,9 @@ public class CalibrateToPlayerHeight : MonoBehaviour
 
 	void Start ()
     {
-        ShowHint();
+        //ShowHint();
         //m_originalLocalScale = transform.localScale;
-        //Calibrate();
+        Calibrate();
 	}
 
     private void OnEnable()
