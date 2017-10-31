@@ -60,13 +60,12 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
 
             if (dist <= 0.05f)
             {
-                vertices[i] += transform.InverseTransformDirection(dir) * force * Mathf.Abs(dist - 1);
-
-                if (Vector3.Distance(vertices[i], m_originalVerts[i] * m_maxLoss) < 0.05f)
+                if ((m_originalVerts[i].magnitude - vertices[i].magnitude) > (1f - m_maxLoss))
                 {
-                    vertices[i] -= transform.InverseTransformDirection(dir) * force * Mathf.Abs(dist - 1);
-                    print("max");
+                    continue;
                 }
+
+                vertices[i] += transform.InverseTransformDirection(dir) * force * Mathf.Abs(dist - 1);
             }
         }
 
@@ -98,7 +97,7 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         {
             nMag += v.magnitude;
         }
-
-        return ((nMag / oMag) * 2f) - 1f;
+        
+        return ((nMag / oMag) - (m_maxLoss)) / (1f - m_maxLoss);
     }
 }
