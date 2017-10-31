@@ -37,6 +37,7 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
     private void OnDestroy()
     {
         m_subscriptions.UnsubscribeAll();
+        print(CalculateLandRemaining());
     }
 
     public void DeformMesh(Vector3 pos, Vector3 dir, float force)
@@ -57,7 +58,12 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
             if (dist <= 0.05f)
             {
                 vertices[i] += transform.InverseTransformDirection(dir) * force * Mathf.Abs(dist - 1);
-                vertices[i].z = vertices[i].z < 0 ? 0 : vertices[i].z;
+
+                if (Vector3.Distance(vertices[i], m_originalVerts[i] / 2f) > 0.05f)
+                {
+                    vertices[i] -= transform.InverseTransformDirection(dir) * force * Mathf.Abs(dist - 1);
+                    print("max");
+                }
             }
         }
 
