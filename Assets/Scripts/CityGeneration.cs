@@ -67,6 +67,8 @@ public class CityGeneration : MonoBehaviour
             g.transform.parent = m_towerStoragePos;
             m_towerStoragePos = null;
             m_ready.Play();
+
+            m_progressBar.localScale = Vector3.one;
         }
 	}
 

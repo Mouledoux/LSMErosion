@@ -129,10 +129,10 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     public System.Collections.IEnumerator HoldObject(GameObject go)
     {
         Vector3 lastPos = Vector3.zero;
+        Collider collider = m_raycast.collider;
+        Color lineColor = m_lineRenderer.endColor;
 
-        Collider c = m_raycast.collider;
-
-        c.enabled = false;
+        collider.enabled = false;
         m_isHoldingSomething = true;
 
         bool canDrop = false;
@@ -140,7 +140,9 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         {
             go.transform.position = m_lineRenderer.GetPosition(m_lineRenderer.positionCount - 1);
 
-            canDrop = CheckObjectHit() && go.CompareTag(m_raycast.transform.tag) && !m_raycast.transform.GetComponent<InteractableObject>();
+            canDrop = (CheckObjectHit() && go.CompareTag(m_raycast.transform.tag) && m_raycast.transform.GetComponent<InteractableObject>() == null);
+
+            m_lineRenderer.endColor = canDrop ? Color.green : Color.red;
 
             yield return null;
         }
@@ -151,8 +153,9 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         Mouledoux.Components.Mediator.instance.NotifySubscribers
             (go.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
 
-        c.enabled = true;
+        collider.enabled = true;
         m_isHoldingSomething = false;
+        m_lineRenderer.endColor = lineColor;
     }
 
 

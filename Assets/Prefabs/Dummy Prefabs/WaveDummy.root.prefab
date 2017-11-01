@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cab5b599c94b5047bd4fc74da3fecd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 0.075
+  force: 0.1
   direction: {x: 0, y: 0, z: 1}
   m_growthTime: 0.1
   m_pushOnAwake: 1

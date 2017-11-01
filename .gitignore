@@ -35,3 +35,5 @@ sysinfo.txt
 *.unitypackage
 Assets/RawAssets/Scenes/Placement_Test/LightingData.asset
 Assets/RawAssets/Scenes/Placement_Test/LightingData.asset
+Assets/score.csv
+Assets/Scenes/Placement_Test (Eric II)/LightingData.asset
