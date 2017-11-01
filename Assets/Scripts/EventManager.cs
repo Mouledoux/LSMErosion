@@ -35,9 +35,16 @@ public class EventManager : MonoBehaviour
     public List<TriggeredEvent> m_Events
         = new List<TriggeredEvent>();
 
+    private Mouledoux.Components.Mediator.Subscriptions sub = new Mouledoux.Components.Mediator.Subscriptions();
+    private Mouledoux.Callback.Callback onNotify;
+
     void Awake()
     {
         m_CurrentEvent = m_Events[0];   // Sets the current event to the first event
+        onNotify = TriggerNextEvent;
+
+        sub.Subscribe("trigger", onNotify);
+
     }
 
     void Update()
@@ -69,6 +76,12 @@ public class EventManager : MonoBehaviour
         TriggerEventAtIndex(cIndex + 1);                            // Run the event at the next index
     }
 
+    public void TriggerNextEvent(Mouledoux.Callback.Packet packet)
+    {
+        int cIndex = m_Events.FindIndex(i => i == m_CurrentEvent);  // The next event index is the current index +1
+        TriggerEventAtIndex(cIndex + 1);                            // Run the event at the next index
+    }
+
     /// <summary>
     /// Skips forward or backwards to a specific event
     /// </summary>
@@ -81,6 +94,11 @@ public class EventManager : MonoBehaviour
         m_CurrentEvent = m_Events[aIndex];  // Set the current event to the new event
         m_CurrentEvent.RunEvent();          // Run the new event
         m_Timer = 0;
+    }
+
+    public void OnDestroy()
+    {
+        sub.UnsubscribeAll();
     }
 
 }
