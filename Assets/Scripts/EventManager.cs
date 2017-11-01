@@ -62,6 +62,7 @@ public class EventManager : MonoBehaviour
     /// <summary>
     /// Runs the next event in the list
     /// </summary>
+    [ContextMenu("TriggerNext")]
     public void TriggerNextEvent()
     {
         int cIndex = m_Events.FindIndex(i => i == m_CurrentEvent);  // The next event index is the current index +1

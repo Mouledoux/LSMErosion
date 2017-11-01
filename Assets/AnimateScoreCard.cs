@@ -19,7 +19,7 @@ public class AnimateScoreCard : MonoBehaviour
 
     public void AnimScoreCard(string s)
     {
-        m_scoretext.text = s;
+        //m_scoretext.text = s;
         foreach(GameObject g in m_Fireworks)
         {
             g.SetActive(true);
