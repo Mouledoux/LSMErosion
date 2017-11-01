@@ -6,10 +6,19 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: mesh_sea_wall_shell
+    100004: Sea_wall
     400000: //RootNode
+    400002: mesh_sea_wall_shell
+    400004: Sea_wall
     2300000: //RootNode
+    2300002: mesh_sea_wall_shell
+    2300004: Sea_wall
     3300000: //RootNode
+    3300002: mesh_sea_wall_shell
+    3300004: Sea_wall
     4300000: Sea_wall
+    4300002: mesh_sea_wall_shell
   materials:
     importMaterials: 1
     materialName: 0

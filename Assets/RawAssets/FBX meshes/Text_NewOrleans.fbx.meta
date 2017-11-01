@@ -1,39 +1,15 @@
 fileFormatVersion: 2
-guid: 956135e692ef37a45858c0a1b784befc
-timeCreated: 1508997514
+guid: c78e1b8a87e58224fa8035c110b1cb01
+timeCreated: 1509497172
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: Mesh_road
-    100002: polySurface31
-    100004: polySurface36
-    100006: polySurface37
-    100008: polySurface38
-    100010: //RootNode
-    400000: Mesh_road
-    400002: polySurface31
-    400004: polySurface36
-    400006: polySurface37
-    400008: polySurface38
-    400010: //RootNode
-    2300000: Mesh_road
-    2300002: polySurface31
-    2300004: polySurface36
-    2300006: polySurface37
-    2300008: polySurface38
-    2300010: //RootNode
-    3300000: Mesh_road
-    3300002: polySurface31
-    3300004: polySurface36
-    3300006: polySurface37
-    3300008: polySurface38
-    3300010: //RootNode
-    4300000: polySurface31
-    4300002: Mesh_road
-    4300004: polySurface36
-    4300006: polySurface37
-    4300008: polySurface38
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Mesh New Orleans
   materials:
     importMaterials: 1
     materialName: 0
@@ -66,10 +42,10 @@ ModelImporter:
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
