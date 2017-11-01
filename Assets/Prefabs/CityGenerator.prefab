@@ -886,7 +886,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1691363697532980}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.859, y: 1.085, z: -0.60200024}
+  m_LocalPosition: {x: -0.79, y: 1.085, z: -0.42050028}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4242863167928280}
@@ -1399,11 +1399,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e916b48e21a1b694396153eed404b4fd, type: 2}
-  - {fileID: 2100000, guid: 74ccd057491952348b8b8064b8b867b7, type: 2}
-  - {fileID: 2100000, guid: 21fa59b8c4cd7464783a642751ddddc5, type: 2}
-  - {fileID: 2100000, guid: f34cfd853f8a0c642b01d41f08239e19, type: 2}
-  - {fileID: 2100000, guid: b516973c4fea73049b5fa7d67441d284, type: 2}
+  - {fileID: 2100000, guid: 4bdc1114f5d1f5745bbca68928db799e, type: 2}
+  - {fileID: 2100000, guid: 6d01c5d29b38501479f104dc0f43f0ba, type: 2}
+  - {fileID: 2100000, guid: d138ffd1682c0bd4fb4ffc403ea1422b, type: 2}
+  - {fileID: 2100000, guid: 0c107f7b07f61c849bc8234715104429, type: 2}
+  - {fileID: 2100000, guid: b19967ad41b732d46841185e837b373a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1624,7 +1624,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896219475914036}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -1868,8 +1868,8 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e916b48e21a1b694396153eed404b4fd, type: 2}
-  - {fileID: 2100000, guid: 21fa59b8c4cd7464783a642751ddddc5, type: 2}
+  - {fileID: 2100000, guid: 4bdc1114f5d1f5745bbca68928db799e, type: 2}
+  - {fileID: 2100000, guid: 0c107f7b07f61c849bc8234715104429, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3666,7 +3666,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -504813931
+  randomSeed: 1402680347
   InitialModule:
     serializedVersion: 3
     enabled: 1
