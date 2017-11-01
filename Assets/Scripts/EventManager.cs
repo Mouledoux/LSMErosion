@@ -87,6 +87,8 @@ public class EventManager : MonoBehaviour
 [System.Serializable]
 public class TriggeredEvent
 {
+    public string EventName;
+
     /// <summary>
     /// Unity event linked to this custom event
     /// </summary>
