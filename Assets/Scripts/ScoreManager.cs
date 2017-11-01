@@ -2,6 +2,9 @@
 
 public class ScoreManager : MonoBehaviour
 {
+    public AudioClip[] m_titleAudioClips;
+    public AudioSource m_audioSource;
+
     public string m_fileName;
 
     private void AppendToScoreFile()
@@ -54,30 +57,36 @@ public class ScoreManager : MonoBehaviour
         if(landScore <= 0.10f)
         {
             title = "Steward of the Swamp";
+            m_audioSource.PlayOneShot(m_titleAudioClips[0]);
         }
         else if (landScore <= 0.35f)
         {
             title = "Warden of the Water";
+            m_audioSource.PlayOneShot(m_titleAudioClips[1]);
 
         }
         else if (landScore <= 0.50f)
         {
             title = "Defender of the Delta";
+            m_audioSource.PlayOneShot(m_titleAudioClips[2]);
 
         }
         else if (landScore <= 0.75f)
         {
             title = "Guardian of the Ground";
+            m_audioSource.PlayOneShot(m_titleAudioClips[3]);
 
         }
         else if (landScore <= 0.90f)
         {
             title = "Hero of the Habitat";
+            m_audioSource.PlayOneShot(m_titleAudioClips[4]);
 
         }
         else // Perfect score or better
         {
             title = "Champion of the Coast";
+            m_audioSource.PlayOneShot(m_titleAudioClips[5]);
 
         }
 

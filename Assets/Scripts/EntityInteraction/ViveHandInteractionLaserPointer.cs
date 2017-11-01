@@ -11,7 +11,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     private Valve.VR.InteractionSystem.Hand m_hand;
     private LineRenderer m_lineRenderer;
 
-
+    bool hasTriggered = false;
 
     // ---------- ---------- ---------- ---------- ----------
     void Start ()
@@ -101,7 +101,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
             if (m_isHoldingSomething) return -1;
             io.m_lockedInPlace = true;
 
-            StartCoroutine(HoldObject(m_raycast.transform.gameObject));
+            StartCoroutine(HoldObject(m_raycast.collider));
         }
         
         else if (io.m_interactionType == InteractableObject.InteractionType.LONGINTERACT)
@@ -126,10 +126,10 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
 
     // ---------- ---------- ---------- ---------- ----------
-    public System.Collections.IEnumerator HoldObject(GameObject go)
+    public System.Collections.IEnumerator HoldObject(Collider go)
     {
         Vector3 lastPos = Vector3.zero;
-        Collider collider = m_raycast.collider;
+        Collider collider = go;
         Color lineColor = m_lineRenderer.endColor;
 
         collider.enabled = false;
@@ -138,15 +138,9 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         bool canDrop = false;
         while (m_hand.GetStandardInteractionButton() || canDrop ==  false)
         {
-            canDrop = false;
             go.transform.position = m_lineRenderer.GetPosition(m_lineRenderer.positionCount - 1);
 
-            if (CheckObjectHit())
-            {
-                canDrop =
-                    (go.CompareTag(m_raycast.transform.tag) &&
-                    m_raycast.transform.GetComponent<InteractableObject>() == null);
-            }
+            canDrop = m_raycast.transform.CompareTag(go.tag);
 
             m_lineRenderer.endColor = canDrop ? Color.green : Color.red;
 
@@ -162,6 +156,12 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         collider.enabled = true;
         m_isHoldingSomething = false;
         m_lineRenderer.endColor = lineColor;
+
+        if (!hasTriggered)
+        {
+            Mouledoux.Components.Mediator.instance.NotifySubscribers("trigger", new Mouledoux.Callback.Packet());
+            hasTriggered = true;
+        }
     }
 
 
