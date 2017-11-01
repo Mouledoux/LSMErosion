@@ -6486,6 +6486,41 @@ Prefab:
       propertyPath: m_Text
       value: 1998
       objectReference: {fileID: 0}
+    - target: {fileID: 114105730625382146, guid: 5484fdfd4dbaf124c87371fee0eac643,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114985926793072428, guid: 5484fdfd4dbaf124c87371fee0eac643,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114985926793072428, guid: 5484fdfd4dbaf124c87371fee0eac643,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114985926793072428, guid: 5484fdfd4dbaf124c87371fee0eac643,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267369139802972, guid: 5484fdfd4dbaf124c87371fee0eac643,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267369139802972, guid: 5484fdfd4dbaf124c87371fee0eac643,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267369139802972, guid: 5484fdfd4dbaf124c87371fee0eac643,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5484fdfd4dbaf124c87371fee0eac643, type: 2}
   m_IsPrefabParent: 0
@@ -12702,6 +12737,18 @@ Prefab:
         type: 2}
       propertyPath: m_CullingMask.m_Bits
       value: 4294966783
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556787489638318, guid: 625edaf40e1a4c6448c5821f8367bda7, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054809220939052, guid: 625edaf40e1a4c6448c5821f8367bda7, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788006323270510, guid: 625edaf40e1a4c6448c5821f8367bda7, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114939822679001950, guid: 625edaf40e1a4c6448c5821f8367bda7, type: 2}

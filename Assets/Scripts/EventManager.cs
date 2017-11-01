@@ -79,6 +79,7 @@ public class EventManager : MonoBehaviour
 
         m_CurrentEvent = m_Events[aIndex];  // Set the current event to the new event
         m_CurrentEvent.RunEvent();          // Run the new event
+        m_Timer = 0;
     }
 
 }
