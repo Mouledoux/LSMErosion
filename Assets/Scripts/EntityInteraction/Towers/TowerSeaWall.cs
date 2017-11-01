@@ -47,7 +47,7 @@ public class TowerSeaWall : MonoBehaviour
 
         Debug.DrawLine(rayPos, raycast.point, Color.red, 10f);
 
-        while(raycast.transform.CompareTag(tag))
+        while(raycast.transform.CompareTag(tag) || raycast.transform.GetComponent<TowerBase>())
         {
             transform.position = raycast.point;
             rayPos = transform.position;
