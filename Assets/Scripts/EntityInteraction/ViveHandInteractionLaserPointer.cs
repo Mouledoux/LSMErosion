@@ -70,6 +70,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         }
 
         m_raycast.point = m_hand.transform.position + m_hand.transform.forward;
+
         return false;
     }
 
@@ -139,23 +140,22 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         while (m_hand.GetStandardInteractionButton() || canDrop ==  false)
         {
             go.transform.position = m_lineRenderer.GetPosition(m_lineRenderer.positionCount - 1);
-
             canDrop = m_raycast.transform.CompareTag(go.tag);
-
             m_lineRenderer.endColor = canDrop ? Color.green : Color.red;
 
             yield return null;
         }
 
+        Mouledoux.Components.Mediator.instance.NotifySubscribers
+            (go.gameObject.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
+
         go.transform.parent = m_raycast.transform;
         go.transform.position = m_raycast.point;
-
-        Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (go.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
 
         collider.enabled = true;
         m_isHoldingSomething = false;
         m_lineRenderer.endColor = lineColor;
+
 
         if (!hasTriggered)
         {
