@@ -305,3 +305,4 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 1}
   m_growthTime: 0.1
   m_pushOnAwake: 1
+  health: 1

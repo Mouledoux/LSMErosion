@@ -340,6 +340,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 1}
   m_growthTime: 1
   m_pushOnAwake: 0
+  health: 3
 --- !u!135 &135182788506608182
 SphereCollider:
   m_ObjectHideFlags: 1

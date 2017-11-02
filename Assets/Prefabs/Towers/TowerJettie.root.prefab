@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1783f556aac7e4459d75295f128898d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_health: 25
+  m_health: 10
   m_growthDelay: 10
   m_offset: 0.1
 --- !u!114 &114599148182064010
@@ -425,5 +425,5 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_towerType: 
-  m_cost: 25
+  m_cost: 20
   m_preview: {fileID: 1752664867374956, guid: a49c261d78707d3448257a318fb5ea45, type: 2}

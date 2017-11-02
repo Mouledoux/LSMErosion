@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a85bf1f5557c6745b63d08f24160c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_health: 5
+  m_health: 3
   m_damageSound: {fileID: 82620975675725900}
 --- !u!114 &114420450580570310
 MonoBehaviour:
@@ -603,5 +603,5 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_towerType: 
-  m_cost: 10
+  m_cost: 7
   m_preview: {fileID: 1834653807621056, guid: d3b7d362bd487bf41ac00cf31ca728a2, type: 2}

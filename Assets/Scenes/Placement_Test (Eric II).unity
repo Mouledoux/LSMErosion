@@ -23140,7 +23140,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 764de4d6fdf914cdb8ae84ee82daf269, type: 2}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 764de4d6fdf914cdb8ae84ee82daf269, type: 2}
       propertyPath: EmissionModule.m_BurstCount
@@ -66784,8 +66784,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1951198800}
-  m_LocalRotation: {x: -0.023946421, y: 0.9545533, z: 0.28614265, w: 0.07985599}
-  m_LocalPosition: {x: -0.4958793, y: 0.67551255, z: -0.9458008}
+  m_LocalRotation: {x: -0.06562844, y: 0.9265497, z: 0.19191453, w: 0.3168082}
+  m_LocalPosition: {x: -3.1465197, y: 0.31422257, z: -0.1862135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

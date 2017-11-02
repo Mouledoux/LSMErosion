@@ -10,6 +10,7 @@ public class RigidbodyPush : MonoBehaviour
     public bool m_pushOnAwake;
     Rigidbody rb;
 
+    public int health;
 
     void Start ()
     {
@@ -55,8 +56,13 @@ public class RigidbodyPush : MonoBehaviour
         audio.loop = false;
         audio.Play();
 
-        StopAllCoroutines();
-        StartCoroutine(GrowShrink(transform.localScale, Vector3.zero));
+        health--;
+
+        if (health <= 0)
+        {
+            StopAllCoroutines();
+            StartCoroutine(GrowShrink(transform.localScale, Vector3.zero));
+        }
 
 
     }
