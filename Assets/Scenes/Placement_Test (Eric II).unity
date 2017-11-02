@@ -28339,7 +28339,7 @@ Prefab:
     - target: {fileID: 82341973596236864, guid: 9177f0c8a6187424aa4f74408721461d,
         type: 2}
       propertyPath: m_Volume
-      value: 0.01
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9177f0c8a6187424aa4f74408721461d, type: 2}
@@ -38739,6 +38739,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 198063442800785228, guid: cb25c1b3b33263a4f8543fc22c9cf250,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198063442800785228, guid: cb25c1b3b33263a4f8543fc22c9cf250,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198063442800785228, guid: cb25c1b3b33263a4f8543fc22c9cf250,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198063442800785228, guid: cb25c1b3b33263a4f8543fc22c9cf250,
+        type: 2}
+      propertyPath: randomSeed
+      value: -56441789
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb25c1b3b33263a4f8543fc22c9cf250, type: 2}
   m_IsPrefabParent: 0
@@ -38756,7 +38776,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9057eb66b1bc95c439e86a644032238c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -38832,6 +38852,52 @@ Transform:
   m_PrefabParentObject: {fileID: 4593192852629538, guid: cb25c1b3b33263a4f8543fc22c9cf250,
     type: 2}
   m_PrefabInternal: {fileID: 1134511561}
+--- !u!114 &1134511565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1134511562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ed45793d1dd434cad2a0b47db9f964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AudioSource: {fileID: 1134511563}
+  m_StartSec: 0
+  m_EndSec: 0
+  m_NumberOfFrequencyBands: 13
+  m_OnPlay:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  m_OnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  m_CurrentFrequencyStereo: []
+  m_CurrentFrequencyLeft: []
+  m_CurrentFrequencyRight: []
+  m_DeltaFrequencyStereo: []
+  m_DeltaFrequencyLeft: []
+  m_DeltaFrequencyRight: []
+--- !u!114 &1134511566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1134511562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35dd2ecfcd3e62b448b0f7d864a0ca2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AV: {fileID: 1134511565}
+  m_AudioBand: 9
+  m_Material: {fileID: 2100000, guid: 932219c0c58a73346b1333ad83656f68, type: 2}
+  m_NewColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1141834733 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 89e3db803f6b6e84ba05b3e7a14eea90, type: 3}
@@ -65883,8 +65949,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1951198800}
-  m_LocalRotation: {x: 0.11506681, y: 0.80114794, z: 0.16343583, w: -0.5641014}
-  m_LocalPosition: {x: 2.7106304, y: 0.0010228157, z: -1.3223934}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  m_LocalPosition: {x: 0, y: 2.2900002, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
