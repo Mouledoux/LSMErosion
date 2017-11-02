@@ -1983,8 +1983,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1936784343303950}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 0.045, z: 0.115}
-  m_LocalScale: {x: 0.15999998, y: 0.010000003, z: 0.04}
+  m_LocalPosition: {x: 0.08, y: 0.045, z: 0.138}
+  m_LocalScale: {x: 0.15999998, y: 0.010000003, z: 0.03}
   m_Children:
   - {fileID: 4961275270341266}
   m_Father: {fileID: 4376823919919462}
@@ -2246,8 +2246,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1497535315425046}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 0.045, z: 0.0675}
-  m_LocalScale: {x: 0.15999998, y: 0.010000003, z: 0.04}
+  m_LocalPosition: {x: 0.08, y: 0.045, z: 0.105}
+  m_LocalScale: {x: 0.15999998, y: 0.010000003, z: 0.03}
   m_Children:
   - {fileID: 4758140054849410}
   m_Father: {fileID: 4376823919919462}
@@ -2443,8 +2443,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1412285508697822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 0.045, z: 0.161}
-  m_LocalScale: {x: 0.16, y: 0.010000004, z: 0.04}
+  m_LocalPosition: {x: 0.08, y: 0.045, z: 0.17}
+  m_LocalScale: {x: 0.16, y: 0.010000004, z: 0.03}
   m_Children:
   - {fileID: 4696510871973006}
   m_Father: {fileID: 4376823919919462}
@@ -4604,9 +4604,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\rQuestion 3\r\n\r\nThe wind is also eroding the top layer of land, what
-    defenses provide protection against the wind?\r\n\r\nOyster farms\r\n\r\r\nWind
-    Breaks\r\n\r\r\nThe Lake Charles Bridge\r"
+  m_Text: "\rQuestion 3\r\n\r\nWind is known to erode the top layer of land. What
+    defenses provide protection against\r the wind?\n\r\nOyster farms\r\n\r\r\nWind
+    Breaks\r\n\r\r\nSea Walls"
 --- !u!114 &114295125760620918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4898,7 +4898,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\rQuestion 2\r\n\r\nMud and silt collected by dredging barges can be used
     to:\r\n\r\r\nFill in potholes on the I-10\r\n\r\nBuild new barrier islands and
-    wetlands\r\n\r\nFertilize your garden.\r\n\r\n\r\n\r\n\r"
+    wetlands\r\n\r\nMake Sea Walls\n\r\n\r\n\r"
 --- !u!114 &114332487855319246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5654,9 +5654,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\r\nThe Louisiana coast loses the area of one football field every hour.\r\n\r\n\r\nChoose
-    the answers that correctly describe the best defenses against coastal erosion
-    along the Louisiana Gulf Coast.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r"
+  m_Text: "\r\nThe Louisiana Gulf Coast loses the area of one football field every
+    hour.\r\n\r\n\r\nChoose the best answers to the following questions about defending
+    against coastal\r erosion along Louisiana\u2019s coast.\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r"
 --- !u!114 &114526571965700788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6010,8 +6010,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\rQuestion 5\r\n\nThe average amount of land on the Louisiana coast lost
-    each day is:\r\n\r\nThe area of one football field every hour \r\n\r\nThe area
-    of one football field every day\r\n\r\nThe area of one football field every week\r"
+    each day is:\r\n\r\nEvery hour \r\n\r\nEvery day\r\n\r\nEvery week\r"
 --- !u!114 &114711550844442350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6367,8 +6366,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\rQuestion 4\r\n\r\nWhat is a quick to create but delicate sea defense?\r\n\r\nOyster
-    Farms \r\n\r\nSunken Ships\r\r\n\r\nThe Super Dome\r"
+  m_Text: "\rQuestion 4\r\n\r\nWhat is quick to create, but a delicate sea defense?\n\r\nOyster
+    Farms \r\n\r\nSunken Ships\r\r\n\r\nWind Breaks"
 --- !u!114 &114775903981242906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6913,8 +6912,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Question 1 \r\n\r\nSurprisingly what sea defense is now understood to do
-    more damage than good?\r\n\r\nSea Walls \r\n\r\nWind Breaks\r\n\r\nFishing\r"
+  m_Text: "Question 1 \r\n\r\nWhat defense against erosion is now known to do more
+    damage than good?\n\r\nSea Walls \r\n\r\nWind Breaks\r\n\r\nBarrier Islands"
 --- !u!137 &137409240241568660
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
