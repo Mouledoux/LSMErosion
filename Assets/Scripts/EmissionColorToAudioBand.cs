@@ -27,6 +27,8 @@ public class EmissionColorToAudioBand : MonoBehaviour
             GetComponent<Renderer>().material = m_Material;
         }
         m_OriginalColor = m_Material.GetColor("_EmissionColor");
+
+        m_AudioBand = (m_AudioBand > m_AV.frequencyBands) ? (m_AV.frequencyBands - 1) : m_AudioBand;
 	}
 	
 
