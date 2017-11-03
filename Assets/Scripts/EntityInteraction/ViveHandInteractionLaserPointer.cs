@@ -85,6 +85,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     public bool CheckInput()
     {
+        m_hand.controller.TriggerHapticPulse();
         return (m_hand.GetStandardInteractionButtonDown());
     }
 

@@ -37,6 +37,7 @@ public class CityGeneration : MonoBehaviour
         foreach (Transform t in m_towerStorage.m_towerStorageSpots)
         {
             if (m_towerStoragePos != null) break;
+            else SetPreview(m_generationObjectPrefabs[m_generationIndex].GetComponent<TowerBase>().m_preview);
 
             if (t.childCount == 0)
             {
@@ -54,7 +55,6 @@ public class CityGeneration : MonoBehaviour
             m_towerPreviewBase.SetActive(false);
             return;
         }
-
 
         m_chargeingTime += Time.deltaTime;
         m_progressBar.localScale = new Vector3(m_chargeingTime / m_generationObjectPrefabs[m_generationIndex].GetComponent<TowerBase>().m_cost, 1, 1);

@@ -90,9 +90,9 @@ public class ScoreManager : MonoBehaviour
 
         }
 
-        text.text = "Congratulations!" + "\n" +
+        text.text = "Congratulations!" + "\n\n" +
             "With a final score of " + "\n" +
-            (landScore * 10000).ToString("0") + "\n" +
+            (landScore * 10000).ToString("0") + "\n\n" +
             "You have earned the title " + "\n" +
             title + "!";
 
