@@ -35704,7 +35704,7 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-    nextEventDelay: 1
+    nextEventDelay: 0.1
   - EventName: Disable Teleport
     TriggerEvent:
       m_PersistentCalls:
@@ -35722,7 +35722,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-    nextEventDelay: 5
+    nextEventDelay: 1
   - EventName: Sammy Intro
     TriggerEvent:
       m_PersistentCalls:
@@ -35765,6 +35765,17 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1134511563}
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1134511563}
           m_MethodName: PlayOneShot
           m_Mode: 2
           m_Arguments:
@@ -35783,6 +35794,17 @@ MonoBehaviour:
     TriggerEvent:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1134511563}
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1134511563}
           m_MethodName: PlayOneShot
           m_Mode: 2
@@ -35803,6 +35825,17 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1134511563}
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1134511563}
           m_MethodName: PlayOneShot
           m_Mode: 2
           m_Arguments:
@@ -35821,6 +35854,17 @@ MonoBehaviour:
     TriggerEvent:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1134511563}
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1134511563}
           m_MethodName: PlayOneShot
           m_Mode: 2
@@ -35841,6 +35885,17 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1134511563}
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1134511563}
           m_MethodName: PlayOneShot
           m_Mode: 2
           m_Arguments:
@@ -35859,6 +35914,17 @@ MonoBehaviour:
     TriggerEvent:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1134511563}
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1134511563}
           m_MethodName: PlayOneShot
           m_Mode: 2
@@ -35909,7 +35975,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
@@ -35919,12 +35985,11 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1134511563}
-          m_MethodName: PlayOneShot
-          m_Mode: 2
+          m_MethodName: Stop
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 3efeb855e28fff145ab32b9f646a2f41,
-              type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -35941,9 +36006,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1134511563}
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 3efeb855e28fff145ab32b9f646a2f41,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-    nextEventDelay: 13
+    nextEventDelay: 12
   - EventName: Enemy Wind
     TriggerEvent:
       m_PersistentCalls:
@@ -35973,7 +36050,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-    nextEventDelay: 5
+    nextEventDelay: 3
   - EventName: Enemy Waves
     TriggerEvent:
       m_PersistentCalls:
@@ -36014,7 +36091,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-    nextEventDelay: 5
+    nextEventDelay: 3
   - EventName: Enemy Hurricane
     TriggerEvent:
       m_PersistentCalls:
@@ -36055,7 +36132,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-    nextEventDelay: 5
+    nextEventDelay: 3
   - EventName: Defense Intro
     TriggerEvent:
       m_PersistentCalls:
@@ -36096,7 +36173,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-    nextEventDelay: 8
+    nextEventDelay: 7
   - EventName: Defense Oyster
     TriggerEvent:
       m_PersistentCalls:
@@ -36126,7 +36203,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-    nextEventDelay: 5
+    nextEventDelay: 3
   - EventName: Defense Wind Break
     TriggerEvent:
       m_PersistentCalls:
@@ -36167,7 +36244,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-    nextEventDelay: 5
+    nextEventDelay: 3
   - EventName: Defense Island
     TriggerEvent:
       m_PersistentCalls:
@@ -36208,7 +36285,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-    nextEventDelay: 5
+    nextEventDelay: 3
   - EventName: Defense Sea Wall
     TriggerEvent:
       m_PersistentCalls:
@@ -36249,7 +36326,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-    nextEventDelay: 5
+    nextEventDelay: 3
   - EventName: Defense Jettie
     TriggerEvent:
       m_PersistentCalls:
@@ -36290,18 +36367,17 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-    nextEventDelay: 5
+    nextEventDelay: 3
   - EventName: Building Intro
     TriggerEvent:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1134511563}
-          m_MethodName: PlayOneShot
-          m_Mode: 2
+          m_MethodName: Stop
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: df8a3698f0c7ac34087a638cf0947eff,
-              type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -36329,6 +36405,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1134511563}
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: df8a3698f0c7ac34087a638cf0947eff,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
     nextEventDelay: -1
@@ -36336,6 +36424,17 @@ MonoBehaviour:
     TriggerEvent:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1134511563}
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1134511563}
           m_MethodName: PlayOneShot
           m_Mode: 2
@@ -36356,12 +36455,11 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1134511563}
-          m_MethodName: PlayOneShot
-          m_Mode: 2
+          m_MethodName: Stop
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 4072a1dfaa0c34949bd22593bc65b28e,
-              type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -36417,6 +36515,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1134511563}
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 4072a1dfaa0c34949bd22593bc65b28e,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -66845,8 +66955,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1951198800}
-  m_LocalRotation: {x: -0.14015198, y: 0.7285572, z: 0.15660922, w: 0.6519473}
-  m_LocalPosition: {x: -2.8965569, y: 0.14845419, z: 1.6631315}
+  m_LocalRotation: {x: -0.11277832, y: 0.8706729, z: 0.23557442, w: 0.41679072}
+  m_LocalPosition: {x: -2.8965588, y: 0.14845371, z: 1.6631334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
