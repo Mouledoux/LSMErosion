@@ -1168,5 +1168,10 @@ namespace Valve.VR.InteractionSystem
 				return pointerHand.GetAttachmentTransform( "Attach_ControllerTip" );
 			}
 		}
+
+        public void TeleportPlayerToTransform(Transform pos)
+        {
+            teleportingToMarker.TeleportPlayer(pos.position);
+        }
 	}
 }
