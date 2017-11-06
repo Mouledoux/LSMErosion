@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 65512908594429602}
   - component: {fileID: 114420450580570310}
   - component: {fileID: 114277486478776396}
+  - component: {fileID: 114335774819604754}
   m_Layer: 0
   m_Name: TowerOyster.root
   m_TagString: Water
@@ -307,6 +308,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
+  - {fileID: 2100000, guid: 7b939e5e799d98a469f594828ebab52e, type: 2}
   - {fileID: 2100000, guid: 7b939e5e799d98a469f594828ebab52e, type: 2}
   - {fileID: 2100000, guid: 7b939e5e799d98a469f594828ebab52e, type: 2}
   - {fileID: 2100000, guid: 7b939e5e799d98a469f594828ebab52e, type: 2}
@@ -536,6 +538,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_health: 3
   m_damageSound: {fileID: 82620975675725900}
+--- !u!114 &114335774819604754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1834653807621056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf7bbb0dc0838f49be88228c83b4db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_cycleTime: 0.5
+  m_events:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1226933396475890}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1226933396475890}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  m_cycle: 0
 --- !u!114 &114420450580570310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -552,6 +598,17 @@ MonoBehaviour:
   m_onHighnight:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 114335774819604754}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1226933396475890}
         m_MethodName: SetActive
         m_Mode: 6
@@ -568,6 +625,17 @@ MonoBehaviour:
   m_offHighnight:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 114335774819604754}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1226933396475890}
         m_MethodName: SetActive
         m_Mode: 6
@@ -592,6 +660,28 @@ MonoBehaviour:
       - m_Target: {fileID: 82722451549638762}
         m_MethodName: Play
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114335774819604754}
+        m_MethodName: StopCycle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1226933396475890}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
