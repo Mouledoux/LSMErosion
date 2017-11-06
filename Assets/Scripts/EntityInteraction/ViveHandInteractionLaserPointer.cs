@@ -13,20 +13,27 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
     bool hasTriggered = false;
 
+    private bool m_controllerConnected = false;
+
     // ---------- ---------- ---------- ---------- ----------
     void Start ()
     {
         m_hand = GetComponent<Valve.VR.InteractionSystem.Hand>();
         m_lineRenderer = GetComponent<LineRenderer>();
 
-        if (m_hand.controller.uninitialized) Destroy(gameObject);
+        m_controllerConnected = (!m_hand.controller.connected);
     }
 
 
     // ---------- ---------- ---------- ---------- ----------
     void Update ()
     {
-        if (CheckObjectHit())
+        if(!m_controllerConnected)
+        {
+            m_controllerConnected = (!m_hand.controller.connected);
+        }
+
+        else if (CheckObjectHit())
         {
             if (CheckObject())
             {
@@ -126,6 +133,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     public void UpdateLaser()
     {
+        m_lineRenderer.enabled = m_controllerConnected;
         m_lineRenderer.SetPositions( new Vector3[] {m_hand.transform.position, m_raycast.point});
     }
 
