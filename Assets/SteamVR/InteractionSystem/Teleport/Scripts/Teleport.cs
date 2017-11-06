@@ -1171,7 +1171,16 @@ namespace Valve.VR.InteractionSystem
 
         public void TeleportPlayerToTransform(Transform pos)
         {
-            teleportingToMarker.TeleportPlayer(pos.position);
+            //teleporting = true;
+
+            //SteamVR_Fade.Start(Color.clear, 0);
+            //SteamVR_Fade.Start(Color.black, currentFadeTime);
+
+            //headAudioSource.transform.SetParent(player.hmdTransform);
+            //headAudioSource.transform.localPosition = Vector3.zero;
+            //PlayAudioClip(headAudioSource, teleportSound);
+
+            Valve.VR.InteractionSystem.Player.instance.transform.position = pos.position;
         }
 	}
 }
