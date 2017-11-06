@@ -37,4 +37,9 @@ public class EmissionColorToAudioBand : MonoBehaviour
         m_Frequency = m_AV.m_CurrentFrequencyStereo[m_AudioBand];
         m_Material.SetColor("_EmissionColor", Color.Lerp(m_OriginalColor, m_NewColor, m_Frequency * 2f));
 	}
+
+    private void OnDisable()
+    {
+        m_Material.SetColor("_EmissionColor", m_OriginalColor);
+    }
 }
