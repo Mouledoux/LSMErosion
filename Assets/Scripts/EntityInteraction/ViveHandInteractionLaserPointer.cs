@@ -19,7 +19,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         m_hand = GetComponent<Valve.VR.InteractionSystem.Hand>();
         m_lineRenderer = GetComponent<LineRenderer>();
 
-        if (!m_hand.controller.connected) Destroy(gameObject);
+        if (m_hand.controller.uninitialized) Destroy(gameObject);
     }
 
 
@@ -88,7 +88,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     public bool CheckInput()
     {
 
-        //if(m_hand.controller.connected) m_hand.controller.TriggerHapticPulse();
+        if(m_hand.controller.connected) m_hand.controller.TriggerHapticPulse();
         return (m_hand.GetStandardInteractionButtonDown());
     }
 
