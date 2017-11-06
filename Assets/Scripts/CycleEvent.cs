@@ -8,7 +8,7 @@ public class CycleEvent : MonoBehaviour
     public List<UnityEngine.Events.UnityEvent> m_events;
     public bool m_cycle;
 
-    private void OnEnable()
+    private void Start()
     {
         m_cycle = true;
         StartCoroutine(CycleEvents());
@@ -29,6 +29,6 @@ public class CycleEvent : MonoBehaviour
 
     public void StopCycle()
     {
-        StopCoroutine(CycleEvents());
+        StopAllCoroutines();
     }
 }

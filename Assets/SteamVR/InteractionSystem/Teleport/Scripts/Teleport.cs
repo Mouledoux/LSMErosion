@@ -1181,6 +1181,7 @@ namespace Valve.VR.InteractionSystem
             //PlayAudioClip(headAudioSource, teleportSound);
 
             Valve.VR.InteractionSystem.Player.instance.transform.position = pos.position;
+            Valve.VR.InteractionSystem.Player.instance.transform.rotation = pos.rotation;
         }
 	}
 }
