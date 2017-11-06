@@ -6,15 +6,17 @@ public class CycleEvent : MonoBehaviour
 {
     public float m_cycleTime;
     public List<UnityEngine.Events.UnityEvent> m_events;
+    public bool m_cycle;
 
-    private void Start()
+    private void OnEnable()
     {
+        m_cycle = true;
         StartCoroutine(CycleEvents());
     }
 
     public IEnumerator CycleEvents()
     {
-        while (enabled)
+        while (m_cycle)
         {
             foreach (UnityEngine.Events.UnityEvent action in m_events)
             {
@@ -23,5 +25,10 @@ public class CycleEvent : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    public void StopCycle()
+    {
+        StopCoroutine(CycleEvents());
     }
 }
