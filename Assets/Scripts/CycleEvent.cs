@@ -5,7 +5,6 @@ using UnityEngine;
 public class CycleEvent : MonoBehaviour
 {
     public float m_cycleTime;
-
     public List<UnityEngine.Events.UnityEvent> m_events;
 
     private void Start()
