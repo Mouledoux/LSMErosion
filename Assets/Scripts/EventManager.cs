@@ -49,6 +49,12 @@ public class EventManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            TriggerNextEvent();
+        }
+
+
         if (m_CurrentEvent.nextEventDelay < 0)          // If the current delay time is less than 0
         {                                                   //
             return;                                         // break out of the update loop

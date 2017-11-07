@@ -60,10 +60,10 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
 
             if (dist <= 0.05f)
             {
-                if ((m_originalVerts[i].magnitude - vertices[i].magnitude) > (1f - m_maxLoss))
-                {
-                    continue;
-                }
+                //if ((m_originalVerts[i].magnitude - vertices[i].magnitude) >= (1f - m_maxLoss))
+                //{
+                //    continue;
+                //}
 
                 vertices[i] += transform.InverseTransformDirection(dir) * force * Mathf.Abs(dist - 1);
             }
@@ -88,16 +88,28 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
         float oMag = 0;
         float nMag = 0;
 
-        foreach(Vector3 v in m_originalVerts)
+        foreach (Vector3 v in m_originalVerts)
         {
             oMag += v.magnitude;
         }
 
-        foreach(Vector3 v in m_mesh.vertices)
+        for (int i = 0; i < m_originalVerts.Length; ++i)
         {
-            nMag += v.magnitude;
+            nMag += Vector3.Distance(m_originalVerts[i], m_mesh.vertices[i] * 10);
         }
+
+        return ((oMag - nMag) / oMag);
+
+        //foreach(vector3 v in m_originalverts)
+        //{
+        //    oMag += v.magnitude;
+        //}
+
+        //foreach(Vector3 v in m_mesh.vertices)
+        //{
+        //    nMag += v.magnitude;
+        //}
         
-        return ((nMag / oMag) - (m_maxLoss)) / (1f - m_maxLoss);
+        //return ((nMag / oMag) - (m_maxLoss)) / (1f - m_maxLoss);
     }
 }
