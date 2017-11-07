@@ -10,12 +10,13 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
     private Valve.VR.InteractionSystem.Hand m_hand;
     private LineRenderer m_lineRenderer;
+    private Vector3 m_endLinePos;
 
     bool hasTriggered = false;
 
     private bool m_controllerConnected
     {
-        get { return !m_hand.controller.outOfRange; }
+        get { return m_hand.controller.connected; }
     }
 
     // ---------- ---------- ---------- ---------- ----------
@@ -65,7 +66,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
                 Mouledoux.Components.Mediator.instance.NotifySubscribers
                     (m_targetObject.GetInstanceID().ToString() + "->onhighlight", new Mouledoux.Callback.Packet());
             }
-            
+
+            m_endLinePos = m_raycast.point;
             return true;
         }
 
@@ -77,8 +79,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
             m_targetObject = null;
         }
 
-        m_raycast.point = m_hand.transform.position + m_hand.transform.forward;
-
+        m_endLinePos = m_hand.transform.position + m_hand.transform.forward;
         return false;
     }
 
@@ -134,8 +135,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     public void UpdateLaser()
     {
-        m_lineRenderer.enabled = m_controllerConnected;
-        m_lineRenderer.SetPositions( new Vector3[] {m_hand.transform.position, m_raycast.point});
+        m_lineRenderer.endColor = m_controllerConnected ? Color.green : Color.red;
+        m_lineRenderer.SetPositions( new Vector3[] {m_hand.transform.position, m_endLinePos});
     }
 
 
