@@ -886,7 +886,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1691363697532980}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.3052, y: 1.085, z: -0.59000015}
+  m_LocalPosition: {x: -0.79, y: 1.085, z: -0.42050028}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4242863167928280}
@@ -2207,7 +2207,7 @@ BoxCollider:
   m_GameObject: {fileID: 1691363697532980}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.11410717, y: 0.10000002, z: 0.09510955}
   m_Center: {x: 0, y: 0, z: 0.047554776}
@@ -3653,7 +3653,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -930954857
+  randomSeed: 1081945244
   InitialModule:
     serializedVersion: 3
     enabled: 1
