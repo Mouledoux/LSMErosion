@@ -95,10 +95,10 @@ public class _PLACEHOLDER_LAND_DEFORM : MonoBehaviour
 
         for (int i = 0; i < m_originalVerts.Length; ++i)
         {
-            nMag += Vector3.Distance(m_originalVerts[i], m_mesh.vertices[i] * 10);
+            nMag += Vector3.Distance(m_originalVerts[i], m_mesh.vertices[i]);
         }
 
-        return ((oMag - nMag) / oMag);
+        return (((oMag - nMag) / oMag));
 
         //foreach(vector3 v in m_originalverts)
         //{
