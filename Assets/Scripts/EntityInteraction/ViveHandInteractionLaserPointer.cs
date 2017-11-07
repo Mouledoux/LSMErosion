@@ -14,10 +14,10 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
     bool hasTriggered = false;
 
-    private bool m_controllerConnected
-    {
-        get { return m_hand.controller.connected; }
-    }
+    //private bool m_controllerConnected
+    //{
+    //    get { return m_hand.controller.connected; }
+    //}
 
     // ---------- ---------- ---------- ---------- ----------
     void Start ()
@@ -30,7 +30,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     void Update ()
     {
-        if (m_controllerConnected)
+        //if (m_controllerConnected)
         {
             if (CheckObjectHit())
             {
@@ -87,9 +87,6 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     public bool CheckObject()
     {
-        if(!m_targetObject.GetComponent<InteractableObject>().m_lockedInPlace)
-            m_hand.controller.TriggerHapticPulse();
-
         return m_targetObject.GetComponent<InteractableObject>();
     }
 
@@ -97,7 +94,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     public bool CheckInput()
     {
-
+        if (!m_targetObject.GetComponent<InteractableObject>().m_lockedInPlace)
+            m_hand.controller.TriggerHapticPulse();
         return (m_hand.GetStandardInteractionButtonDown());
     }
 
@@ -135,8 +133,9 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     public void UpdateLaser()
     {
-        m_lineRenderer.endColor = m_controllerConnected ? Color.green : Color.red;
+        //m_lineRenderer.endColor = m_controllerConnected ? Color.green : Color.red;
         m_lineRenderer.SetPositions( new Vector3[] {m_hand.transform.position, m_endLinePos});
+        print(m_lineRenderer.positionCount);
     }
 
 
