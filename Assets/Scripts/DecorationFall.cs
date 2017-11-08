@@ -5,9 +5,15 @@ using UnityEngine;
 public class DecorationFall : MonoBehaviour
 {
 
-    private void OnTriggerEnter(Collider other)
+    private void FixedUpdate()
     {
-        if (!other.transform.CompareTag(tag))
-            Destroy(gameObject);
+        RaycastHit rayHit;
+        if(Physics.Raycast(transform.position, -transform.forward, out rayHit))
+        {
+            if (rayHit.transform.CompareTag("Water"))
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

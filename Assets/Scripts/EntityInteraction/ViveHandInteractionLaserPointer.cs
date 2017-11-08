@@ -12,7 +12,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     private LineRenderer m_lineRenderer;
     private Vector3 m_endLinePos;
 
-    bool hasTriggered = false;
+    static bool hasTriggered = false;
 
     //private bool m_controllerConnected
     //{
@@ -135,7 +135,6 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         //m_lineRenderer.endColor = m_controllerConnected ? Color.green : Color.red;
         m_lineRenderer.SetPositions( new Vector3[] {m_hand.transform.position, m_endLinePos});
-        print(m_lineRenderer.positionCount);
     }
 
 
