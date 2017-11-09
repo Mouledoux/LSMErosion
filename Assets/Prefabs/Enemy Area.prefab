@@ -144,6 +144,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnDelay: 3
   m_enemy: {fileID: 1938139530534630, guid: 75028d0707be038499caa64d9187bf0e, type: 2}
+  m_speciamEnemy: {fileID: 0}
+  m_specialSpawnGap: 0
 --- !u!114 &114673943596033798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,5 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781d63aec8b3ab84ca33fe9dae447e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spawnDelay: 3
-  m_enemy: {fileID: 1938139530534630, guid: 75028d0707be038499caa64d9187bf0e, type: 2}
+  m_spawnDelay: 7
+  m_enemy: {fileID: 1117213901659954, guid: 29ca57396beb7e9448d7774c25813799, type: 2}
+  m_speciamEnemy: {fileID: 1089210049293112, guid: 9467eafb7f3f07c4da967051a872ef30,
+    type: 2}
+  m_specialSpawnGap: 10
