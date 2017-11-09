@@ -58,9 +58,10 @@ public class RigidbodyPush : MonoBehaviour
 
         health--;
 
-        if (health <= 0)
+        if (health <= 0 || other.gameObject.layer == LayerMask.NameToLayer("Land"))
         {
             StopAllCoroutines();
+            GetComponent<Collider>().enabled = false;
             StartCoroutine(GrowShrink(transform.localScale, Vector3.zero));
         }
 

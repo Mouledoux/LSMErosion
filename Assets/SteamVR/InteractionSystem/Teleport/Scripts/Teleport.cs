@@ -1168,20 +1168,5 @@ namespace Valve.VR.InteractionSystem
 				return pointerHand.GetAttachmentTransform( "Attach_ControllerTip" );
 			}
 		}
-
-        public void TeleportPlayerToTransform(Transform pos)
-        {
-            //teleporting = true;
-
-            //SteamVR_Fade.Start(Color.clear, 0);
-            //SteamVR_Fade.Start(Color.black, currentFadeTime);
-
-            //headAudioSource.transform.SetParent(player.hmdTransform);
-            //headAudioSource.transform.localPosition = Vector3.zero;
-            //PlayAudioClip(headAudioSource, teleportSound);
-
-            Valve.VR.InteractionSystem.Player.instance.transform.position = pos.position;
-            Valve.VR.InteractionSystem.Player.instance.transform.rotation = pos.rotation;
-        }
-	}
+    }
 }

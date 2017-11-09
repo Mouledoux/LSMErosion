@@ -9,6 +9,7 @@ public class LevelTimer : MonoBehaviour
 
     public UnityEngine.UI.Text m_countDownClock;
     public Transform m_progressBar;
+    public RectTransform m_progressBarUI;
 
     public UnityEngine.Events.UnityEvent m_onStart;
     public UnityEngine.Events.UnityEvent m_onEnd;
@@ -29,7 +30,7 @@ public class LevelTimer : MonoBehaviour
         int sec = (int)(reaminingTime % 60f);
         m_countDownClock.text = min.ToString("00") + ":" + sec.ToString("00");
         m_progressBar.localScale = new Vector3(1, m_timer / m_time, 1);
-
+        m_progressBarUI.localScale = new Vector3(1, m_timer / m_time, 1);
 
         if (m_timer >= m_time)
         {

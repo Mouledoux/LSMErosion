@@ -14,10 +14,10 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
     static bool hasTriggered = false;
 
-    //private bool m_controllerConnected
-    //{
-    //    get { return m_hand.controller.connected; }
-    //}
+    private bool m_controllerConnected
+    {
+        get { return m_hand.controller.hasTracking; }
+    }
 
     // ---------- ---------- ---------- ---------- ----------
     void Start ()
@@ -133,6 +133,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     public void UpdateLaser()
     {
+        m_lineRenderer.enabled = m_controllerConnected;
         //m_lineRenderer.endColor = m_controllerConnected ? Color.green : Color.red;
         m_lineRenderer.SetPositions( new Vector3[] {m_hand.transform.position, m_endLinePos});
     }

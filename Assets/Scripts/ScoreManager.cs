@@ -54,24 +54,24 @@ public class ScoreManager : MonoBehaviour
 
         string title = "";
 
-        if(landScore <= 0.10f)
+        if(landScore <= 0.50f)
         {
             title = "Steward of the Swamp";
             m_audioSource.PlayOneShot(m_titleAudioClips[0]);
         }
-        else if (landScore <= 0.35f)
+        else if (landScore <= 0.60f)
         {
             title = "Warden of the Water";
             m_audioSource.PlayOneShot(m_titleAudioClips[1]);
 
         }
-        else if (landScore <= 0.50f)
+        else if (landScore <= 0.70f)
         {
             title = "Defender of the Delta";
             m_audioSource.PlayOneShot(m_titleAudioClips[2]);
 
         }
-        else if (landScore <= 0.75f)
+        else if (landScore <= 0.80f)
         {
             title = "Guardian of the Ground";
             m_audioSource.PlayOneShot(m_titleAudioClips[3]);
@@ -90,11 +90,11 @@ public class ScoreManager : MonoBehaviour
 
         }
 
-        text.text = "Congratulations!" + "\n\n" +
+        text.text = "Congratulations!" + "\n" +
             "With a final score of " + "\n" +
-            (landScore * 10000).ToString("0") + "\n\n" +
+            "<b>" + (landScore * 10000).ToString("0") + "</b>" + "\n" +
             "You have earned the title " + "\n" +
-            title + "!";
+            "<b>" + title + "!" + "</b>";
 
     }
 
