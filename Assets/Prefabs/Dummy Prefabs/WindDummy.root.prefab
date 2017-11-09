@@ -707,8 +707,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -2.1431323e-18, y: 0.01750001, z: 0}
-    m_Extent: {x: 2.5912425e-18, y: 0.017500008, z: 0.0025000111}
+    m_Center: {x: -4.2862646e-18, y: 0.03500002, z: -0.0000000037252903}
+    m_Extent: {x: 5.182485e-18, y: 0.035000015, z: 0.0050000185}
   m_DirtyAABB: 0
 --- !u!137 &137284206263742716
 SkinnedMeshRenderer:
@@ -751,8 +751,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0.017500008, z: 0}
-    m_Extent: {x: 0, y: 0.017500008, z: 0.0025000093}
+    m_Center: {x: 0, y: 0.035000015, z: 0}
+    m_Extent: {x: 0, y: 0.035000015, z: 0.0050000185}
   m_DirtyAABB: 0
 --- !u!137 &137624012278530002
 SkinnedMeshRenderer:
@@ -795,8 +795,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0.017500006, z: -9.313226e-10}
-    m_Extent: {x: 0, y: 0.017500008, z: 0.0025000093}
+    m_Center: {x: 0, y: 0.035000015, z: 0}
+    m_Extent: {x: 0, y: 0.035000015, z: 0.0050000194}
   m_DirtyAABB: 0
 --- !u!183 &183150604944727278
 Cloth:
@@ -805,16 +805,16 @@ Cloth:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1225891116041266}
   m_Enabled: 1
-  m_StretchingStiffness: 1
-  m_BendingStiffness: 0.8
+  m_StretchingStiffness: 0.75
+  m_BendingStiffness: 0.5
   m_UseTethers: 0
   m_UseGravity: 0
-  m_Damping: 1
+  m_Damping: 0.5
   m_ExternalAcceleration: {x: 1, y: 0, z: 1}
-  m_RandomAcceleration: {x: 0, y: 0, z: 0}
+  m_RandomAcceleration: {x: 1, y: 0, z: 1}
   m_WorldVelocityScale: 1
   m_WorldAccelerationScale: 2
-  m_Friction: 0.5
+  m_Friction: 0
   m_CollisionMassScale: 0
   m_UseContinuousCollision: 1
   m_UseVirtualParticles: 1
@@ -2392,16 +2392,16 @@ Cloth:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1824894017913562}
   m_Enabled: 1
-  m_StretchingStiffness: 1
-  m_BendingStiffness: 0.8
+  m_StretchingStiffness: 0.75
+  m_BendingStiffness: 0.5
   m_UseTethers: 0
   m_UseGravity: 0
-  m_Damping: 1
+  m_Damping: 0.5
   m_ExternalAcceleration: {x: 1, y: 0, z: 1}
-  m_RandomAcceleration: {x: 0, y: 0, z: 0}
+  m_RandomAcceleration: {x: 1, y: 0, z: 1}
   m_WorldVelocityScale: 1
   m_WorldAccelerationScale: 2
-  m_Friction: 0.5
+  m_Friction: 0
   m_CollisionMassScale: 0
   m_UseContinuousCollision: 1
   m_UseVirtualParticles: 1
@@ -3979,16 +3979,16 @@ Cloth:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849982403410424}
   m_Enabled: 1
-  m_StretchingStiffness: 1
-  m_BendingStiffness: 0.8
+  m_StretchingStiffness: 0.75
+  m_BendingStiffness: 0.5
   m_UseTethers: 0
   m_UseGravity: 0
-  m_Damping: 1
+  m_Damping: 0.5
   m_ExternalAcceleration: {x: 1, y: 0, z: 1}
-  m_RandomAcceleration: {x: 0, y: 0, z: 0}
+  m_RandomAcceleration: {x: 1, y: 0, z: 1}
   m_WorldVelocityScale: 1
   m_WorldAccelerationScale: 2
-  m_Friction: 0.5
+  m_Friction: 0
   m_CollisionMassScale: 0
   m_UseContinuousCollision: 1
   m_UseVirtualParticles: 1
