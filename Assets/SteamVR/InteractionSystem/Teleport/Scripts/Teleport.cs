@@ -192,7 +192,8 @@ namespace Valve.VR.InteractionSystem
 		{
 			chaperoneInfoInitializedAction.enabled = true;
 			OnChaperoneInfoInitialized(); // In case it's already initialized
-		}
+            Invoke("ShowTeleportHint", 5.0f);
+        }
 
 
 		//-------------------------------------------------
@@ -200,6 +201,8 @@ namespace Valve.VR.InteractionSystem
 		{
 			chaperoneInfoInitializedAction.enabled = false;
 			HidePointer();
+
+            CancelInvoke();
 		}
 
 
@@ -1165,5 +1168,5 @@ namespace Valve.VR.InteractionSystem
 				return pointerHand.GetAttachmentTransform( "Attach_ControllerTip" );
 			}
 		}
-	}
+    }
 }
