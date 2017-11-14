@@ -25,7 +25,7 @@ public class TowerDredgeIsland : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        m_targetScale *= 0.9f;
+        m_targetScale *= 0.5f;
         if (m_targetScale.magnitude < m_maxScale.magnitude * 0.05f) StartCoroutine(iDestroy());
     }
 

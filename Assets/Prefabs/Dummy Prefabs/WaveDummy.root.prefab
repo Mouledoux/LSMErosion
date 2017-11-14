@@ -336,6 +336,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 1}
   m_growthTime: 0.1
   m_pushOnAwake: 1
+  m_land: 0
+  m_water: 1
   health: 1
 --- !u!198 &198239042394353230
 ParticleSystem:

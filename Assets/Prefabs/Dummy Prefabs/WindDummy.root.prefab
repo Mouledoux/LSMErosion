@@ -665,6 +665,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 1}
   m_growthTime: 0.1
   m_pushOnAwake: 1
+  m_land: 1
+  m_water: 0
   health: 1
 --- !u!137 &137043411980087170
 SkinnedMeshRenderer:

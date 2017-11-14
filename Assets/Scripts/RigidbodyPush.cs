@@ -10,6 +10,8 @@ public class RigidbodyPush : MonoBehaviour
     public bool m_pushOnAwake;
     Rigidbody rb;
 
+    public bool m_land, m_water;
+
     public int health;
 
     void Start ()
@@ -38,9 +40,7 @@ public class RigidbodyPush : MonoBehaviour
         if (nScale == Vector3.zero)
         {
             GetComponent<Collider>().enabled = false;
-
             yield return new WaitWhile(() => GetComponent<AudioSource>().isPlaying);
-
             Destroy(gameObject);
         }
     }
@@ -49,22 +49,31 @@ public class RigidbodyPush : MonoBehaviour
     {
         if (other.GetComponent<Valve.VR.InteractionSystem.TeleportArea>() ||
             other.gameObject.layer == LayerMask.NameToLayer("Water") ||
-            other.GetComponent<Rigidbody>() != null ||
-            (!other.CompareTag(tag) && other.gameObject.layer != LayerMask.NameToLayer("Land"))) return;
+            other.GetComponent<Rigidbody>() != null) return;
 
-        AudioSource audio = GetComponent<AudioSource>();
-        audio.loop = false;
-        audio.Play();
 
-        health--;
-
-        if (health <= 0 || other.gameObject.layer == LayerMask.NameToLayer("Land"))
+        if(other.gameObject.layer == LayerMask.NameToLayer("Land"))
         {
             StopAllCoroutines();
             GetComponent<Collider>().enabled = false;
             StartCoroutine(GrowShrink(transform.localScale, Vector3.zero));
+            return;
         }
 
+        else if ((m_land && other.CompareTag("Land")) || (m_water && other.CompareTag("Water")))
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.loop = false;
+            audio.Play();
 
+            health--;
+
+            if (health <= 0 || other.gameObject.layer == LayerMask.NameToLayer("Land"))
+            {
+                StopAllCoroutines();
+                GetComponent<Collider>().enabled = false;
+                StartCoroutine(GrowShrink(transform.localScale, Vector3.zero));
+            }
+        }
     }
 }

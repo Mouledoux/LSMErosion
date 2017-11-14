@@ -15,6 +15,11 @@ public class TowerSeaWall : MonoBehaviour
         Physics.Raycast(transform.position, -transform.up, out raycast);
 
         if (!raycast.transform.CompareTag(tag)) StartCoroutine(iDestroy());
+        else if(other.CompareTag("Water"))
+        {
+            RigidbodyPush rbp = other.GetComponent<RigidbodyPush>();
+            if (rbp != null) rbp.force *= 2f;
+        }
     }
 
     public IEnumerator iDestroy()
@@ -47,7 +52,7 @@ public class TowerSeaWall : MonoBehaviour
 
         Debug.DrawLine(rayPos, raycast.point, Color.red, 10f);
 
-        while(raycast.transform.CompareTag(tag) || raycast.transform.GetComponent<TowerBase>())
+        while(raycast.transform.CompareTag(tag) && !raycast.transform.GetComponent<TowerBase>())
         {
             transform.position = raycast.point;
             rayPos = transform.position;

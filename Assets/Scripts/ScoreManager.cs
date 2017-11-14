@@ -90,17 +90,16 @@ public class ScoreManager : MonoBehaviour
 
         }
 
-        text.text = "Congratulations!" + "\n" +
-            "With a final score of " + "\n" +
+        text.text = "With a final score of " + "\n" +
             "<b>" + (landScore * 10000).ToString("0") + "</b>" + "\n" +
             "You have earned the title " + "\n" +
             "<b>" + title + "!" + "</b>";
 
+        AppendToScoreFile();
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         print("dead");
-        AppendToScoreFile();   
     }
 }
