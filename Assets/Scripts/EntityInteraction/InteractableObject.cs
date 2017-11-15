@@ -54,23 +54,23 @@ public class InteractableObject : MonoBehaviour
 
 
 
-    protected virtual void OnHighlight(Mouledoux.Callback.Packet packet)
+    protected void OnHighlight(Mouledoux.Callback.Packet packet)
     {
         m_onHighnight.Invoke();
     }
 
-    protected virtual void OffHighlight(Mouledoux.Callback.Packet packet)
+    protected void OffHighlight(Mouledoux.Callback.Packet packet)
     {
         m_offHighnight.Invoke();
     }
 
 
-    protected virtual void OnInteract(Mouledoux.Callback.Packet packet)
+    protected void OnInteract(Mouledoux.Callback.Packet packet)
     {
         m_onInteract.Invoke();
     }
 
-    protected virtual void OffInteract(Mouledoux.Callback.Packet packet)
+    protected void OffInteract(Mouledoux.Callback.Packet packet)
     {
         m_offInteract.Invoke();
     }

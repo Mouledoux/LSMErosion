@@ -197,4 +197,9 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         Mouledoux.Components.Mediator.instance.NotifySubscribers
             (go.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
     }
+
+    public void OnDestroy()
+    {
+        hasTriggered = false;
+    }
 }
