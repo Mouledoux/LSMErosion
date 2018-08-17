@@ -153,7 +153,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         while (m_hand.GetStandardInteractionButton() || canDrop ==  false)
         {
             go.transform.position = m_lineRenderer.GetPosition(m_lineRenderer.positionCount - 1);
-            canDrop = m_raycast.transform.CompareTag(go.tag);
+            canDrop = (m_raycast.transform.CompareTag(go.tag) && m_raycast.transform.GetComponent<TowerObject>() == null);
             m_lineRenderer.endColor = canDrop ? Color.green : Color.red;
 
             yield return null;

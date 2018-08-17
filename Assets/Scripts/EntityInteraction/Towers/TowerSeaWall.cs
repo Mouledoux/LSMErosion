@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerSeaWall : MonoBehaviour
+public class TowerSeaWall : TowerObject
 {
     private void Start()
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerDredgeIsland : MonoBehaviour
+public class TowerDredgeIsland : TowerObject
 {
     private Vector3 m_targetScale;
     private Vector3 m_maxScale;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerOysterFarmWindBreak : MonoBehaviour
+public class TowerOysterFarmWindBreak : TowerObject
 {
     public int m_health;
     public AudioSource m_damageSound;
