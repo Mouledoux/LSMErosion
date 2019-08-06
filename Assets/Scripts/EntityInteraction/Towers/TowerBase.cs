@@ -15,22 +15,22 @@ public class TowerBase : InteractableObject
         Initialize(gameObject);
     }
 
-    override protected void OnHighlight(Mouledoux.Callback.Packet packet)
+    new protected void OnHighlight(Mouledoux.Callback.Packet packet)
     {
         base.OnHighlight(packet);
     }
 
-    override protected void OffHighlight(Mouledoux.Callback.Packet packet)
+    new protected void OffHighlight(Mouledoux.Callback.Packet packet)
     {
         base.OffHighlight(packet);
     }
 
-    override protected void OnInteract(Mouledoux.Callback.Packet packet)
+    new protected void OnInteract(Mouledoux.Callback.Packet packet)
     {
         base.OnInteract(packet);
     }
 
-    override protected void OffInteract(Mouledoux.Callback.Packet packet)
+    new protected void OffInteract(Mouledoux.Callback.Packet packet)
     {
         base.OffInteract(packet);
     }

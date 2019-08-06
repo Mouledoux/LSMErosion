@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerJettie : MonoBehaviour
+public class TowerJettie : TowerObject
 {
     public int m_health;
     public float m_growthDelay;
